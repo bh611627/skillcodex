@@ -1,6 +1,6 @@
 {
   "name": "@skillcodex/skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SkillCodex agent skills as installable JavaScript modules",
   "type": "module",
   "main": "./dist/index.js",

@@ -2,20 +2,27 @@ import { defineSkill } from "../types.js";
 
 const skillMd = `---
 name: web-design-guidelines
-description: Audit UI vs design-guidelines + web interface rules - outcomes with file:line report
+description: Web design for SkillCodex doc UIs - React + TypeScript + Tailwind; build or audit per design-guidelines. Prefer div + CSS motion; use framer-motion only in client components.
 tags:
   - ui
+  - design-system
   - accessibility
-  - design
-version: 1.9.0
+  - react
+  - documentation
+version: 2.1.0
 category: development
 outcomes:
-  - Terse file:line findings for a11y, whitespace, skeletons, anti-SaaS violations
-  - Checklist pass/fail you can act on immediately
+  - Doc UI implemented with design-guidelines checklist passed (tokens, skeletons, whitespace)
+  - OR file:line audit + pass/fail for a11y, motion, anti-SaaS violations
 stack:
-  - pnpm
-  - next
   - react
+  - typescript
+  - tailwindcss
+  - react-markdown
+  - remark-gfm
+  - react-icons
+  - pnpm
+  - framer-motion
 last_reviewed: 2026-05-15
 risk_level: low
 tools_allowed: repo-files
@@ -27,31 +34,64 @@ compatibility:
   - skills-sh
 references:
   - references/design-guidelines.md
+  - references/react-stack.md
+  - references/data-source.md
 ---
 
 # Instructions
 
-Audit against [design-guidelines.md](../../references/design-guidelines.md). Flag missing skeletons, poor whitespace, custom CSS over Tailwind, gradients, glass, SaaS patterns, a11y gaps.
+This skill merges **doc UI implementation** (formerly \`documentation-ui\`) and **UI review (audit)**.
 
-Fetch \`https://raw.githubusercontent.com/bh611627/skillcodex/main/references/design-guidelines.md\` if local file missing.
+Canonical rules live in [design-guidelines.md](../../references/design-guidelines.md) only. **STRICT UI ONLY** - no backend, API, DB, auth.
 
-Output grouped \`file:line\` findings + checklist. Optional: Vercel \`web-interface-guidelines/main/command.md\`.
+**Stack:** **React** + **TypeScript** + **Tailwind** + **react-markdown** + **remark-gfm** + **react-icons**. Next.js or Vite as host is fine. **Motion:** default to **\`<div>\` + Tailwind** transitions; **\`framer-motion\`** only in **client** components (\`'use client'\` in Next). If \`motion.div\` causes RSC or build errors, replace with **\`div\`** + Tailwind (see design-guidelines **Motion** section).
+
+---
+
+## Mode A - Build / implement doc UI
+
+Use when the user wants a **premium documentation-style** interface (like [skills.sh](https://www.skills.sh/) structure: browse, search, detail, outcomes visible - but **no fake install counts**).
+
+1. Apply [design-guidelines.md](../../references/design-guidelines.md) end-to-end (including **testimonials with avatar images** and **buttons** with \`cursor-pointer\`, hover, \`focus-visible\`, and **motion on \`div\`** unless a client-only leaf needs Framer).
+2. **Tailwind-first**, mobile-first, mandatory **skeletons** (\`animate-pulse\` on **\`<div>\`**, not \`motion\`).
+3. **pnpm** for new app; **match user lockfile** in existing repos; **npm** for \`@skillcodex/skills\`.
+4. Optional **Next**: \`next/image\`, \`next/link\`. Optional **framer-motion** in client files only.
+5. Data: [data-source.md](../../references/data-source.md).
+
+Output: pnpm commands, file paths, checklist pass/fail.
+
+---
+
+## Mode B - Audit / review existing UI
+
+Use when the user asks to review, audit, or check accessibility.
+
+1. Read project TSX against [design-guidelines.md](../../references/design-guidelines.md).
+2. If file missing locally, fetch \`https://raw.githubusercontent.com/bh611627/skillcodex/main/references/design-guidelines.md\`.
+3. Flag: missing skeletons, weak whitespace, custom CSS over Tailwind, gradients, glass, SaaS landing/dashboard, a11y gaps; testimonials without **alt** on avatars; buttons without pointer/hover/focus; **\`motion\` / \`motion.div\` in Server Components** (Next) without \`'use client'\`.
+4. Optional deep pass: Vercel \`web-interface-guidelines/main/command.md\`.
+
+Output: grouped \`file:line\` findings + checklist. No preamble.
+
+---
 
 ## Outcomes
 
-Actionable audit list or explicit pass.
+- **Build:** components wired, skeletons on load, theme + tokens, \`pnpm dev\` works.
+- **Audit:** actionable list or explicit pass.
 
 ## Output Rules
 
-By file. No preamble.
+State which mode. Then evidence (files or findings).
 
 ## Scope and boundaries
 
-- UI review only.
+- Frontend documentation UIs only - not SaaS marketing sites.
 
 ## Safety
 
-- Suggest only.
+- Build: edit UI files; user runs pnpm.
+- Audit: suggest only; public raw URLs for guidelines.
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/web-design-guidelines/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills
@@ -59,40 +99,71 @@ By file. No preamble.
 
 export const webDesignGuidelines = defineSkill({
   name: "web-design-guidelines",
-  description: "Audit UI vs design-guidelines + web interface rules - outcomes with file:line report",
-  tags: ["ui","accessibility","design"],
-  version: "1.9.0",
+  description: "Web design for SkillCodex doc UIs - React + TypeScript + Tailwind; build or audit per design-guidelines. Prefer div + CSS motion; use framer-motion only in client components.",
+  tags: ["ui","design-system","accessibility","react","documentation"],
+  version: "2.1.0",
   category: "development",
   lastReviewed: "2026-05-15",
   riskLevel: "low",
   toolsAllowed: "repo-files",
   requiresUserApproval: undefined,
   compatibility: ["generic-markdown","cursor","claude-code","skills-sh"],
-  outcomes: ["Terse file:line findings for a11y, whitespace, skeletons, anti-SaaS violations","Checklist pass/fail you can act on immediately"],
-  stack: ["pnpm","next","react"],
-  references: ["references/design-guidelines.md"],
+  outcomes: ["Doc UI implemented with design-guidelines checklist passed (tokens, skeletons, whitespace)","OR file:line audit + pass/fail for a11y, motion, anti-SaaS violations"],
+  stack: ["react","typescript","tailwindcss","react-markdown","remark-gfm","react-icons","pnpm","framer-motion"],
+  references: ["references/design-guidelines.md","references/react-stack.md","references/data-source.md"],
   instructions: `# Instructions
 
-Audit against [design-guidelines.md](../../references/design-guidelines.md). Flag missing skeletons, poor whitespace, custom CSS over Tailwind, gradients, glass, SaaS patterns, a11y gaps.
+This skill merges **doc UI implementation** (formerly \`documentation-ui\`) and **UI review (audit)**.
 
-Fetch \`https://raw.githubusercontent.com/bh611627/skillcodex/main/references/design-guidelines.md\` if local file missing.
+Canonical rules live in [design-guidelines.md](../../references/design-guidelines.md) only. **STRICT UI ONLY** - no backend, API, DB, auth.
 
-Output grouped \`file:line\` findings + checklist. Optional: Vercel \`web-interface-guidelines/main/command.md\`.
+**Stack:** **React** + **TypeScript** + **Tailwind** + **react-markdown** + **remark-gfm** + **react-icons**. Next.js or Vite as host is fine. **Motion:** default to **\`<div>\` + Tailwind** transitions; **\`framer-motion\`** only in **client** components (\`'use client'\` in Next). If \`motion.div\` causes RSC or build errors, replace with **\`div\`** + Tailwind (see design-guidelines **Motion** section).
+
+---
+
+## Mode A - Build / implement doc UI
+
+Use when the user wants a **premium documentation-style** interface (like [skills.sh](https://www.skills.sh/) structure: browse, search, detail, outcomes visible - but **no fake install counts**).
+
+1. Apply [design-guidelines.md](../../references/design-guidelines.md) end-to-end (including **testimonials with avatar images** and **buttons** with \`cursor-pointer\`, hover, \`focus-visible\`, and **motion on \`div\`** unless a client-only leaf needs Framer).
+2. **Tailwind-first**, mobile-first, mandatory **skeletons** (\`animate-pulse\` on **\`<div>\`**, not \`motion\`).
+3. **pnpm** for new app; **match user lockfile** in existing repos; **npm** for \`@skillcodex/skills\`.
+4. Optional **Next**: \`next/image\`, \`next/link\`. Optional **framer-motion** in client files only.
+5. Data: [data-source.md](../../references/data-source.md).
+
+Output: pnpm commands, file paths, checklist pass/fail.
+
+---
+
+## Mode B - Audit / review existing UI
+
+Use when the user asks to review, audit, or check accessibility.
+
+1. Read project TSX against [design-guidelines.md](../../references/design-guidelines.md).
+2. If file missing locally, fetch \`https://raw.githubusercontent.com/bh611627/skillcodex/main/references/design-guidelines.md\`.
+3. Flag: missing skeletons, weak whitespace, custom CSS over Tailwind, gradients, glass, SaaS landing/dashboard, a11y gaps; testimonials without **alt** on avatars; buttons without pointer/hover/focus; **\`motion\` / \`motion.div\` in Server Components** (Next) without \`'use client'\`.
+4. Optional deep pass: Vercel \`web-interface-guidelines/main/command.md\`.
+
+Output: grouped \`file:line\` findings + checklist. No preamble.
+
+---
 
 ## Outcomes
 
-Actionable audit list or explicit pass.`,
+- **Build:** components wired, skeletons on load, theme + tokens, \`pnpm dev\` works.
+- **Audit:** actionable list or explicit pass.`,
   outputRules: `## Output Rules
 
-By file. No preamble.
+State which mode. Then evidence (files or findings).
 
 ## Scope and boundaries
 
-- UI review only.
+- Frontend documentation UIs only - not SaaS marketing sites.
 
 ## Safety
 
-- Suggest only.
+- Build: edit UI files; user runs pnpm.
+- Audit: suggest only; public raw URLs for guidelines.
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/web-design-guidelines/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills`,

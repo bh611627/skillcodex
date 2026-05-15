@@ -6,9 +6,10 @@ This repo is public. It must not contain secrets.
 
 **Do not commit**
 
-- API keys, tokens, passwords (`.env`, `.npmrc`, credential files)
-- Private keys (`.pem`, `.key`)
-- Build output under `package/dist/` (generate locally)
+- API keys, tokens, passwords (`.env`, `.env.*`, `.npmrc` with auth, credential JSON, `.netrc`)
+- Private keys and certs (`.pem`, `.key`, `.p12`, `id_rsa`, keystores)
+- Build output under `package/dist/` (generate locally with `pnpm run build`; it is listed in `.gitignore`)
+- Cursor/IDE upload folders copied into the repo (`uploads/`, etc. — see root `.gitignore`)
 
 **Safe to include**
 

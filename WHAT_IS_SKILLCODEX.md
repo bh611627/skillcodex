@@ -18,7 +18,7 @@ Write once. Share on GitHub. Optional npm module. Every skill declares **outcome
 
 ## UI (optional)
 
-Premium **documentation-style** browser - UI/UX only. Full spec: [references/design-guidelines.md](./references/design-guidelines.md).
+Premium **documentation-style** browser - UI/UX only. Spec: [references/design-guidelines.md](./references/design-guidelines.md). Skill: [skills/web-design-guidelines](./skills/web-design-guidelines/SKILL.md) (build + audit).
 
 **Stack:** pnpm for new Next apps (or match user lockfile). framer-motion, Tailwind, react-icons.
 
@@ -26,7 +26,12 @@ Premium **documentation-style** browser - UI/UX only. Full spec: [references/des
 
 | Need | File |
 |------|------|
+| Skill directory (skills.sh-style) | [DIRECTORY.md](./DIRECTORY.md) |
+| Repo layout (folders) | [REPO_LAYOUT.md](./REPO_LAYOUT.md) |
 | SKILL format | [SKILL_STANDARD.md](./SKILL_STANDARD.md) |
 | Stack / pnpm | [references/react-stack.md](./references/react-stack.md) |
 | Data rules | [references/data-source.md](./references/data-source.md) |
 | Trust | [TRUST.md](./TRUST.md) |
+| skills.sh / Vercel CLI vs agent-skills | [references/skills-ecosystem.md](./references/skills-ecosystem.md) |
+| Git branches and releases | [GIT_WORKFLOW.md](./GIT_WORKFLOW.md) |
+| Secrets / what not to commit | [SECURITY.md](./SECURITY.md) |

@@ -48,3 +48,11 @@ Package source in this repo: `package/` (maintainers run `pnpm run sync` inside 
 | Single install path | GitHub + npm documented |
 
 Do not fabricate download counts or stars.
+
+## CLI ecosystem (skills.sh / Vercel)
+
+How `npx skills` relates to [skills.sh](https://skills.sh/) and Vercel repos: [skills-ecosystem.md](./skills-ecosystem.md).
+
+## Git workflow and version bumps
+
+Branches, sync/build/validate, and npm version bumps: [GIT_WORKFLOW.md](../GIT_WORKFLOW.md).

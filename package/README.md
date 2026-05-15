@@ -37,8 +37,7 @@ skills["seo-agent"];
 | `@skillcodex/skills/content-creator` | Content |
 | `@skillcodex/skills/seo-agent` | SEO |
 | `@skillcodex/skills/code-assistant` | Code |
-| `@skillcodex/skills/documentation-ui` | Doc UI |
-| `@skillcodex/skills/web-design-guidelines` | UI review / a11y |
+| `@skillcodex/skills/web-design-guidelines` | Doc UI build + audit / a11y |
 | `@skillcodex/skills/skill-creator` | Meta |
 | `@skillcodex/skills/skillcodex-browser-ui` | Browser UI |
 

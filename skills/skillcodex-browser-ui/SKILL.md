@@ -35,7 +35,7 @@ references:
 
 # Instructions
 
-Build **SkillCodex** doc browser per [design-guidelines.md](../../references/design-guidelines.md).
+Build full doc browser per [design-guidelines.md](../../references/design-guidelines.md). For component-level design work use [web-design-guidelines](../web-design-guidelines/SKILL.md) first.
 
 **STRICT UI ONLY** - no backend, API, DB, or auth.
 

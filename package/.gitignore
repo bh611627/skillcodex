@@ -1,2 +1,4 @@
-node_modules/
+# Build output — regenerate; npm publish uses `files: ["dist"]` from a clean build
 dist/
+*.tsbuildinfo
+node_modules/

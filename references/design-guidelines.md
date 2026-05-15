@@ -6,7 +6,7 @@
 
 **Feel:** extremely clean, highly readable, Apple-level refined, documentation-first, calm, structured, minimal, professional. **NOT** AI-slop, flashy, gradient-heavy, glassmorphism, or SaaS-dashboard / SaaS-landing style.
 
-Data: [data-source.md](./data-source.md). Stack: [react-stack.md](./react-stack.md).
+Canonical web UI rules: **this file**. Use agent skill **web-design-guidelines** to implement or audit doc UIs (merged former `documentation-ui`).
 
 ---
 
@@ -18,14 +18,26 @@ Data: [data-source.md](./data-source.md). Stack: [react-stack.md](./react-stack.
 | Install `@skillcodex/skills` | **npm** |
 | Existing user project | **Match lockfile** (`pnpm-lock.yaml` → pnpm, `package-lock.json` → npm) |
 
+**UI stack (React - do not drop the core):** **React**, **TypeScript**, **Tailwind CSS**, **react-markdown**, **remark-gfm**, **react-icons**. Host with **Next.js (App Router)** or **Vite + React**; same layout and component rules apply.
+
+**Motion:** prefer **`<div>` + Tailwind** (`transition-[transform,opacity]`, `hover:` - see **Motion** below). **framer-motion** is **optional**; use only in **client** code. **Do not** use `motion.div` in React Server Components (e.g. Next without `'use client'`) - it will error; use a **`<div>`** or a small **client** child component.
+
 ```bash
+# Next.js (common for doc UIs)
 pnpm create next-app@latest skillcodex-ui --ts --tailwind --eslint --app --src-dir --import-alias "@/*"
 cd skillcodex-ui && pnpm install
-pnpm add framer-motion react-markdown remark-gfm react-icons
+pnpm add react-markdown remark-gfm react-icons
+# optional, only if you need enter/exit orchestration beyond CSS:
+pnpm add framer-motion
 pnpm dev
 ```
 
-**UI stack (do not drop):** Next.js App Router, TypeScript, Tailwind v4, **framer-motion**, react-markdown, remark-gfm, react-icons.
+```bash
+# Vite + React - install Tailwind using current Vite + Tailwind docs, then:
+pnpm add react-markdown remark-gfm react-icons
+# optional: pnpm add framer-motion
+pnpm dev
+```
 
 ---
 
@@ -46,7 +58,7 @@ pnpm dev
 
 ## Anti-patterns (forbidden)
 
-- SaaS landing (hero, pricing, testimonials, logo wall, funnels)
+- SaaS landing (hero, **pricing strip**, **testimonial carousel** as primary funnel, logo wall, conversion funnels)
 - SaaS dashboard (dense analytics, KPI widgets, chart grids)
 - Gradients, glassmorphism (`backdrop-blur`), neon, glow
 - `transition: all`
@@ -98,15 +110,30 @@ pnpm dev
 | Component | Rules |
 |-----------|--------|
 | **Skill card** | title, description, tag pills, subtle hover lift (`-translate-y-0.5`), View link, no glow |
-| **Buttons** | `rounded-xl` (10-14px feel), soft border/fill, subtle hover |
+| **Buttons** | `rounded-xl`, soft border/fill; **`cursor-pointer`**; **`hover:`** state (not `transition-all`); **`focus-visible:ring-2`**; **`disabled:opacity-50 disabled:cursor-not-allowed`** |
 | **Inputs** | clean border or underline, `focus-visible:ring-2`, labels required |
 | **Markdown** | remark-gfm, GitHub-like code blocks, section spacing, long-form readable |
 | **Pagination** | numbered + prev/next, minimal, sync `?page=` in URL |
 | **ThemeToggle** | light default; `localStorage` + `class="dark"` on `html` |
 
+### Testimonials / trust quotes (doc UIs only)
+
+Allowed when they read as **documentation trust** (short quotes, calm cards)-not a marketing page.
+
+- **Avatar:** In **Next.js**, use `next/image` with fixed `width` / `height`. In **Vite/plain React**, use `<img>` with explicit `width`/`height` (or CSS aspect + `object-cover`) and the same **`alt`** rules. Shape: `rounded-full` or `rounded-xl`.
+- **Quote:** bounded width, generous padding, body typography-no star-rating widgets or “As seen in” logo strips
+- **Motion:** optional subtle fade-in; no auto-rotating carousels for core content
+
+### Buttons and links (interaction)
+
+- **`<button type="button">`** for on-page actions; **`next/link`** (Next) or **`react-router` `<Link>`** / **`<a href>`** for navigation-never a `div` with `onClick` for navigation
+- **Cursor:** `cursor-pointer` on interactive elements; `cursor-not-allowed` when `disabled`
+- **Hover:** visible state change (background, border, or lift per motion rules)
+- **Focus:** `focus-visible` ring; never bare `outline-none` without a replacement
+
 **Icons:** react-icons only (one library). Emoji Mart `set="apple"` only if user asks for picker.
 
-**Footer:** `© {new Date().getFullYear()} {brand}` in `app/layout.tsx` - never hardcode year.
+**Footer:** `© {new Date().getFullYear()} {brand}` in root layout (`app/layout.tsx` on Next or root component on Vite) - never hardcode year.
 
 ---
 
@@ -125,16 +152,40 @@ Before real content on every surface:
 
 ---
 
-## Motion (framer-motion)
+## Motion (prefer `<div>` + Tailwind; framer-motion optional)
+
+**Primary pattern (no library):** opacity and transform via Tailwind on a **`<div>`** - works in Server and Client components, no `motion.div` pitfalls.
 
 **Allowed:** opacity, transform, fade-in, hover lift, toast transitions, microinteractions.
 
-**Forbidden:** `transition: all`, bounce, decorative loops. Honor `prefers-reduced-motion`.
+**Forbidden:** `transition: all`, bounce, decorative loops. Honor **`prefers-reduced-motion`** (`motion-reduce:*` in Tailwind).
 
 ```tsx
-// example card hover
-className="transition-[transform,opacity] duration-200 hover:-translate-y-0.5 motion-reduce:transform-none"
+// Card hover - use <div>, not motion.div, unless you need JS-driven variants
+<div
+  className="transition-[transform,opacity] duration-200 hover:-translate-y-0.5 motion-reduce:transform-none motion-reduce:hover:translate-y-0"
+>
+  …
+</div>
 ```
+
+### When to use framer-motion
+
+Use **only** when CSS cannot handle the animation (e.g. coordinated enter/exit, layout id). Then:
+
+1. Put the component in a **Client Component** (Next: `'use client'` at top of file). **`motion` does not belong in Server Components.**
+2. `import { motion } from "framer-motion"` and use **`motion.div`** (or `motion` + `as="div"` patterns per your version).
+
+### Fixing common `motion.div` errors
+
+| Issue | Fix |
+|-------|-----|
+| “Event handlers cannot be passed to Client Component props” / RSC errors | Move animated UI into a file with **`'use client'`**, or replace **`motion.div`** with **`<div className="...">`** + Tailwind transitions. |
+| `motion` used in default-export Server Component | Same: client child **or** **`<div>`** only. |
+| TypeScript complaints on `motion` | Prefer **`<div>` + Tailwind**; if you keep `motion`, ensure `framer-motion` types resolve and the component is client-only. |
+| Lint / hybrid rendering issues | Default to **`div`**; add framer-motion only in isolated client leaf components. |
+
+**Skeletons:** always **`<div className="animate-pulse ...">`**, never `motion` for pulse placeholders.
 
 ---
 
@@ -144,7 +195,7 @@ className="transition-[transform,opacity] duration-200 hover:-translate-y-0.5 mo
 - semantic HTML (`button`, `a`, `label`, `nav`, `main`, `article`)
 - `focus-visible` only; never `outline-none` without replacement
 - forms: labels, types, autocomplete, inline errors, no paste block
-- `next/link`, `next/image` + width/height, lazy below fold
+- **Next.js:** `next/link`, `next/image` + width/height, lazy below fold. **Vite/React:** semantic `<a>` / router `<Link>`, `<img alt>` + dimensions or CSS constraints
 - toasts: `aria-live="polite"`
 - destructive actions: confirm
 - URL reflects filters/pagination (nuqs or `useSearchParams`)
@@ -153,7 +204,9 @@ Optional deep audit: fetch `vercel-labs/web-interface-guidelines/main/command.md
 
 ---
 
-## Pages
+## Pages (route shape - adapt to your router)
+
+**Next.js:** `app/page.tsx`, `app/skills/[slug]/page.tsx`, etc. **Vite + react-router:** `/`, `/skills/:slug`, same UX.
 
 ### 1. Home `/`
 
@@ -187,7 +240,9 @@ Write once as SKILL.md; share on GitHub; optional npm mirror. Every skill lists 
 
 - [ ] STRICT UI only - no backend/API/DB/auth
 - [ ] Mobile-first Tailwind; whitespace rhythm; no SaaS/gradient/glass
-- [ ] framer-motion + skeletons on all content surfaces
+- [ ] Skeletons on all content surfaces (`<div className="animate-pulse">`); motion via **`<div>` + Tailwind** unless a tiny client leaf needs framer-motion
 - [ ] Outcomes visible on detail; skills.sh gaps addressed
+- [ ] Buttons: `cursor-pointer`, hover, `focus-visible`, disabled cursor; real `<button>` / `Link`
+- [ ] Testimonials (if any): `next/image` avatars with **alt**, doc-trust layout-not marketing carousel
 - [ ] Package manager matches user project lockfile
 - [ ] `pnpm dev` runs

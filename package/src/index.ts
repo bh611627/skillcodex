@@ -4,7 +4,6 @@ export { defineSkill } from "./types.js";
 export { default as contentCreator } from "./skills/content-creator.js";
 export { default as seoAgent } from "./skills/seo-agent.js";
 export { default as codeAssistant } from "./skills/code-assistant.js";
-export { default as documentationUi } from "./skills/documentation-ui.js";
 export { default as webDesignGuidelines } from "./skills/web-design-guidelines.js";
 export { default as skillCreator } from "./skills/skill-creator.js";
 export { default as skillcodexBrowserUi } from "./skills/skillcodex-browser-ui.js";
@@ -12,7 +11,6 @@ export { default as skillcodexBrowserUi } from "./skills/skillcodex-browser-ui.j
 import contentCreator from "./skills/content-creator.js";
 import seoAgent from "./skills/seo-agent.js";
 import codeAssistant from "./skills/code-assistant.js";
-import documentationUi from "./skills/documentation-ui.js";
 import webDesignGuidelines from "./skills/web-design-guidelines.js";
 import skillCreator from "./skills/skill-creator.js";
 import skillcodexBrowserUi from "./skills/skillcodex-browser-ui.js";
@@ -23,7 +21,6 @@ export const skills: Record<string, SkillModule> = {
   "content-creator": contentCreator,
   "seo-agent": seoAgent,
   "code-assistant": codeAssistant,
-  "documentation-ui": documentationUi,
   "web-design-guidelines": webDesignGuidelines,
   "skill-creator": skillCreator,
   "skillcodex-browser-ui": skillcodexBrowserUi,

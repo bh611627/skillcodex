@@ -1,15 +1,92 @@
-# Dependencies and build output
-package/node_modules/
-package/dist/
+# Dependencies
 node_modules/
+package/node_modules/
 
-# Secrets and local config (never commit)
+# Build output (regenerate with `pnpm run build` in package/; never commit)
+package/dist/
+dist/
+*.tsbuildinfo
+build/
+
+# Secrets and credentials (never commit)
 .env
 .env.*
-.npmrc
+!.env.example
+.envrc
 *.pem
 *.key
+*.p12
+*.pfx
+*.crt
+*.keystore
+*.secret
+secrets/
+credentials.json
+credentials.*.json
+*-credentials.json
+.npmrc
+.yarnrc.yml
+.tnpmrc
+.pypirc
+.netrc
+.gcloud/
+*.mobileprovision
+id_rsa
+id_rsa.pub
 
-# Logs and OS
+# Auth tokens (CLI caches; do not paste into repo files)
+**/token.cache
+**/.gh-token
+
+# Logs and debug
 *.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS and editors
 .DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.orig
+
+# Test / coverage
+coverage/
+.nyc_output/
+playwright-report/
+blob-report/
+
+# Optional local tooling / IDE uploads
+.cursor/
+**/.cursor/uploads/
+uploads/
+.vercel/
+.wrangler/
+
+# Framework caches
+.next/
+out/
+.nuxt/
+.svelte-kit/
+.parcel-cache/
+.turbo/
+.cache/
+
+# Package manager caches
+.pnpm-store/
+.pnpm-debug.log
+
+# Python / misc (if scripts added later)
+__pycache__/
+*.egg-info/
+.venv/
+venv/
+
+# Local agent lockfiles (user machine; optional — remove line if you commit skills-lock.json by policy)
+# skills-lock.json

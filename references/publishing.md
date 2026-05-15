@@ -18,23 +18,25 @@ git clone https://github.com/bh611627/skillcodex.git
 # use skills/<name>/SKILL.md in your agent
 ```
 
-## npm (developer)
+## npm (install skills)
 
 ```bash
-pnpm add @skillcodex/skills
+npm install @skillcodex/skills
 ```
 
 ```ts
 import contentCreator from "@skillcodex/skills/content-creator";
 ```
 
-Package source in this repo: `package/` (run `pnpm run sync` to refresh from `skills/`).
+`pnpm add @skillcodex/skills` is fine if the project already uses pnpm.
+
+Package source in this repo: `package/` (maintainers run `pnpm run sync` inside `package/`).
 
 ## Package manager
 
-- Greenfield: **pnpm**
-- Existing repo: match lockfile
-- UI install snippet on detail page: show `pnpm add @skillcodex/skills` by default
+- **Skill package:** prefer **`npm install @skillcodex/skills`** in docs and UI install snippets
+- **New React / Next app:** **pnpm** (`pnpm create next-app@latest …`)
+- **Existing repo:** match lockfile
 
 ## vs skills.sh (what SkillCodex adds)
 

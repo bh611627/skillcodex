@@ -1,15 +1,15 @@
 ---
 name: skillcodex-browser-ui
-description: Build SkillCodex doc UI in Next.js - real skills when provided, mock only if empty, skeletons, react-icons
+description: Full SkillCodex doc browser - skills.sh-style UI, STRICT UI only, design-guidelines
 tags:
   - ui
   - nextjs
   - skillcodex
-version: 1.2.0
+version: 1.5.0
 category: development
 outcomes:
-  - Four routes wired to real SKILL.md data when user supplied it, or minimal mock seed only when none exists
-  - react-icons default; Emoji Mart apple set only if user wants emoji picker
+  - Four routes live with skeletons and skills.sh gaps filled (outcomes, copy, create, guidelines)
+  - Apple-level whitespace doc UI using Tailwind + framer-motion
 stack:
   - pnpm
   - next
@@ -18,49 +18,51 @@ stack:
   - tailwindcss
   - framer-motion
   - react-icons
+last_reviewed: 2026-05-15
+risk_level: medium
+tools_allowed: suggest-shell
+requires_user_approval: false
+compatibility:
+  - generic-markdown
+  - cursor
+  - claude-code
+  - skills-sh
 references:
-  - references/react-stack.md
+  - references/design-guidelines.md
   - references/data-source.md
-  - references/DESIGNSPEC.md
-  - references/ui-pages.md
-  - references/components.md
-  - references/icons-and-emoji.md
-  - references/publishing.md
+  - references/react-stack.md
 ---
 
 # Instructions
 
-Build the SkillCodex documentation UI. **UI only** - no API/DB/auth unless user asks later.
+Build **SkillCodex** doc browser per [design-guidelines.md](../../references/design-guidelines.md).
 
-Read `data-source.md` first:
+**STRICT UI ONLY** - no backend, API, DB, or auth.
 
-| User situation | Data |
-|----------------|------|
-| Full command, existing `skills/`, or pasted SKILL.md | **Use their data.** No mock. |
-| Empty UI scaffold, no skill files | **Add small mock seed** in `src/data/skills.ts` |
+**Package manager:** pnpm for new app; match user lockfile if project exists.
 
-Then: `react-stack.md`, `DESIGNSPEC.md`, `ui-pages.md`, `components.md`, `icons-and-emoji.md`.
+**Stack:** Next, TS, Tailwind, **framer-motion**, react-markdown, remark-gfm, react-icons.
 
-**Stack:** greenfield + user silent -> ask once (Next + pnpm). User already specified -> do not ask.
+Fill [skills.sh](https://www.skills.sh/) gaps: outcomes on detail, full markdown, create page, guidelines, skeletons, URL pagination, no fake install counts.
 
-**Icons:** react-icons. Emoji Mart `set="apple"` only if user asks.
-
-**Skeletons:** DocCardSkeleton, DetailSkeleton while loading (real or mock).
-
-**Pages:** home, `/skills/[slug]`, `/create`, `/guidelines`.
-
-**vs skills.sh:** outcomes, copy/use, GitHub + npm links. No fake install counts.
+Data: [data-source.md](../../references/data-source.md).
 
 ## Outcomes
 
-Runnable Next app, correct data source choice documented, four routes, skeletons, theme toggle.
+- `/`, `/skills/[slug]`, `/create`, `/guidelines` with `pnpm dev`
+- Checklist in design-guidelines passed
 
 ## Output Rules
 
-1. Data source (real vs mock) and why  
-2. File tree  
-3. Key files  
-4. `pnpm dev`
+Data source, file tree, checklist, `pnpm dev`.
+
+## Scope and boundaries
+
+- Documentation browser only - not SaaS landing or dashboard.
+
+## Safety
+
+- User runs pnpm; mock data only if no skills provided.
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/skillcodex-browser-ui/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills

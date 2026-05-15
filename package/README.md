@@ -8,7 +8,7 @@ npm package for [SkillCodex](https://github.com/bh611627/skillcodex).
 ## Install
 
 ```bash
-pnpm add @skillcodex/skills
+npm install @skillcodex/skills
 ```
 
 ## Usage
@@ -38,13 +38,14 @@ skills["seo-agent"];
 | `@skillcodex/skills/seo-agent` | SEO |
 | `@skillcodex/skills/code-assistant` | Code |
 | `@skillcodex/skills/documentation-ui` | Doc UI |
-| `@skillcodex/skills/web-interface-guidelines` | A11y |
+| `@skillcodex/skills/web-design-guidelines` | UI review / a11y |
 | `@skillcodex/skills/skill-creator` | Meta |
 | `@skillcodex/skills/skillcodex-browser-ui` | Browser UI |
 
 ## Maintain (from this repo)
 
 ```bash
-pnpm run sync   # from ../skills/*/SKILL.md
+pnpm run sync      # from ../skills/*/SKILL.md
+pnpm run validate  # safety + required sections
 pnpm run build
 ```

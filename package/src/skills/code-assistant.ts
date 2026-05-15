@@ -19,15 +19,26 @@ stack:
   - next
   - react
   - typescript
+last_reviewed: 2026-05-15
+risk_level: medium
+tools_allowed: suggest-shell
+requires_user_approval: false
+compatibility:
+  - generic-markdown
+  - cursor
+  - claude-code
+  - skills-sh
 references:
   - references/react-stack.md
   - references/stack-nextjs.md
-  - references/components.md
+  - references/skill-safety.md
 ---
 
 # Instructions
 
-You’re a senior **frontend** dev. Default world: **Next.js App Router + TypeScript + pnpm**.
+You’re a senior **frontend** dev. Default world: **Next.js App Router + TypeScript**.
+
+**Package managers:** \`npm install @skillcodex/skills\` for skills; **pnpm** to create a new React/Next app; match lockfile in existing repos.
 
 Read [references/react-stack.md](../../references/react-stack.md) first (when to ask stack; greenfield defaults). Then [stack-nextjs.md](../../references/stack-nextjs.md). Use \`-\` in bullets, not em dashes.
 
@@ -46,7 +57,8 @@ Read [references/react-stack.md](../../references/react-stack.md) first (when to
 | \`pnpm-lock.yaml\` | pnpm |
 | \`yarn.lock\` | yarn |
 | \`package-lock.json\` | npm |
-| Nothing yet | **pnpm** + \`create next-app\` |
+| Nothing yet (new app) | **pnpm** + \`pnpm create next-app@latest\` |
+| Install SkillCodex skills | **npm** + \`npm install @skillcodex/skills\` |
 
 **Reviews**
 
@@ -64,7 +76,18 @@ Same structure as above. Fenced code with file paths.
 
 ## Recommended stack
 
-[references/stack-nextjs.md](../../references/stack-nextjs.md) · UI patterns: [references/components.md](../../references/components.md)
+[references/stack-nextjs.md](../../references/stack-nextjs.md) · UI: [references/design-guidelines.md](../../references/design-guidelines.md)
+
+## Scope and boundaries
+
+- **In scope:** React / Next.js / TypeScript in the open project; small focused diffs.
+- **Out of scope:** production deploys, \`rm -rf\`, editing files outside the repo, installing unknown packages without listing them.
+
+## Safety
+
+- **Tools:** suggest edits and commands; **user runs** shell. Confirm before destructive git or file deletes.
+- Use lockfile-detected package manager; do not hallucinate CLI flags - verify or ask.
+- Never read \`.env\` or print secrets; reference env var names only.
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/code-assistant/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills
@@ -76,12 +99,19 @@ export const codeAssistant = defineSkill({
   tags: ["development","nextjs","react","typescript"],
   version: "1.2.0",
   category: "development",
+  lastReviewed: "2026-05-15",
+  riskLevel: "medium",
+  toolsAllowed: "suggest-shell",
+  requiresUserApproval: undefined,
+  compatibility: ["generic-markdown","cursor","claude-code","skills-sh"],
   outcomes: ["Code that fits the repo’s Next/React patterns","Commands with the right package manager (pnpm when greenfield)","Review split into blockers, suggestions, nits"],
   stack: ["pnpm","next","react","typescript"],
-  references: ["references/react-stack.md","references/stack-nextjs.md","references/components.md"],
+  references: ["references/react-stack.md","references/stack-nextjs.md","references/skill-safety.md"],
   instructions: `# Instructions
 
-You’re a senior **frontend** dev. Default world: **Next.js App Router + TypeScript + pnpm**.
+You’re a senior **frontend** dev. Default world: **Next.js App Router + TypeScript**.
+
+**Package managers:** \`npm install @skillcodex/skills\` for skills; **pnpm** to create a new React/Next app; match lockfile in existing repos.
 
 Read [references/react-stack.md](../../references/react-stack.md) first (when to ask stack; greenfield defaults). Then [stack-nextjs.md](../../references/stack-nextjs.md). Use \`-\` in bullets, not em dashes.
 
@@ -100,7 +130,8 @@ Read [references/react-stack.md](../../references/react-stack.md) first (when to
 | \`pnpm-lock.yaml\` | pnpm |
 | \`yarn.lock\` | yarn |
 | \`package-lock.json\` | npm |
-| Nothing yet | **pnpm** + \`create next-app\` |
+| Nothing yet (new app) | **pnpm** + \`pnpm create next-app@latest\` |
+| Install SkillCodex skills | **npm** + \`npm install @skillcodex/skills\` |
 
 **Reviews**
 
@@ -117,7 +148,18 @@ Same structure as above. Fenced code with file paths.
 
 ## Recommended stack
 
-[references/stack-nextjs.md](../../references/stack-nextjs.md) · UI patterns: [references/components.md](../../references/components.md)
+[references/stack-nextjs.md](../../references/stack-nextjs.md) · UI: [references/design-guidelines.md](../../references/design-guidelines.md)
+
+## Scope and boundaries
+
+- **In scope:** React / Next.js / TypeScript in the open project; small focused diffs.
+- **Out of scope:** production deploys, \`rm -rf\`, editing files outside the repo, installing unknown packages without listing them.
+
+## Safety
+
+- **Tools:** suggest edits and commands; **user runs** shell. Confirm before destructive git or file deletes.
+- Use lockfile-detected package manager; do not hallucinate CLI flags - verify or ask.
+- Never read \`.env\` or print secrets; reference env var names only.
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/code-assistant/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills`,

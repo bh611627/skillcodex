@@ -2,7 +2,7 @@
 
 SkillCodex defines how AI agent skills are stored in a GitHub repository. Each skill is one folder with one `SKILL.md` file.
 
-> This repo is **markdown only**. For UI/design rules, use agent skills `documentation-ui` and `web-interface-guidelines` - see [WHAT_IS_SKILLCODEX.md](./WHAT_IS_SKILLCODEX.md).
+> This repo is **markdown only**. For UI/design rules, use `documentation-ui` and `web-design-guidelines` - see [WHAT_IS_SKILLCODEX.md](./WHAT_IS_SKILLCODEX.md).
 
 ## Repository layout
 
@@ -32,7 +32,7 @@ skills/<skill-name>/SKILL.md
 **npm** - https://www.npmjs.com/package/@skillcodex/skills
 
 ```bash
-pnpm add @skillcodex/skills
+npm install @skillcodex/skills
 ```
 
 ```js
@@ -72,6 +72,11 @@ tags:
 | `outcomes` | string[] | Expected results when the skill runs successfully |
 | `stack` | string[] | Recommended packages for the user’s project stack |
 | `references` | string[] | Paths to compact `references/*.md` files (save tokens) |
+| `last_reviewed` | string | ISO date when a human last audited the skill (e.g. `2026-05-15`) |
+| `risk_level` | string | `low` \| `medium` \| `high` - see [TRUST.md](./TRUST.md) |
+| `tools_allowed` | string | `read-only` \| `repo-files` \| `suggest-shell` - intent only; host enforces |
+| `requires_user_approval` | boolean | `true` when `risk_level: high` or destructive steps |
+| `compatibility` | string[] | Hosts reviewed against (e.g. `cursor`, `claude-code`, `skills-sh`) |
 
 ### Body (required)
 
@@ -94,6 +99,14 @@ What the user should receive when the skill completes successfully.
 
 Constraints on how the agent should format its response.
 
+## Scope and boundaries
+
+Required in **SkillCodex** skills. State what the skill covers and what it must not do (other stacks, production deploys, secrets, etc.).
+
+## Safety
+
+Required in **SkillCodex** skills. State tool posture, confirmation rules, and injection awareness. See [references/skill-safety.md](./references/skill-safety.md).
+
 ## Recommended stack
 
 Packages and tools that keep agent projects organized (use project lockfile for package manager).
@@ -104,15 +117,14 @@ Put repeatable rules in `references/` - short markdown agents load instead of fu
 
 | File | Contents |
 |------|----------|
-| [references/react-stack.md](./references/react-stack.md) | Stack picker: ask on greenfield if unspecified; pnpm + Next default |
+| [references/design-guidelines.md](./references/design-guidelines.md) | **All UI/design** (layout, tokens, motion, a11y, pages, components) |
+| [references/react-stack.md](./references/react-stack.md) | pnpm + Next; npm for skill package |
 | [references/stack-nextjs.md](./references/stack-nextjs.md) | Next 15, React 19, **TSX only**, Tailwind 4 |
-| [references/DESIGNSPEC.md](./references/DESIGNSPEC.md) | Doc UI design system (no backend) |
 | [references/data-source.md](./references/data-source.md) | Real skills vs mock seed |
-| [references/ui-pages.md](./references/ui-pages.md) | Home, detail, create, guidelines pages |
 | [references/publishing.md](./references/publishing.md) | GitHub + npm links |
+| [references/skill-safety.md](./references/skill-safety.md) | Prompt injection, tools, review checklist |
+| [references/interoperability.md](./references/interoperability.md) | Cursor, Claude Code, skills.sh mapping |
 | [references/google-seo.md](./references/google-seo.md) | Search Console, CWV, Next SEO |
-| [references/icons-and-emoji.md](./references/icons-and-emoji.md) | react-icons; Emoji Mart apple set if user asks |
-| [references/components.md](./references/components.md) | DocCard, PlainButton, LoadingBlock, ContentWidth |
 
 Link from skill frontmatter: `references: [references/react-stack.md]`
 
@@ -140,6 +152,13 @@ Before publishing a skill, confirm:
 - [ ] Folder name matches `name` in frontmatter
 - [ ] `description` is one clear line
 - [ ] At least one tag is present
+- [ ] `version` and `last_reviewed` set
+- [ ] `risk_level`, `tools_allowed`, and `compatibility` set
 - [ ] `# Instructions` heading exists
+- [ ] `## Scope and boundaries` and `## Safety` sections exist
 - [ ] Outcomes are listed (frontmatter or `## Outcomes` section)
 - [ ] Instructions are specific enough for an agent to follow without guessing
+- [ ] `cd package && pnpm run validate` passes
+- [ ] No hidden Unicode, secrets, or “ignore safety” phrasing
+
+Ecosystem context: [TRUST.md](./TRUST.md).

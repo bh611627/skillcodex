@@ -1,16 +1,27 @@
 # Security
 
-This repo is a public skill library. It should not contain secrets.
+## Repo hygiene (this git repository)
 
-## Do not commit
+This repo is public. It must not contain secrets.
 
-- API keys, tokens, or passwords (`.env`, `.npmrc`, credential files)
+**Do not commit**
+
+- API keys, tokens, passwords (`.env`, `.npmrc`, credential files)
 - Private keys (`.pem`, `.key`)
-- Build artifacts under `package/dist/` (generated locally)
+- Build output under `package/dist/` (generate locally)
 
-## Safe to include
+**Safe to include**
 
-- Public GitHub URLs and skill markdown
-- Generic placeholders like `@your-org/my-ai-skills` in skill templates
+- Public GitHub and npm URLs
+- Skill markdown and references
 
-If you accidentally commit a secret, rotate it immediately and remove it from git history.
+If you commit a secret by mistake, rotate it immediately and remove it from git history.
+
+## Skill threat model (agents)
+
+Skills are **instructions**, not sandboxed programs. Risks include prompt injection, unsafe workflows, and hallucinated tool use. SkillCodex mitigates with curated content, required `## Safety` sections, frontmatter risk labels, and `pnpm run validate`.
+
+Read:
+
+- [TRUST.md](./TRUST.md) - ecosystem risks and SkillCodex controls (2026)
+- [references/skill-safety.md](./references/skill-safety.md) - author and consumer checklist

@@ -4,6 +4,11 @@ export interface SkillModule {
   tags: string[];
   version?: string;
   category?: string;
+  lastReviewed?: string;
+  riskLevel?: "low" | "medium" | "high";
+  toolsAllowed?: "read-only" | "repo-files" | "suggest-shell";
+  requiresUserApproval?: boolean;
+  compatibility?: string[];
   outcomes?: string[];
   stack?: string[];
   references?: string[];

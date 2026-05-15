@@ -26,9 +26,9 @@
       "types": "./dist/skills/documentation-ui.d.ts",
       "import": "./dist/skills/documentation-ui.js"
     },
-    "./web-interface-guidelines": {
-      "types": "./dist/skills/web-interface-guidelines.d.ts",
-      "import": "./dist/skills/web-interface-guidelines.js"
+    "./web-design-guidelines": {
+      "types": "./dist/skills/web-design-guidelines.d.ts",
+      "import": "./dist/skills/web-design-guidelines.js"
     },
     "./skill-creator": {
       "types": "./dist/skills/skill-creator.d.ts",
@@ -46,7 +46,8 @@
   ],
   "scripts": {
     "build": "tsc",
-    "sync": "node scripts/sync-from-skills.mjs"
+    "sync": "node scripts/sync-from-skills.mjs",
+    "validate": "node scripts/validate-skills.mjs"
   },
   "keywords": [
     "ai",

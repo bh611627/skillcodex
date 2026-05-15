@@ -1,6 +1,6 @@
 # Next.js + React (frontend only)
 
-Short ref for agents. If the repo already has a lockfile, use that package manager. **New project → pnpm.**
+Short ref for agents. **New React/Next project → pnpm.** Install SkillCodex skills with **npm** (`npm install @skillcodex/skills`). If a lockfile exists, match it.
 
 ## Pick your setup
 

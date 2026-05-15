@@ -69,6 +69,7 @@ for (const name of folders) {
   const outcomes = Array.isArray(meta.outcomes) ? meta.outcomes : undefined;
   const stack = Array.isArray(meta.stack) ? meta.stack : undefined;
   const references = Array.isArray(meta.references) ? meta.references : undefined;
+  const compatibility = Array.isArray(meta.compatibility) ? meta.compatibility : undefined;
 
   const varName = name.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
   const code = `import { defineSkill } from "../types.js";
@@ -81,6 +82,11 @@ export const ${varName} = defineSkill({
   tags: ${JSON.stringify(tags)},
   version: ${meta.version ? JSON.stringify(meta.version) : "undefined"},
   category: ${meta.category ? JSON.stringify(meta.category) : "undefined"},
+  lastReviewed: ${meta.last_reviewed ? JSON.stringify(meta.last_reviewed) : "undefined"},
+  riskLevel: ${meta.risk_level ? JSON.stringify(meta.risk_level) : "undefined"},
+  toolsAllowed: ${meta.tools_allowed ? JSON.stringify(meta.tools_allowed) : "undefined"},
+  requiresUserApproval: ${meta.requires_user_approval === true ? "true" : meta.requires_user_approval === false ? "false" : "undefined"},
+  compatibility: ${compatibility ? JSON.stringify(compatibility) : "undefined"},
   outcomes: ${outcomes ? JSON.stringify(outcomes) : "undefined"},
   stack: ${stack ? JSON.stringify(stack) : "undefined"},
   references: ${references ? JSON.stringify(references) : "undefined"},

@@ -5,10 +5,21 @@ tags:
   - nextjs
   - react
 references:
+  - references/design-guidelines.md
   - references/react-stack.md
   - references/publishing.md
+  - references/skill-safety.md
 version: 1.0.0
 category: development
+last_reviewed: 2026-05-15
+risk_level: low
+tools_allowed: read-only
+requires_user_approval: false
+compatibility:
+  - generic-markdown
+  - cursor
+  - claude-code
+  - skills-sh
 outcomes:
   - Concrete result one
   - Concrete result two
@@ -21,12 +32,7 @@ stack:
 
 # Instructions
 
-Short, human sentences. Use `-` for bullets (no em dashes).
-
-1. What the agent does first.
-2. Link `references/` files instead of repeating rules.
-
-Greenfield stack: read [react-stack.md](./references/react-stack.md) - ask user only if they did not name a stack.
+Short steps. Link `references/` instead of repeating rules. UI work: [design-guidelines.md](./references/design-guidelines.md) only.
 
 ## Outcomes
 
@@ -36,6 +42,16 @@ Greenfield stack: read [react-stack.md](./references/react-stack.md) - ask user 
 ## Output Rules
 
 Section order for the reply.
+
+## Scope and boundaries
+
+- **In scope:** …
+- **Out of scope:** …
+
+## Safety
+
+- Read/analyze/suggest only unless stated otherwise.
+- User runs shell commands.
 
 ## Recommended stack
 

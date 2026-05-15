@@ -1,18 +1,32 @@
 # What is SkillCodex?
 
-Markdown skill library for React / Next agents.
+**SkillCodex** is a system for creating, organizing, and publishing AI agent skills (`SKILL.md`) - like [skills.sh](https://www.skills.sh/) with clearer docs and dual install paths.
 
 - **GitHub:** https://github.com/bh611627/skillcodex
 - **npm:** https://www.npmjs.com/package/@skillcodex/skills
 
-| Need | Open |
-|------|------|
-| Format rules | [SKILL_STANDARD.md](./SKILL_STANDARD.md) |
-| Build doc UI | [skills/skillcodex-browser-ui](./skills/skillcodex-browser-ui/SKILL.md) |
-| Design + skeletons | [references/DESIGNSPEC.md](./references/DESIGNSPEC.md) |
-| Icons | [references/icons-and-emoji.md](./references/icons-and-emoji.md) (react-icons; Emoji Mart apple set if user asks) |
-| Stack | [references/react-stack.md](./references/react-stack.md) |
-| Real vs mock data | [references/data-source.md](./references/data-source.md) |
-| Distribution | [references/publishing.md](./references/publishing.md) |
+## Core idea
 
-UI builds: no backend. Use **real** skill data when the user gave a full command or already has `skills/`; add **mock seed** only when they have no data yet ([data-source.md](./references/data-source.md)). Ask stack once on greenfield if they did not say Next/pnpm.
+A **skill** = structured markdown instructions for an agent.
+
+| Format | Use |
+|--------|-----|
+| **GitHub** | `skills/<name>/SKILL.md` - share, browse, portfolio |
+| **npm** | `npm install @skillcodex/skills` - apps and scripts |
+
+Write once. Share on GitHub. Optional npm module. Every skill declares **outcomes** (what success looks like).
+
+## UI (optional)
+
+Premium **documentation-style** browser - UI/UX only. Full spec: [references/design-guidelines.md](./references/design-guidelines.md).
+
+**Stack:** pnpm for new Next apps (or match user lockfile). framer-motion, Tailwind, react-icons.
+
+## Other docs
+
+| Need | File |
+|------|------|
+| SKILL format | [SKILL_STANDARD.md](./SKILL_STANDARD.md) |
+| Stack / pnpm | [references/react-stack.md](./references/react-stack.md) |
+| Data rules | [references/data-source.md](./references/data-source.md) |
+| Trust | [TRUST.md](./TRUST.md) |

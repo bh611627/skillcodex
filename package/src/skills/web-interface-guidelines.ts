@@ -37,7 +37,8 @@ Checklist + fixed snippets with paths.
 
 Summary, changes, checklist.
 
-**GitHub:** \`skills/web-interface-guidelines/SKILL.md\`
+**GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/web-interface-guidelines/SKILL.md  
+**npm:** https://www.npmjs.com/package/@skillcodex/skills
 `;
 
 export const webInterfaceGuidelines = defineSkill({
@@ -64,7 +65,8 @@ Checklist + fixed snippets with paths.`,
 
 Summary, changes, checklist.
 
-**GitHub:** \`skills/web-interface-guidelines/SKILL.md\``,
+**GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/web-interface-guidelines/SKILL.md  
+**npm:** https://www.npmjs.com/package/@skillcodex/skills`,
   skillMd,
   githubPath: "skills/web-interface-guidelines/SKILL.md",
 });

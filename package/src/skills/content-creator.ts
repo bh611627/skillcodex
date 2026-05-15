@@ -49,8 +49,8 @@ Return markdown in that order. Number the hooks.
 
 Content tools in Next: [references/stack-nextjs.md](../../references/stack-nextjs.md).
 
-**GitHub:** \`skills/content-creator/SKILL.md\`  
-**npm:** \`import skill from "@your-org/my-ai-skills/content-creator"\`
+**GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/content-creator/SKILL.md  
+**npm:** https://www.npmjs.com/package/@skillcodex/skills
 `;
 
 export const contentCreator = defineSkill({
@@ -90,8 +90,8 @@ Return markdown in that order. Number the hooks.
 
 Content tools in Next: [references/stack-nextjs.md](../../references/stack-nextjs.md).
 
-**GitHub:** \`skills/content-creator/SKILL.md\`  
-**npm:** \`import skill from "@your-org/my-ai-skills/content-creator"\``,
+**GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/content-creator/SKILL.md  
+**npm:** https://www.npmjs.com/package/@skillcodex/skills`,
   skillMd,
   githubPath: "skills/content-creator/SKILL.md",
 });

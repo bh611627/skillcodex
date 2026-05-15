@@ -41,5 +41,5 @@ Section order for the reply.
 
 [react-stack.md](./references/react-stack.md) · [publishing.md](./references/publishing.md)
 
-**GitHub:** `skills/your-skill-name/SKILL.md`  
-**npm:** `import skill from "@your-org/my-ai-skills/your-skill-name"`
+**GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/your-skill-name/SKILL.md  
+**npm:** https://www.npmjs.com/package/@skillcodex/skills

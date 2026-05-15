@@ -1,6 +1,9 @@
 # Publishing skills (GitHub + npm)
 
-Write once as SKILL.md. Two ways to distribute.
+SkillCodex skills ship in two places:
+
+- **GitHub:** https://github.com/bh611627/skillcodex
+- **npm:** https://www.npmjs.com/package/@skillcodex/skills
 
 ## GitHub (primary)
 
@@ -8,7 +11,12 @@ Write once as SKILL.md. Two ways to distribute.
 skills/<skill-name>/SKILL.md
 ```
 
-For: sharing, portfolios, browsing on GitHub, human review.
+For: sharing, portfolios, browsing on GitHub, copying into agents.
+
+```bash
+git clone https://github.com/bh611627/skillcodex.git
+# use skills/<name>/SKILL.md in your agent
+```
 
 ## npm (developer)
 
@@ -22,27 +30,11 @@ import contentCreator from "@skillcodex/skills/content-creator";
 
 Package source in this repo: `package/` (run `pnpm run sync` to refresh from `skills/`).
 
-Object shape (when compiled):
-
-```ts
-{
-  name: string;
-  description: string;
-  tags: string[];
-  outcomes?: string[];
-  stack?: string[];
-  instructions: string;
-  outputRules?: string;
-}
-```
-
-For: agents, apps, programmatic use.
-
 ## Package manager
 
 - Greenfield: **pnpm**
 - Existing repo: match lockfile
-- UI install snippet on detail page: show `pnpm add ...` by default
+- UI install snippet on detail page: show `pnpm add @skillcodex/skills` by default
 
 ## vs skills.sh (what SkillCodex adds)
 

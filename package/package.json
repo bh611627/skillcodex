@@ -46,8 +46,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "sync": "node scripts/sync-from-skills.mjs",
-    "prepublishOnly": "pnpm run build"
+    "sync": "node scripts/sync-from-skills.mjs"
   },
   "keywords": [
     "ai",

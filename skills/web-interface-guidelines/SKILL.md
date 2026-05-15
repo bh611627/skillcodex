@@ -35,4 +35,5 @@ Checklist + fixed snippets with paths.
 
 Summary, changes, checklist.
 
-**GitHub:** `skills/web-interface-guidelines/SKILL.md`
+**GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/web-interface-guidelines/SKILL.md  
+**npm:** https://www.npmjs.com/package/@skillcodex/skills

@@ -41,4 +41,5 @@ Tokens, components, skeleton usage noted.
 
 Tokens, file list, example TSX.
 
-**GitHub:** `skills/documentation-ui/SKILL.md`
+**GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/documentation-ui/SKILL.md  
+**npm:** https://www.npmjs.com/package/@skillcodex/skills

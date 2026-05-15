@@ -21,24 +21,22 @@ my-ai-skills/
 | `skills/<skill-name>/SKILL.md` | The skill definition file |
 | `README.md` | Repository overview and skill index |
 
-## Publishing formats
+## Distribution
 
-Skills in this standard support two equivalent representations:
-
-**GitHub (primary)** - browse and share as markdown:
+**GitHub (primary)** - https://github.com/bh611627/skillcodex
 
 ```
 skills/<skill-name>/SKILL.md
 ```
 
-**npm (developer)** - install and import in code:
+**npm** - https://www.npmjs.com/package/@skillcodex/skills
 
 ```bash
-pnpm add @your-org/my-ai-skills
+pnpm add @skillcodex/skills
 ```
 
 ```js
-import skill from "@your-org/my-ai-skills/content-creator";
+import skill from "@skillcodex/skills/content-creator";
 ```
 
 Use the package manager that matches the project (`pnpm-lock.yaml` → pnpm, `yarn.lock` → yarn, else npm).
@@ -111,7 +109,7 @@ Put repeatable rules in `references/` - short markdown agents load instead of fu
 | [references/DESIGNSPEC.md](./references/DESIGNSPEC.md) | Doc UI design system (no backend) |
 | [references/data-source.md](./references/data-source.md) | Real skills vs mock seed |
 | [references/ui-pages.md](./references/ui-pages.md) | Home, detail, create, guidelines pages |
-| [references/publishing.md](./references/publishing.md) | GitHub + npm dual format |
+| [references/publishing.md](./references/publishing.md) | GitHub + npm links |
 | [references/google-seo.md](./references/google-seo.md) | Search Console, CWV, Next SEO |
 | [references/icons-and-emoji.md](./references/icons-and-emoji.md) | react-icons; Emoji Mart apple set if user asks |
 | [references/components.md](./references/components.md) | DocCard, PlainButton, LoadingBlock, ContentWidth |

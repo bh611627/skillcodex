@@ -1,1 +1,15 @@
+# Dependencies and build output
 package/node_modules/
+package/dist/
+node_modules/
+
+# Secrets and local config (never commit)
+.env
+.env.*
+.npmrc
+*.pem
+*.key
+
+# Logs and OS
+*.log
+.DS_Store

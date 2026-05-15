@@ -70,5 +70,5 @@ Use these headings in order:
 
 Next + pnpm: [references/stack-nextjs.md](../../references/stack-nextjs.md). SEO detail: [references/google-seo.md](../../references/google-seo.md).
 
-**GitHub:** `skills/seo-agent/SKILL.md`  
-**npm:** `import skill from "@your-org/my-ai-skills/seo-agent"`
+**GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/seo-agent/SKILL.md  
+**npm:** https://www.npmjs.com/package/@skillcodex/skills

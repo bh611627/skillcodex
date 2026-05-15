@@ -66,8 +66,8 @@ Same structure as above. Fenced code with file paths.
 
 [references/stack-nextjs.md](../../references/stack-nextjs.md) · UI patterns: [references/components.md](../../references/components.md)
 
-**GitHub:** \`skills/code-assistant/SKILL.md\`  
-**npm:** \`import skill from "@your-org/my-ai-skills/code-assistant"\`
+**GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/code-assistant/SKILL.md  
+**npm:** https://www.npmjs.com/package/@skillcodex/skills
 `;
 
 export const codeAssistant = defineSkill({
@@ -119,8 +119,8 @@ Same structure as above. Fenced code with file paths.
 
 [references/stack-nextjs.md](../../references/stack-nextjs.md) · UI patterns: [references/components.md](../../references/components.md)
 
-**GitHub:** \`skills/code-assistant/SKILL.md\`  
-**npm:** \`import skill from "@your-org/my-ai-skills/code-assistant"\``,
+**GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/code-assistant/SKILL.md  
+**npm:** https://www.npmjs.com/package/@skillcodex/skills`,
   skillMd,
   githubPath: "skills/code-assistant/SKILL.md",
 });

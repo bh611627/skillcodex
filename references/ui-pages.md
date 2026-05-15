@@ -2,7 +2,7 @@
 
 **Strict:** UI only. No API, DB, or auth. **Data:** see [data-source.md](./data-source.md) - use real `skills/` when the user provided them; add mock in `src/data/skills.ts` only when there is no source yet.
 
-Fill gaps vs skills.sh: show **outcomes**, GitHub path, pnpm install line, copy/use actions. **No fake install counts.**
+Fill gaps vs skills.sh: show **outcomes**, GitHub + npm links, clone/copy actions. **No fake install counts.**
 
 ## 1. Home (`/`)
 
@@ -21,7 +21,7 @@ Fill gaps vs skills.sh: show **outcomes**, GitHub path, pnpm install line, copy/
 - Header: title, description, tags, version, category, **outcomes list**
 - Right rail (desktop) or stacked (mobile):
   - Copy Skill (clipboard + toast)
-  - Use Skill (toast + show npm import snippet)
+  - Use Skill (toast + show GitHub clone path or copy path)
   - Metadata box: GitHub path, stack pills
 - DetailSkeleton until markdown content loads
 - GitHub-style code blocks in prose
@@ -62,8 +62,10 @@ export type SkillRecord = {
   stack: string[];
   markdown: string; // full SKILL.md body or file content
   githubPath: string;
-  npmImport: string;
-  installCommand: string; // e.g. pnpm add @org/pkg
+  githubUrl: string; // https://github.com/bh611627/skillcodex/tree/main/skills/<slug>/SKILL.md
+  npmUrl: string; // https://www.npmjs.com/package/@skillcodex/skills
+  cloneCommand: string; // git clone https://github.com/bh611627/skillcodex.git
+  installCommand: string; // pnpm add @skillcodex/skills
 };
 ```
 

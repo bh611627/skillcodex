@@ -49,7 +49,7 @@ Then: `react-stack.md`, `DESIGNSPEC.md`, `ui-pages.md`, `components.md`, `icons-
 
 **Pages:** home, `/skills/[slug]`, `/create`, `/guidelines`.
 
-**vs skills.sh:** outcomes, copy/use, GitHub path, pnpm line. No fake install counts.
+**vs skills.sh:** outcomes, copy/use, GitHub + npm links. No fake install counts.
 
 ## Outcomes
 
@@ -62,4 +62,5 @@ Runnable Next app, correct data source choice documented, four routes, skeletons
 3. Key files  
 4. `pnpm dev`
 
-**GitHub:** `skills/skillcodex-browser-ui/SKILL.md`
+**GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/skillcodex-browser-ui/SKILL.md  
+**npm:** https://www.npmjs.com/package/@skillcodex/skills

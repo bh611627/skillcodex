@@ -1,6 +1,9 @@
 # @skillcodex/skills
 
-npm package for [SkillCodex](../README.md) agent skills.
+npm package for [SkillCodex](https://github.com/bh611627/skillcodex).
+
+- **npm:** https://www.npmjs.com/package/@skillcodex/skills
+- **GitHub:** https://github.com/bh611627/skillcodex
 
 ## Install
 
@@ -13,14 +16,11 @@ pnpm add @skillcodex/skills
 ```ts
 import contentCreator from "@skillcodex/skills/content-creator";
 
-// Structured fields
 contentCreator.name;
 contentCreator.description;
 contentCreator.tags;
 contentCreator.outcomes;
 contentCreator.instructions;
-
-// Full SKILL.md source
 contentCreator.skillMd;
 ```
 
@@ -42,11 +42,9 @@ skills["seo-agent"];
 | `@skillcodex/skills/skill-creator` | Meta |
 | `@skillcodex/skills/skillcodex-browser-ui` | Browser UI |
 
-## Maintain
+## Maintain (from this repo)
 
 ```bash
 pnpm run sync   # from ../skills/*/SKILL.md
 pnpm run build
 ```
-
-Publish: see [../PUBLISH.md](../PUBLISH.md).

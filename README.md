@@ -9,10 +9,12 @@
 ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚══════╝
 ```
 
-**Open agent skills for React and Next.js.**  
-Readable `SKILL.md` on GitHub. Installable modules on npm.
+**Open agent skills for React and Next.js.**
 
-Inspired by the clean directory style of [skills.sh](https://www.skills.sh/) with full skill text, outcomes, and dual publish paths.
+- **GitHub:** [github.com/bh611627/skillcodex](https://github.com/bh611627/skillcodex)
+- **npm:** [@skillcodex/skills](https://www.npmjs.com/package/@skillcodex/skills)
+
+Readable `SKILL.md` on GitHub. Installable modules on npm. Inspired by the clean directory style of [skills.sh](https://www.skills.sh/) with full skill text and clear outcomes.
 
 ---
 
@@ -38,6 +40,8 @@ console.log(seoAgent.outcomes);
 git clone https://github.com/bh611627/skillcodex.git
 # open skills/seo-agent/SKILL.md in your agent
 ```
+
+Browse a skill: [skills/seo-agent/SKILL.md](https://github.com/bh611627/skillcodex/tree/main/skills/seo-agent/SKILL.md)
 
 ---
 
@@ -70,9 +74,9 @@ import codeAssistant from "@skillcodex/skills/code-assistant";
 
 | | GitHub | npm |
 |---|--------|-----|
+| **Link** | [github.com/bh611627/skillcodex](https://github.com/bh611627/skillcodex) | [npmjs.com/package/@skillcodex/skills](https://www.npmjs.com/package/@skillcodex/skills) |
 | **Path** | `skills/<name>/SKILL.md` | `@skillcodex/skills/<name>` |
 | **Best for** | Browse, fork, copy into agents | Apps, scripts, programmatic use |
-| **Package** | This repo | [`package/`](./package/) |
 
 ---
 
@@ -90,17 +94,17 @@ import codeAssistant from "@skillcodex/skills/code-assistant";
 
 | Doc | |
 |-----|---|
-| [PUBLISH.md](./PUBLISH.md) | **Upload to GitHub + publish npm** |
 | [SKILL_STANDARD.md](./SKILL_STANDARD.md) | SKILL.md format |
 | [WHAT_IS_SKILLCODEX.md](./WHAT_IS_SKILLCODEX.md) | What this repo is |
+| [SECURITY.md](./SECURITY.md) | No secrets in the repo |
 | [package/README.md](./package/README.md) | npm package API |
+| [references/publishing.md](./references/publishing.md) | GitHub + npm distribution |
 
 ---
 
 ## Develop
 
 ```bash
-# Regenerate npm package from markdown skills
 cd package && pnpm run sync && pnpm run build
 ```
 

@@ -1,6 +1,6 @@
 ---
 name: skill-creator
-description: Write SKILL.md files for SkillCodex - outcomes, stack, refs, GitHub and npm paths
+description: Write SKILL.md files for SkillCodex - outcomes, stack, refs, GitHub paths
 tags:
   - meta
   - skills
@@ -10,7 +10,7 @@ category: meta
 outcomes:
   - Valid SKILL.md plus README table row
   - references/ links for token savings
-  - Publishing block (GitHub + pnpm/npm import)
+  - Publishing block with GitHub + npm links
 stack:
   - pnpm
   - next
@@ -30,13 +30,13 @@ Author a **SkillCodex** skill (markdown library, not a deployed website).
 4. Sections: `# Instructions`, `## Outcomes`, `## Output Rules`, `## Recommended stack`.
 5. UI skills: link `DESIGNSPEC.md`, `data-source.md`, `react-stack.md`, `ui-pages.md`, `components.md`, `icons-and-emoji.md` as needed.
 6. SEO skills: link `google-seo.md`.
-7. End with GitHub path + npm import. Include pnpm install line when relevant.
+7. End with GitHub tree URL + npm package URL (see [publishing.md](../../references/publishing.md)).
 8. Use `-` in lists. **No em dashes** in skill text.
 9. Frontend only in stack field (no Python/uv).
 
 Put long rules in `references/`, keep SKILL.md short.
 
-Read [publishing.md](../../references/publishing.md) for dual-format wording.
+Read [publishing.md](../../references/publishing.md) for GitHub + npm link wording.
 
 ## Outcomes
 
@@ -52,5 +52,5 @@ Read [publishing.md](../../references/publishing.md) for dual-format wording.
 
 [publishing.md](../../references/publishing.md) · [react-stack.md](../../references/react-stack.md)
 
-**GitHub:** `skills/skill-creator/SKILL.md`  
-**npm:** `import skill from "@your-org/my-ai-skills/skill-creator"`
+**GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/skill-creator/SKILL.md  
+**npm:** https://www.npmjs.com/package/@skillcodex/skills

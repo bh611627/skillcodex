@@ -1,0 +1,78 @@
+{
+  "name": "@skillcodex/skills",
+  "version": "1.0.0",
+  "description": "SkillCodex agent skills as installable JavaScript modules",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./content-creator": {
+      "types": "./dist/skills/content-creator.d.ts",
+      "import": "./dist/skills/content-creator.js"
+    },
+    "./seo-agent": {
+      "types": "./dist/skills/seo-agent.d.ts",
+      "import": "./dist/skills/seo-agent.js"
+    },
+    "./code-assistant": {
+      "types": "./dist/skills/code-assistant.d.ts",
+      "import": "./dist/skills/code-assistant.js"
+    },
+    "./documentation-ui": {
+      "types": "./dist/skills/documentation-ui.d.ts",
+      "import": "./dist/skills/documentation-ui.js"
+    },
+    "./web-interface-guidelines": {
+      "types": "./dist/skills/web-interface-guidelines.d.ts",
+      "import": "./dist/skills/web-interface-guidelines.js"
+    },
+    "./skill-creator": {
+      "types": "./dist/skills/skill-creator.d.ts",
+      "import": "./dist/skills/skill-creator.js"
+    },
+    "./skillcodex-browser-ui": {
+      "types": "./dist/skills/skillcodex-browser-ui.d.ts",
+      "import": "./dist/skills/skillcodex-browser-ui.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "sync": "node scripts/sync-from-skills.mjs",
+    "prepublishOnly": "pnpm run build"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "skills",
+    "skill-md",
+    "skillcodex"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bh611627/skillcodex.git"
+  },
+  "homepage": "https://github.com/bh611627/skillcodex#readme",
+  "bugs": {
+    "url": "https://github.com/bh611627/skillcodex/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "packageManager": "pnpm@10.0.0",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

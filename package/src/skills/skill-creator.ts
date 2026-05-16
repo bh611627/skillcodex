@@ -7,11 +7,12 @@ tags:
   - meta
   - skills
   - nextjs
-version: 1.5.0
+version: 1.6.0
 category: meta
 outcomes:
-  - Valid SKILL.md with outcomes, safety, and compatibility fields
+  - Valid SKILL.md passing package validator with zero errors
   - README table row and validation-ready frontmatter
+  - risk_level suggested with one-line reasoning
 stack:
   - pnpm
   - next
@@ -21,7 +22,7 @@ references:
   - references/publishing.md
   - references/skill-safety.md
   - references/interoperability.md
-last_reviewed: 2026-05-15
+last_reviewed: 2026-05-16
 risk_level: low
 tools_allowed: repo-files
 requires_user_approval: false
@@ -43,7 +44,9 @@ Author **SkillCodex** skills (not a deployed product UI unless asked).
 5. UI skills: link only [design-guidelines.md](../../references/design-guidelines.md); stack includes **framer-motion** when UI.
 6. Dual format footer: GitHub tree URL + npm package link.
 7. **Package manager in stack:** pnpm for greenfield Next; match user lockfile if they have one.
-8. \`cd package && pnpm run validate\` before merge.
+8. After generating SKILL.md, run validation mentally against [SKILL_STANDARD.md](../../SKILL_STANDARD.md): kebab-case name, \`# Instructions\`, required sections, no Unicode tag/bidi chars.
+9. Tell the user to run \`pnpm validate\` before merge.
+10. Always suggest \`risk_level\` (\`low\` | \`medium\` | \`high\`) with one sentence of reasoning and matching \`tools_allowed\`.
 
 ## Outcomes
 
@@ -63,6 +66,12 @@ SKILL.md fence, README row, checklist.
 
 - No secrets; honest risk_level.
 
+## Troubleshooting
+
+- **Validator fails on name:** folder name must equal frontmatter \`name\` in kebab-case.
+- **High risk without approval:** set \`requires_user_approval: true\` when \`risk_level: high\`.
+- **pnpm validate not found:** run from repo root after \`pnpm install\` or \`cd package && pnpm run validate\`.
+
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/skill-creator/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills
 `;
@@ -71,14 +80,14 @@ export const skillCreator = defineSkill({
   name: "skill-creator",
   description: "Author SkillCodex SKILL.md - outcomes, dual GitHub+npm format, safety metadata",
   tags: ["meta","skills","nextjs"],
-  version: "1.5.0",
+  version: "1.6.0",
   category: "meta",
-  lastReviewed: "2026-05-15",
+  lastReviewed: "Sat May 16 2026 05:00:00 GMT+0500 (Pakistan Standard Time)",
   riskLevel: "low",
   toolsAllowed: "repo-files",
-  requiresUserApproval: undefined,
+  requiresUserApproval: false,
   compatibility: ["generic-markdown","cursor","claude-code","skills-sh"],
-  outcomes: ["Valid SKILL.md with outcomes, safety, and compatibility fields","README table row and validation-ready frontmatter"],
+  outcomes: ["Valid SKILL.md passing package validator with zero errors","README table row and validation-ready frontmatter","risk_level suggested with one-line reasoning"],
   stack: ["pnpm","next"],
   references: ["references/design-guidelines.md","references/react-stack.md","references/publishing.md","references/skill-safety.md","references/interoperability.md"],
   instructions: `# Instructions
@@ -92,7 +101,9 @@ Author **SkillCodex** skills (not a deployed product UI unless asked).
 5. UI skills: link only [design-guidelines.md](../../references/design-guidelines.md); stack includes **framer-motion** when UI.
 6. Dual format footer: GitHub tree URL + npm package link.
 7. **Package manager in stack:** pnpm for greenfield Next; match user lockfile if they have one.
-8. \`cd package && pnpm run validate\` before merge.
+8. After generating SKILL.md, run validation mentally against [SKILL_STANDARD.md](../../SKILL_STANDARD.md): kebab-case name, \`# Instructions\`, required sections, no Unicode tag/bidi chars.
+9. Tell the user to run \`pnpm validate\` before merge.
+10. Always suggest \`risk_level\` (\`low\` | \`medium\` | \`high\`) with one sentence of reasoning and matching \`tools_allowed\`.
 
 ## Outcomes
 
@@ -110,6 +121,12 @@ SKILL.md fence, README row, checklist.
 ## Safety
 
 - No secrets; honest risk_level.
+
+## Troubleshooting
+
+- **Validator fails on name:** folder name must equal frontmatter \`name\` in kebab-case.
+- **High risk without approval:** set \`requires_user_approval: true\` when \`risk_level: high\`.
+- **pnpm validate not found:** run from repo root after \`pnpm install\` or \`cd package && pnpm run validate\`.
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/skill-creator/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills`,

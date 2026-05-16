@@ -1,0 +1,16 @@
+{
+  "name": "skillcodex",
+  "private": true,
+  "description": "SkillCodex monorepo — curated agent skills for React / Next.js",
+  "scripts": {
+    "validate": "cd package && pnpm run validate",
+    "build": "cd package && pnpm run build",
+    "sync": "cd package && pnpm run sync",
+    "new-skill": "tsx scripts/new-skill.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  },
+  "packageManager": "pnpm@9.15.0"
+}

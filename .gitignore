@@ -4,6 +4,9 @@ package/node_modules/
 
 # Build output (regenerate with `pnpm run build` in package/; never commit)
 package/dist/
+package/skills/
+package/skills-index.json
+package/CHANGELOG_AUTO.md
 dist/
 *.tsbuildinfo
 build/

@@ -20,7 +20,7 @@ stack:
   - tailwindcss
   - framer-motion
   - react-icons
-last_reviewed: 2026-05-15
+last_reviewed: 2026-05-16
 risk_level: medium
 tools_allowed: suggest-shell
 requires_user_approval: false
@@ -66,6 +66,12 @@ Data source, file tree, checklist, \`pnpm dev\`.
 
 - User runs pnpm; mock data only if no skills provided.
 
+## Troubleshooting
+
+- **framer-motion in layout:** only import motion in client leaf components.
+- **pnpm vs npm lockfile mismatch:** use the lockfile already in the repo.
+- **Fake install counts:** show outcomes and tags, not download metrics.
+
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/skillcodex-browser-ui/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills
 `;
@@ -76,10 +82,10 @@ export const skillcodexBrowserUi = defineSkill({
   tags: ["ui","nextjs","skillcodex"],
   version: "1.5.0",
   category: "development",
-  lastReviewed: "2026-05-15",
+  lastReviewed: "Sat May 16 2026 05:00:00 GMT+0500 (Pakistan Standard Time)",
   riskLevel: "medium",
   toolsAllowed: "suggest-shell",
-  requiresUserApproval: undefined,
+  requiresUserApproval: false,
   compatibility: ["generic-markdown","cursor","claude-code","skills-sh"],
   outcomes: ["Four routes live with skeletons and skills.sh gaps filled (outcomes, copy, create, guidelines)","Apple-level whitespace doc UI using Tailwind + framer-motion"],
   stack: ["pnpm","next","react","typescript","tailwindcss","framer-motion","react-icons"],
@@ -113,6 +119,12 @@ Data source, file tree, checklist, \`pnpm dev\`.
 ## Safety
 
 - User runs pnpm; mock data only if no skills provided.
+
+## Troubleshooting
+
+- **framer-motion in layout:** only import motion in client leaf components.
+- **pnpm vs npm lockfile mismatch:** use the lockfile already in the repo.
+- **Fake install counts:** show outcomes and tags, not download metrics.
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/skillcodex-browser-ui/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills`,

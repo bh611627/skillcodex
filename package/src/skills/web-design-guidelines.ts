@@ -23,7 +23,7 @@ stack:
   - react-icons
   - pnpm
   - framer-motion
-last_reviewed: 2026-05-15
+last_reviewed: 2026-05-16
 risk_level: low
 tools_allowed: repo-files
 requires_user_approval: false
@@ -93,6 +93,12 @@ State which mode. Then evidence (files or findings).
 - Build: edit UI files; user runs pnpm.
 - Audit: suggest only; public raw URLs for guidelines.
 
+## Troubleshooting
+
+- **framer-motion / motion.div in Server Components:** add \`'use client'\` to that file or replace with \`motionless\` div + Tailwind.
+- **pnpm vs npm:** pnpm for app scripts; npm for installing \`@skillcodex/skills\`.
+- **Skeletons missing:** use \`animate-pulse\` on \`<div>\`, not Framer, unless client-only.
+
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/web-design-guidelines/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills
 `;
@@ -103,10 +109,10 @@ export const webDesignGuidelines = defineSkill({
   tags: ["ui","design-system","accessibility","react","documentation"],
   version: "2.1.0",
   category: "development",
-  lastReviewed: "2026-05-15",
+  lastReviewed: "Sat May 16 2026 05:00:00 GMT+0500 (Pakistan Standard Time)",
   riskLevel: "low",
   toolsAllowed: "repo-files",
-  requiresUserApproval: undefined,
+  requiresUserApproval: false,
   compatibility: ["generic-markdown","cursor","claude-code","skills-sh"],
   outcomes: ["Doc UI implemented with design-guidelines checklist passed (tokens, skeletons, whitespace)","OR file:line audit + pass/fail for a11y, motion, anti-SaaS violations"],
   stack: ["react","typescript","tailwindcss","react-markdown","remark-gfm","react-icons","pnpm","framer-motion"],
@@ -164,6 +170,12 @@ State which mode. Then evidence (files or findings).
 
 - Build: edit UI files; user runs pnpm.
 - Audit: suggest only; public raw URLs for guidelines.
+
+## Troubleshooting
+
+- **framer-motion / motion.div in Server Components:** add \`'use client'\` to that file or replace with \`motionless\` div + Tailwind.
+- **pnpm vs npm:** pnpm for app scripts; npm for installing \`@skillcodex/skills\`.
+- **Skeletons missing:** use \`animate-pulse\` on \`<div>\`, not Framer, unless client-only.
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/web-design-guidelines/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills`,

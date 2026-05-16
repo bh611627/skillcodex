@@ -1,7 +1,7 @@
 {
   "name": "@skillcodex/skills",
-  "version": "1.0.2",
-  "description": "SkillCodex agent skills as installable JavaScript modules",
+  "version": "1.1.0",
+  "description": "Curated SkillCodex agent skills for React and Next.js — installable TypeScript modules with full SKILL.md source",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -10,21 +10,34 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./content-creator": {
-      "types": "./dist/skills/content-creator.d.ts",
-      "import": "./dist/skills/content-creator.js"
-    },
-    "./seo-agent": {
-      "types": "./dist/skills/seo-agent.d.ts",
-      "import": "./dist/skills/seo-agent.js"
+    "./package.json": "./package.json",
+    "./accessibility-audit": {
+      "types": "./dist/skills/accessibility-audit.d.ts",
+      "import": "./dist/skills/accessibility-audit.js"
     },
     "./code-assistant": {
       "types": "./dist/skills/code-assistant.d.ts",
       "import": "./dist/skills/code-assistant.js"
     },
-    "./web-design-guidelines": {
-      "types": "./dist/skills/web-design-guidelines.d.ts",
-      "import": "./dist/skills/web-design-guidelines.js"
+    "./content-creator": {
+      "types": "./dist/skills/content-creator.d.ts",
+      "import": "./dist/skills/content-creator.js"
+    },
+    "./database-schema-agent": {
+      "types": "./dist/skills/database-schema-agent.d.ts",
+      "import": "./dist/skills/database-schema-agent.js"
+    },
+    "./env-config-agent": {
+      "types": "./dist/skills/env-config-agent.d.ts",
+      "import": "./dist/skills/env-config-agent.js"
+    },
+    "./performance-audit": {
+      "types": "./dist/skills/performance-audit.d.ts",
+      "import": "./dist/skills/performance-audit.js"
+    },
+    "./seo-agent": {
+      "types": "./dist/skills/seo-agent.d.ts",
+      "import": "./dist/skills/seo-agent.js"
     },
     "./skill-creator": {
       "types": "./dist/skills/skill-creator.d.ts",
@@ -34,23 +47,42 @@
       "types": "./dist/skills/skillcodex-browser-ui.d.ts",
       "import": "./dist/skills/skillcodex-browser-ui.js"
     },
-    "./package.json": "./package.json"
+    "./testing-agent": {
+      "types": "./dist/skills/testing-agent.d.ts",
+      "import": "./dist/skills/testing-agent.js"
+    },
+    "./typescript-refactor": {
+      "types": "./dist/skills/typescript-refactor.d.ts",
+      "import": "./dist/skills/typescript-refactor.js"
+    },
+    "./web-design-guidelines": {
+      "types": "./dist/skills/web-design-guidelines.d.ts",
+      "import": "./dist/skills/web-design-guidelines.js"
+    }
   },
   "files": [
     "dist",
-    "README.md"
+    "skills",
+    "README.md",
+    "skills-index.json"
   ],
   "scripts": {
     "build": "tsc",
-    "sync": "node scripts/sync-from-skills.mjs",
-    "validate": "node scripts/validate-skills.mjs"
+    "sync": "tsx src/sync.ts",
+    "validate": "tsx src/validate.ts",
+    "prebuild": "tsx src/sync.ts"
   },
   "keywords": [
     "ai",
     "agent",
     "skills",
     "skill-md",
-    "skillcodex"
+    "skillcodex",
+    "cursor",
+    "claude",
+    "nextjs",
+    "react",
+    "typescript"
   ],
   "license": "MIT",
   "repository": {
@@ -65,7 +97,12 @@
     "access": "public"
   },
   "packageManager": "pnpm@10.0.0",
+  "dependencies": {
+    "gray-matter": "^4.0.3"
+  },
   "devDependencies": {
+    "@types/node": "^22.15.21",
+    "tsx": "^4.19.4",
     "typescript": "^5.8.3"
   },
   "engines": {

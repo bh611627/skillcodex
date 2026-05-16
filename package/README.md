@@ -1,6 +1,8 @@
 # @skillcodex/skills
 
-Curated [SkillCodex](https://github.com/bh611627/skillcodex) agent skills for React and Next.js — installable as TypeScript modules with full `SKILL.md` source included.
+**AI agent skills** for React and Next.js — a curated **skills system** of reusable **workflows** for Cursor, Claude Code, and modern **developer tooling**. Installable TypeScript modules with full `SKILL.md` source.
+
+Part of [SkillCodex](https://github.com/bh611627/skillcodex) — an open **automation framework** for consistent, outcome-driven agent behavior.
 
 ## Install
 

@@ -1,7 +1,7 @@
 {
   "name": "@skillcodex/skills",
-  "version": "1.1.0",
-  "description": "Curated SkillCodex agent skills for React and Next.js — installable TypeScript modules with full SKILL.md source",
+  "version": "1.1.1",
+  "description": "AI agent skills and reusable workflows for React & Next.js — curated SKILL.md library for Cursor, Claude Code, and automation tools",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -73,16 +73,21 @@
     "prebuild": "tsx src/sync.ts"
   },
   "keywords": [
-    "ai",
-    "agent",
-    "skills",
+    "ai-agents",
+    "ai-agent-skills",
+    "agent-skills",
+    "cursor-skills",
+    "claude-code",
+    "skills-sh",
     "skill-md",
-    "skillcodex",
-    "cursor",
-    "claude",
+    "workflows",
+    "developer-tools",
+    "developer-productivity",
+    "automation",
     "nextjs",
     "react",
-    "typescript"
+    "typescript",
+    "skillcodex"
   ],
   "license": "MIT",
   "repository": {

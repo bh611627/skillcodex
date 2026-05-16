@@ -76,7 +76,7 @@ Same structure as above. Fenced code with file paths.
 
 ## Recommended stack
 
-[references/stack-nextjs.md](../../references/stack-nextjs.md) · UI: [references/design-guidelines.md](../../references/design-guidelines.md)
+[references/stack-nextjs.md](../../references/stack-nextjs.md) | UI: [references/design-guidelines.md](../../references/design-guidelines.md)
 
 ## When NOT to use this skill
 

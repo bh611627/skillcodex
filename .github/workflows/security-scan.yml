@@ -9,15 +9,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Scan for Unicode tag characters
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Validate skills (Unicode tag + bidi injection checks)
+        run: cd package && pnpm run validate
+      - name: Byte-level grep scan (supplementary)
         run: |
-          if grep -rP '[\xf3\xb0\x80\x80-\xf3\xb0\x81\xbf]' skills/; then
+          # PCRE byte ranges from SKILL_STANDARD; validate.ts is authoritative
+          if grep -rP '[\x{E0000}-\x{E007F}]' skills/ 2>/dev/null; then
             echo "ERROR: Unicode tag characters detected in skills/"
             exit 1
           fi
-      - name: Scan for bidi override characters
-        run: |
-          if grep -rP '[\xe2\x80\xaa-\xe2\x80\xae]|[\xe2\x81\xa6-\xe2\x81\xa9]' skills/; then
+          if grep -rP '[\x{202A}-\x{202E}\x{2066}-\x{2069}]' skills/; then
             echo "ERROR: Bidi override characters detected in skills/"
             exit 1
           fi

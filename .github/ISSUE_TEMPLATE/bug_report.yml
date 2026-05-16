@@ -1,0 +1,66 @@
+name: Broken or outdated skill
+description: Report a skill that fails, misleads, or is out of date
+title: "[bug]: "
+labels:
+  - bug
+body:
+  - type: dropdown
+    id: skill
+    attributes:
+      label: Which skill?
+      options:
+        - web-design-guidelines
+        - skillcodex-browser-ui
+        - content-creator
+        - seo-agent
+        - code-assistant
+        - skill-creator
+        - typescript-refactor
+        - testing-agent
+        - accessibility-audit
+        - env-config-agent
+        - performance-audit
+        - database-schema-agent
+        - other
+    validations:
+      required: true
+  - type: input
+    id: other_skill
+    attributes:
+      label: Other skill name (if applicable)
+      placeholder: my-skill-slug
+  - type: dropdown
+    id: agent_host
+    attributes:
+      label: Agent host
+      options:
+        - cursor
+        - claude-code
+        - skills-sh
+        - npm import (@skillcodex/skills)
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What went wrong?
+      description: Steps to reproduce, error messages, or bad agent output
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Skill version or git ref (if known)
+      placeholder: 1.0.0 or main @ abc1234
+  - type: textarea
+    id: context
+    attributes:
+      label: Project context (optional)
+      description: Next.js version, monorepo, lockfile type, etc.

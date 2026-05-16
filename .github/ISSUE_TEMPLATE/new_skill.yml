@@ -1,0 +1,75 @@
+name: Propose a new skill
+description: Suggest a new SkillCodex skill for the catalog
+title: "[skill]: "
+labels:
+  - skill-proposal
+body:
+  - type: input
+    id: skill_name
+    attributes:
+      label: Skill name (kebab-case)
+      description: Must match the folder name under skills/, e.g. performance-audit
+      placeholder: my-new-skill
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: One-line description
+      description: Under 200 characters; what the agent will do
+    validations:
+      required: true
+  - type: dropdown
+    id: target_host
+    attributes:
+      label: Primary agent host
+      options:
+        - cursor
+        - claude-code
+        - skills-sh
+        - other
+    validations:
+      required: true
+  - type: input
+    id: stack
+    attributes:
+      label: Stack (comma-separated)
+      description: e.g. next, react, typescript, vitest
+    validations:
+      required: true
+  - type: textarea
+    id: outcomes
+    attributes:
+      label: Expected outcomes
+      description: At least two measurable results when the skill runs successfully
+      placeholder: |
+        - Audit report with file:line findings
+        - User can apply fixes without guessing scope
+    validations:
+      required: true
+  - type: dropdown
+    id: risk_level
+    attributes:
+      label: Proposed risk level
+      options:
+        - low
+        - medium
+        - high
+    validations:
+      required: true
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Why is this skill needed?
+      description: Pain point, example user prompt, or gap in the current catalog
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Author checklist
+      options:
+        - label: I have read SKILL_STANDARD.md and references/skill-safety.md
+          required: true
+        - label: I am willing to open a PR with a full SKILL.md if accepted
+          required: false

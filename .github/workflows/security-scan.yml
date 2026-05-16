@@ -1,0 +1,23 @@
+name: Security scan
+on:
+  pull_request:
+    paths:
+      - "skills/**"
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scan for Unicode tag characters
+        run: |
+          if grep -rP '[\xf3\xb0\x80\x80-\xf3\xb0\x81\xbf]' skills/; then
+            echo "ERROR: Unicode tag characters detected in skills/"
+            exit 1
+          fi
+      - name: Scan for bidi override characters
+        run: |
+          if grep -rP '[\xe2\x80\xaa-\xe2\x80\xae]|[\xe2\x81\xa6-\xe2\x81\xa9]' skills/; then
+            echo "ERROR: Bidi override characters detected in skills/"
+            exit 1
+          fi

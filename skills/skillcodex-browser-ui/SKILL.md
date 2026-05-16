@@ -18,7 +18,7 @@ stack:
   - tailwindcss
   - framer-motion
   - react-icons
-last_reviewed: 2026-05-15
+last_reviewed: 2026-05-16
 risk_level: medium
 tools_allowed: suggest-shell
 requires_user_approval: false
@@ -63,6 +63,12 @@ Data source, file tree, checklist, `pnpm dev`.
 ## Safety
 
 - User runs pnpm; mock data only if no skills provided.
+
+## Troubleshooting
+
+- **framer-motion in layout:** only import motion in client leaf components.
+- **pnpm vs npm lockfile mismatch:** use the lockfile already in the repo.
+- **Fake install counts:** show outcomes and tags, not download metrics.
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/skillcodex-browser-ui/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills

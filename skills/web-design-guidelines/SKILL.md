@@ -21,7 +21,7 @@ stack:
   - react-icons
   - pnpm
   - framer-motion
-last_reviewed: 2026-05-15
+last_reviewed: 2026-05-16
 risk_level: low
 tools_allowed: repo-files
 requires_user_approval: false
@@ -90,6 +90,12 @@ State which mode. Then evidence (files or findings).
 
 - Build: edit UI files; user runs pnpm.
 - Audit: suggest only; public raw URLs for guidelines.
+
+## Troubleshooting
+
+- **framer-motion / motion.div in Server Components:** add `'use client'` to that file or replace with `motionless` div + Tailwind.
+- **pnpm vs npm:** pnpm for app scripts; npm for installing `@skillcodex/skills`.
+- **Skeletons missing:** use `animate-pulse` on `<div>`, not Framer, unless client-only.
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/web-design-guidelines/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills

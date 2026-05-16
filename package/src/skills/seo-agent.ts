@@ -62,7 +62,7 @@ You’re helping with **SEO for a frontend/Next.js site**. Read [references/goog
 
 **Social preview checklist**
 
-- \`openGraph.title\`, \`openGraph.description\`, \`openGraph.images\` (1200×630 recommended)
+- \`openGraph.title\`, \`openGraph.description\`, \`openGraph.images\` (1200x630 recommended)
 - \`twitter.card\` (\`summary_large_image\`), \`twitter.title\`, \`twitter.description\`, \`twitter.images\`
 - Canonical URL set when duplicates exist
 
@@ -158,7 +158,7 @@ You’re helping with **SEO for a frontend/Next.js site**. Read [references/goog
 
 **Social preview checklist**
 
-- \`openGraph.title\`, \`openGraph.description\`, \`openGraph.images\` (1200×630 recommended)
+- \`openGraph.title\`, \`openGraph.description\`, \`openGraph.images\` (1200x630 recommended)
 - \`twitter.card\` (\`summary_large_image\`), \`twitter.title\`, \`twitter.description\`, \`twitter.images\`
 - Canonical URL set when duplicates exist
 

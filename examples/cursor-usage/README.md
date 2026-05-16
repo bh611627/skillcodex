@@ -10,11 +10,11 @@ Or copy `skills/<name>/SKILL.md` into `.cursor/skills/` (project) or `~/.cursor/
 
 ## Example 1: code-assistant
 
-**Without skill** — user asks: “Fix the login button styling.”
+**Without skill** - user asks: “Fix the login button styling.”
 
 The agent may rewrite entire files, change unrelated components, and mix npm/pnpm commands.
 
-**With `code-assistant` loaded** — same prompt.
+**With `code-assistant` loaded** - same prompt.
 
 The agent:
 
@@ -25,7 +25,7 @@ The agent:
 
 ## Example 2: accessibility-audit
 
-**Without skill** — “Is my form accessible?”
+**Without skill** - “Is my form accessible?”
 
 Generic advice: “add labels” with no file references.
 
@@ -35,10 +35,10 @@ Output:
 
 ```
 Critical
-- src/components/LoginForm.tsx:42 — icon button missing aria-label
+- src/components/LoginForm.tsx:42 - icon button missing aria-label
 
 Major
-- src/components/LoginForm.tsx:18 — error state color-only
+- src/components/LoginForm.tsx:18 - error state color-only
 ```
 
 ## npm package (optional)

@@ -40,8 +40,8 @@ ${tags}
 version: 1.0.0
 category: ${fields.category}
 outcomes:
-  - Outcome one — replace with a measurable result
-  - Outcome two — replace with a measurable result
+  - Outcome one - replace with a measurable result
+  - Outcome two - replace with a measurable result
 last_reviewed: ${today}
 risk_level: ${fields.risk_level}
 tools_allowed: ${fields.tools_allowed}
@@ -133,7 +133,7 @@ async function main(): Promise<void> {
     try {
       execSync("pnpm run validate", { cwd: join(repoRoot, "package"), stdio: "inherit" });
     } catch {
-      console.warn("\nValidator reported issues — edit SKILL.md and run pnpm validate again.\n");
+      console.warn("\nValidator reported issues - edit SKILL.md and run pnpm validate again.\n");
     }
 
     console.log(`Add to your agent:\n  npx skills add https://github.com/bh611627/skillcodex --skill ${name}\n`);

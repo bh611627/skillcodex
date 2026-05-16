@@ -1,7 +1,7 @@
 {
   "name": "skillcodex",
   "private": true,
-  "description": "SkillCodex — AI agent skills system and reusable workflows for React / Next.js (monorepo)",
+  "description": "SkillCodex - AI agent skills system and reusable workflows for React / Next.js (monorepo)",
   "scripts": {
     "validate": "cd package && pnpm run validate",
     "build": "cd package && pnpm run build",

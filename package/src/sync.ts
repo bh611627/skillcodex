@@ -210,7 +210,7 @@ try {
   }
 } catch {
   changelogFragment =
-    "_No git tags found — CHANGELOG_AUTO.md lists all skills in this sync._\n\n" +
+    "_No git tags found - CHANGELOG_AUTO.md lists all skills in this sync._\n\n" +
     indexEntries.map((e) => `- skills/${e.slug}/SKILL.md`).join("\n") +
     "\n";
 }

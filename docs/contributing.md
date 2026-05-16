@@ -7,7 +7,7 @@ Thank you for improving SkillCodex. Full guidelines live in [.github/CONTRIBUTIN
 1. Fork and clone the repo.
 2. `pnpm install`
 3. `pnpm new-skill` or edit an existing `skills/<slug>/SKILL.md`
-4. `pnpm validate` — must pass with zero errors
+4. `pnpm validate` - must pass with zero errors
 5. Open a PR using the skill or bug issue template
 
 ## What we look for

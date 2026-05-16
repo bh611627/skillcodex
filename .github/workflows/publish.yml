@@ -37,7 +37,7 @@ jobs:
               const index = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
               body += '| Skill | Version | Risk |\n|-------|---------|------|\n';
               for (const s of index.skills) {
-                body += `| ${s.slug} | ${s.version ?? '—'} | ${s.risk_level ?? '—'} |\n`;
+                body += `| ${s.slug} | ${s.version ?? '-'} | ${s.risk_level ?? '-'} |\n`;
               }
             } else {
               body += '_skills-index.json not found_\n';

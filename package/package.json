@@ -1,7 +1,7 @@
 {
   "name": "@skillcodex/skills",
   "version": "1.1.1",
-  "description": "AI agent skills and reusable workflows for React & Next.js — curated SKILL.md library for Cursor, Claude Code, and automation tools",
+  "description": "AI agent skills and reusable workflows for React & Next.js - curated SKILL.md library for Cursor, Claude Code, and automation tools",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

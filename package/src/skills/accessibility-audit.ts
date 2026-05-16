@@ -2,7 +2,7 @@ import { defineSkill } from "../types.js";
 
 const skillMd = `---
 name: accessibility-audit
-description: Audit React/Next.js UIs for WCAG 2.2 AA — contrast, ARIA, keyboard, forms, alt text
+description: Audit React/Next.js UIs for WCAG 2.2 AA - contrast, ARIA, keyboard, forms, alt text
 tags:
   - accessibility
   - a11y
@@ -33,26 +33,26 @@ references:
 
 # Instructions
 
-Audit the user’s **React / Next.js** UI for **WCAG 2.2 Level AA** compliance. Read-only — produce a report, do not edit files unless the user explicitly asks.
+Audit the user’s **React / Next.js** UI for **WCAG 2.2 Level AA** compliance. Read-only - produce a report, do not edit files unless the user explicitly asks.
 
 ## Audit steps
 
-1. **Color contrast** — text and UI components (normal text 4.5:1, large text 3:1, UI components 3:1). Flag token pairs from Tailwind/className when hex is inferable.
-2. **ARIA and semantics** — interactive elements without accessible names; duplicate IDs; incorrect roles; icon-only buttons missing \`aria-label\`.
-3. **Keyboard** — focus order, visible focus styles, focus traps in modals, skip links for main content.
-4. **Images** — missing \`alt\`, empty \`alt\` on informative images, decorative images that should be \`alt=""\`.
-5. **Forms** — \`<label>\` association, \`aria-describedby\` for errors, error text not color-only.
-6. **Motion** — respect \`prefers-reduced-motion\` where animations exist.
+1. **Color contrast** - text and UI components (normal text 4.5:1, large text 3:1, UI components 3:1). Flag token pairs from Tailwind/className when hex is inferable.
+2. **ARIA and semantics** - interactive elements without accessible names; duplicate IDs; incorrect roles; icon-only buttons missing \`aria-label\`.
+3. **Keyboard** - focus order, visible focus styles, focus traps in modals, skip links for main content.
+4. **Images** - missing \`alt\`, empty \`alt\` on informative images, decorative images that should be \`alt=""\`.
+5. **Forms** - \`<label>\` association, \`aria-describedby\` for errors, error text not color-only.
+6. **Motion** - respect \`prefers-reduced-motion\` where animations exist.
 
 ## Output format
 
 Group findings:
 
-- **Critical** — blocks task completion for assistive tech users
-- **Major** — significant barrier, workaround exists
-- **Minor** — best practice / enhancement
+- **Critical** - blocks task completion for assistive tech users
+- **Major** - significant barrier, workaround exists
+- **Minor** - best practice / enhancement
 
-Each finding: \`path:line\` — issue — WCAG criterion — suggested fix (one line).
+Each finding: \`path:line\` - issue - WCAG criterion - suggested fix (one line).
 
 End with a short **pass/fail** summary for AA target scope.
 
@@ -87,7 +87,7 @@ No preamble essay. Tables or bullet groups by severity only.
 
 export const accessibilityAudit = defineSkill({
   name: "accessibility-audit",
-  description: "Audit React/Next.js UIs for WCAG 2.2 AA — contrast, ARIA, keyboard, forms, alt text",
+  description: "Audit React/Next.js UIs for WCAG 2.2 AA - contrast, ARIA, keyboard, forms, alt text",
   tags: ["accessibility","a11y","wcag","react"],
   version: "1.0.0",
   category: "development",
@@ -101,26 +101,26 @@ export const accessibilityAudit = defineSkill({
   references: ["references/design-guidelines.md","references/skill-safety.md"],
   instructions: `# Instructions
 
-Audit the user’s **React / Next.js** UI for **WCAG 2.2 Level AA** compliance. Read-only — produce a report, do not edit files unless the user explicitly asks.
+Audit the user’s **React / Next.js** UI for **WCAG 2.2 Level AA** compliance. Read-only - produce a report, do not edit files unless the user explicitly asks.
 
 ## Audit steps
 
-1. **Color contrast** — text and UI components (normal text 4.5:1, large text 3:1, UI components 3:1). Flag token pairs from Tailwind/className when hex is inferable.
-2. **ARIA and semantics** — interactive elements without accessible names; duplicate IDs; incorrect roles; icon-only buttons missing \`aria-label\`.
-3. **Keyboard** — focus order, visible focus styles, focus traps in modals, skip links for main content.
-4. **Images** — missing \`alt\`, empty \`alt\` on informative images, decorative images that should be \`alt=""\`.
-5. **Forms** — \`<label>\` association, \`aria-describedby\` for errors, error text not color-only.
-6. **Motion** — respect \`prefers-reduced-motion\` where animations exist.
+1. **Color contrast** - text and UI components (normal text 4.5:1, large text 3:1, UI components 3:1). Flag token pairs from Tailwind/className when hex is inferable.
+2. **ARIA and semantics** - interactive elements without accessible names; duplicate IDs; incorrect roles; icon-only buttons missing \`aria-label\`.
+3. **Keyboard** - focus order, visible focus styles, focus traps in modals, skip links for main content.
+4. **Images** - missing \`alt\`, empty \`alt\` on informative images, decorative images that should be \`alt=""\`.
+5. **Forms** - \`<label>\` association, \`aria-describedby\` for errors, error text not color-only.
+6. **Motion** - respect \`prefers-reduced-motion\` where animations exist.
 
 ## Output format
 
 Group findings:
 
-- **Critical** — blocks task completion for assistive tech users
-- **Major** — significant barrier, workaround exists
-- **Minor** — best practice / enhancement
+- **Critical** - blocks task completion for assistive tech users
+- **Major** - significant barrier, workaround exists
+- **Minor** - best practice / enhancement
 
-Each finding: \`path:line\` — issue — WCAG criterion — suggested fix (one line).
+Each finding: \`path:line\` - issue - WCAG criterion - suggested fix (one line).
 
 End with a short **pass/fail** summary for AA target scope.
 

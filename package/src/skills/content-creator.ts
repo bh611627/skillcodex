@@ -41,7 +41,7 @@ Act as a content strategist for feeds and short-form.
 5. **5–10 hashtags** - mix of broad and niche.
 6. Flag anything that needs a fact-check before posting.
 
-## Mode C — Twitter/X thread
+## Mode C - Twitter/X thread
 
 1. Opening tweet: hook under 280 chars with a clear promise.
 2. 5–12 tweets: one idea per tweet; number them (1/n).
@@ -50,7 +50,7 @@ Act as a content strategist for feeds and short-form.
 
 ## TikTok script output
 
-When asked for short-form video, output sections: **Hook (0–3s)**, **Beats**, **On-screen text**, **CTA**, **B-roll notes** — under 60s unless user specifies length.
+When asked for short-form video, output sections: **Hook (0–3s)**, **Beats**, **On-screen text**, **CTA**, **B-roll notes** - under 60s unless user specifies length.
 
 If they build a Next UI: [design-guidelines.md](../../references/design-guidelines.md). **pnpm** for app; **npm** for \`@skillcodex/skills\`.
 
@@ -116,7 +116,7 @@ Act as a content strategist for feeds and short-form.
 5. **5–10 hashtags** - mix of broad and niche.
 6. Flag anything that needs a fact-check before posting.
 
-## Mode C — Twitter/X thread
+## Mode C - Twitter/X thread
 
 1. Opening tweet: hook under 280 chars with a clear promise.
 2. 5–12 tweets: one idea per tweet; number them (1/n).
@@ -125,7 +125,7 @@ Act as a content strategist for feeds and short-form.
 
 ## TikTok script output
 
-When asked for short-form video, output sections: **Hook (0–3s)**, **Beats**, **On-screen text**, **CTA**, **B-roll notes** — under 60s unless user specifies length.
+When asked for short-form video, output sections: **Hook (0–3s)**, **Beats**, **On-screen text**, **CTA**, **B-roll notes** - under 60s unless user specifies length.
 
 If they build a Next UI: [design-guidelines.md](../../references/design-guidelines.md). **pnpm** for app; **npm** for \`@skillcodex/skills\`.
 

@@ -1,6 +1,6 @@
 ---
 name: performance-audit
-description: Audit Next.js performance — bundle size, images, RSC boundaries, Core Web Vitals checklist
+description: Audit Next.js performance - bundle size, images, RSC boundaries, Core Web Vitals checklist
 tags:
   - performance
   - nextjs
@@ -37,11 +37,11 @@ Audit **Next.js** app performance. Read-only analysis unless user requests fixes
 
 ## Checks
 
-1. **Bundle size** — note if `@next/bundle-analyzer` is configured; flag heavy imports in client components (`lodash` full, large icon packs, chart libs on landing routes).
-2. **Images** — raw `<img>` vs `next/image`; missing `sizes`; above-fold without `priority`; below-fold without lazy loading.
-3. **RSC boundaries** — large client islands that could be Server Components; unnecessary `"use client"` on layout shells.
-4. **Fonts** — prefer `next/font`; flag layout shift risks.
-5. **Core Web Vitals** — per route/component checklist:
+1. **Bundle size** - note if `@next/bundle-analyzer` is configured; flag heavy imports in client components (`lodash` full, large icon packs, chart libs on landing routes).
+2. **Images** - raw `<img>` vs `next/image`; missing `sizes`; above-fold without `priority`; below-fold without lazy loading.
+3. **RSC boundaries** - large client islands that could be Server Components; unnecessary `"use client"` on layout shells.
+4. **Fonts** - prefer `next/font`; flag layout shift risks.
+5. **Core Web Vitals** - per route/component checklist:
    - **LCP:** hero image/font, server latency hints
    - **CLS:** dynamic inserts without reserved space
    - **INP:** heavy client handlers on first interaction
@@ -52,7 +52,7 @@ Group each finding:
 
 - **Impact:** high | medium | low
 - **Location:** `file:line` or route path
-- **Issue** — **Recommendation** (one line each)
+- **Issue** - **Recommendation** (one line each)
 
 ## Outcomes
 
@@ -76,7 +76,7 @@ No generic performance lectures. Evidence from the repo only; say when a metric 
 ## Troubleshooting
 
 - **Analyzer not set up:** give minimal `next.config` snippet; do not assume it is already installed.
-- **False positive on `next/image`:** check Next version — props differ between v13 and v15.
+- **False positive on `next/image`:** check Next version - props differ between v13 and v15.
 - **High INP in dev:** remind that production builds matter; recommend field data when available.
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/performance-audit/SKILL.md  

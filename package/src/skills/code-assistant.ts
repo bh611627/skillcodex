@@ -47,7 +47,7 @@ Read [references/react-stack.md](../../references/react-stack.md) first (when to
 1. Say the goal back in one line.
 2. Look at how the repo already does things - match it.
 3. Smallest change that works. No “while I’m here” refactors.
-4. **Output diffs**, not full file rewrites — show only changed hunks with path headers.
+4. **Output diffs**, not full file rewrites - show only changed hunks with path headers.
 5. **Never change more than 3 files in one response** unless the user explicitly requests a larger scope.
 6. New UI files: **\`.tsx\`**, typed props, components in \`src/components/\`.
 7. Server Components unless you need hooks - then \`"use client"\`.
@@ -135,7 +135,7 @@ Read [references/react-stack.md](../../references/react-stack.md) first (when to
 1. Say the goal back in one line.
 2. Look at how the repo already does things - match it.
 3. Smallest change that works. No “while I’m here” refactors.
-4. **Output diffs**, not full file rewrites — show only changed hunks with path headers.
+4. **Output diffs**, not full file rewrites - show only changed hunks with path headers.
 5. **Never change more than 3 files in one response** unless the user explicitly requests a larger scope.
 6. New UI files: **\`.tsx\`**, typed props, components in \`src/components/\`.
 7. Server Components unless you need hooks - then \`"use client"\`.

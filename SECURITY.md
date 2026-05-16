@@ -49,13 +49,13 @@ Skills are **instructions**, not sandboxed programs. Risks include prompt inject
 
 - Curated content and required `## Safety` sections
 - Frontmatter `risk_level`, `tools_allowed`, `requires_user_approval`
-- `pnpm validate` — including Unicode tag and bidi scans
+- `pnpm validate` - including Unicode tag and bidi scans
 - PR workflow **security-scan.yml** on `skills/**` changes
 
 Read:
 
-- [TRUST.md](./TRUST.md) — ecosystem risks and controls
-- [references/skill-safety.md](./references/skill-safety.md) — author and consumer checklist
+- [TRUST.md](./TRUST.md) - ecosystem risks and controls
+- [references/skill-safety.md](./references/skill-safety.md) - author and consumer checklist
 
 ## npm package
 

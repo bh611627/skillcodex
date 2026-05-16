@@ -1,6 +1,6 @@
 # Introduction to SkillCodex
 
-SkillCodex is an open-source **AI agent skills** library for **React** and **Next.js** developers. It packages team know-how as `SKILL.md` files — a portable **skills system** that works across Cursor, Claude Code, skills.sh, and custom tooling.
+SkillCodex is an open-source **AI agent skills** library for **React** and **Next.js** developers. It packages team know-how as `SKILL.md` files - a portable **skills system** that works across Cursor, Claude Code, skills.sh, and custom tooling.
 
 ## Core concepts
 
@@ -15,15 +15,15 @@ SkillCodex is an open-source **AI agent skills** library for **React** and **Nex
 
 SkillCodex is a **developer productivity tool**, not a hosted agent:
 
-- **GitHub** — browse, fork, and PR skills like code
-- **npm** — `import` skills in dashboards, CLIs, or internal tools
-- **skills.sh CLI** — `npx skills add` for one-command agent install
+- **GitHub** - browse, fork, and PR skills like code
+- **npm** - `import` skills in dashboards, CLIs, or internal tools
+- **skills.sh CLI** - `npx skills add` for one-command agent install
 
 ## Ecosystem
 
-- [skills.sh](https://www.skills.sh/) — discovery and install CLI
-- [SKILL_STANDARD.md](../SKILL_STANDARD.md) — format specification
-- [references/skills-ecosystem.md](../references/skills-ecosystem.md) — comparison with Vercel agent-skills
+- [skills.sh](https://www.skills.sh/) - discovery and install CLI
+- [SKILL_STANDARD.md](../SKILL_STANDARD.md) - format specification
+- [references/skills-ecosystem.md](../references/skills-ecosystem.md) - comparison with Vercel agent-skills
 
 ## Who it is for
 

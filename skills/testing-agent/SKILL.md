@@ -37,7 +37,7 @@ references:
 
 Improve test quality for **React / Next.js** projects using **Vitest** + **React Testing Library** (unit/component) and **Playwright** (E2E).
 
-## Mode A — generate tests
+## Mode A - generate tests
 
 1. Identify the target component or route and existing test patterns in the repo.
 2. Add or extend tests under `__tests__/` or colocated `*.test.tsx` matching project convention.
@@ -45,11 +45,11 @@ Improve test quality for **React / Next.js** projects using **Vitest** + **React
 4. For E2E: one happy path per critical flow; use `data-testid` only when roles are insufficient.
 5. Provide `pnpm test` (and `pnpm exec playwright test` if E2E added) commands.
 
-## Mode B — audit coverage gaps
+## Mode B - audit coverage gaps
 
 1. Map components/routes without tests.
 2. List missing cases: loading, error boundary, keyboard, mobile viewport.
-3. Output `file:line` or file path groups — no writes unless user asks to fix.
+3. Output `file:line` or file path groups - no writes unless user asks to fix.
 
 ## Outcomes
 
@@ -67,7 +67,7 @@ State mode. List new/changed test files. Show one example assertion block per ma
 
 ## Safety
 
-- **tools_allowed:** repo-files — edit test files and test config only unless user expands scope.
+- **tools_allowed:** repo-files - edit test files and test config only unless user expands scope.
 - Do not commit secrets; mock `fetch` and env vars in tests.
 - Match lockfile; prefer `pnpm` when `pnpm-lock.yaml` exists.
 

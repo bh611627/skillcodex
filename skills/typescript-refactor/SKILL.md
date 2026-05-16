@@ -1,6 +1,6 @@
 ---
 name: typescript-refactor
-description: Refactor JavaScript to strict TypeScript or audit types — incremental .js to .ts with explicit return types
+description: Refactor JavaScript to strict TypeScript or audit types - incremental .js to .ts with explicit return types
 tags:
   - typescript
   - refactor
@@ -34,22 +34,22 @@ Help the user migrate a React/Next.js codebase from JavaScript to **strict TypeS
 
 **Before edits:** suggest `pnpm exec tsc --noEmit` (or `npx tsc --noEmit`) so there is a baseline.
 
-## Mode A — full file refactor
+## Mode A - full file refactor
 
 1. Ensure `tsconfig.json` has `"strict": true` (and `"noImplicitAny": true` if split).
 2. Rename target `.js`/`.jsx` → `.ts`/`.tsx` one module at a time (smallest leaf first).
 3. Infer props and state; add **explicit return types** on exported functions and hooks.
 4. Replace `any` with `unknown`, generics, or narrow types; use type guards where needed.
-5. For large repos, optional **ts-morph** codemods — list files touched.
+5. For large repos, optional **ts-morph** codemods - list files touched.
 6. Update imports and `package.json` types field if missing.
 7. Re-run `tsc --noEmit` and fix errors until clean for touched scope.
 
-## Mode B — audit only
+## Mode B - audit only
 
 1. Scan `src/` for `.js`/`.jsx` remaining.
 2. Report `file:line` for: implicit `any`, missing return types, `@ts-ignore`, unsafe casts.
 3. Prioritize entry points and shared utilities.
-4. No file writes — deliver a markdown table grouped by severity.
+4. No file writes - deliver a markdown table grouped by severity.
 
 ## Outcomes
 

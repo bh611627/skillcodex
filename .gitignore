@@ -91,5 +91,5 @@ __pycache__/
 .venv/
 venv/
 
-# Local agent lockfiles (user machine; optional — remove line if you commit skills-lock.json by policy)
+# Local agent lockfiles (user machine; optional - remove line if you commit skills-lock.json by policy)
 # skills-lock.json

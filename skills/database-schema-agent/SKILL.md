@@ -1,6 +1,6 @@
 ---
 name: database-schema-agent
-description: Design or audit Prisma schemas for Next.js — relations, indexes, naming, migration notes
+description: Design or audit Prisma schemas for Next.js - relations, indexes, naming, migration notes
 tags:
   - prisma
   - database
@@ -33,21 +33,21 @@ references:
 
 Design or review **Prisma** data models for **Next.js** applications.
 
-## Mode A — generate schema
+## Mode A - generate schema
 
 1. Parse the user’s plain-English domain model (entities, relationships, enums).
 2. Produce `schema.prisma` with:
    - `@@map` / `@map` only if user prefers snake_case tables
-   - IDs (`cuid()` or `uuid()` — match repo if exists)
+   - IDs (`cuid()` or `uuid()` - match repo if exists)
    - indexes on foreign keys and frequent filters
 3. Include migration commands: `pnpm exec prisma migrate dev --name init` (or match project scripts).
 4. **Requires user approval** before writing files.
 
-## Mode B — audit existing schema
+## Mode B - audit existing schema
 
 1. Read `prisma/schema.prisma` and related queries if present.
 2. Report: missing indexes, ambiguous relations, cascade risks, N+1-prone includes, naming inconsistencies.
-3. Suggest fixes as diffs or bullet list — no writes unless approved.
+3. Suggest fixes as diffs or bullet list - no writes unless approved.
 
 ## Outcomes
 
@@ -65,7 +65,7 @@ State mode. For Mode A, fence `schema.prisma` only after approval summary.
 
 ## Safety
 
-- **Mode A** writes schema files — `requires_user_approval: true`.
+- **Mode A** writes schema files - `requires_user_approval: true`.
 - Never embed production database URLs or passwords; use `env("DATABASE_URL")` only.
 - Warn before `onDelete: Cascade` on high-cardinality relations.
 

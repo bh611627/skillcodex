@@ -7,7 +7,7 @@ Versioning: [Semantic Versioning](https://semver.org/)
 
 ## [Unreleased]
 
-## [1.1.0] — 2026-05-16
+## [1.1.0] - 2026-05-16
 
 ### Added
 
@@ -28,7 +28,7 @@ Versioning: [Semantic Versioning](https://semver.org/)
 - Root README: badges, quick start, roadmap, ASCII demo
 - Sync regenerates `package.json` exports and `src/index.ts`
 
-## [1.0.0] — 2026-05-16
+## [1.0.0] - 2026-05-16
 
 ### Added
 

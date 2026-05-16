@@ -32,7 +32,7 @@ Open a **pull request** on GitHub into `main` (or merge locally if you are solo 
 ## What not to commit
 
 - **Secrets:** see [SECURITY.md](./SECURITY.md)
-- **`package/dist/`** — ignored; CI or maintainers run `pnpm run build` before `npm publish`
+- **`package/dist/`** - ignored; CI or maintainers run `pnpm run build` before `npm publish`
 - **`node_modules/`**
 - Editor-only paths under **`.cursor/`** (ignored)
 

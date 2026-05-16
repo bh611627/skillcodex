@@ -34,10 +34,10 @@ See [SKILL_STANDARD.md](../SKILL_STANDARD.md) for the full spec. Use [SKILL_TEMP
 
 Every `SKILL.md` must include:
 
-- `# Instructions` — step-by-step behavior for the agent
-- `## Scope and boundaries` — what the skill does **not** do
-- `## Safety` — files read/written, tool boundaries, approval requirements
-- `## Outcomes` — measurable results for the user
+- `# Instructions` - step-by-step behavior for the agent
+- `## Scope and boundaries` - what the skill does **not** do
+- `## Safety` - files read/written, tool boundaries, approval requirements
+- `## Outcomes` - measurable results for the user
 
 Optional but encouraged: `## Output Rules`, `## Troubleshooting`.
 
@@ -69,7 +69,7 @@ Before opening a PR, also run:
 
 ```bash
 pnpm build
-pnpm sync   # if you changed skills/ — regenerates package/src/skills/*.ts
+pnpm sync   # if you changed skills/ - regenerates package/src/skills/*.ts
 ```
 
 ## Pull request checklist

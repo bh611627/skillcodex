@@ -10,7 +10,7 @@ Claude Code reads `SKILL.md` from the skills directory configured by your host.
 
 ## Example 1: seo-agent
 
-**Without skill** — “Improve SEO for my About page.”
+**Without skill** - “Improve SEO for my About page.”
 
 Vague title suggestions, no JSON-LD, mixes Pages Router `next/head` with App Router APIs.
 
@@ -27,7 +27,7 @@ Deliverables in order:
 
 ## Example 2: testing-agent
 
-**Without skill** — “Add tests for `UserCard`.”
+**Without skill** - “Add tests for `UserCard`.”
 
 May use Jest patterns that do not match a Vitest repo.
 

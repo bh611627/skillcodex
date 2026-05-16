@@ -1,44 +1,21 @@
-# SkillCodex — AI agent skills and reusable workflows for React & Next.js
+# SkillCodex - AI agent skills and reusable workflows for React & Next.js
 
 **SkillCodex** is a curated **skills system** for AI agents: structured `SKILL.md` instructions that turn vague prompts into repeatable **workflows** with clear outcomes, safety boundaries, and modern dev tooling support. Built for **Cursor**, **Claude Code**, [skills.sh](https://www.skills.sh/), and any host that reads agent skills.
 
-Use it as a **developer productivity tool** and lightweight **automation framework** for frontend teams — not a black-box plugin. Every skill is readable markdown on GitHub, with an optional npm package for apps and CI.
+Use it as a **developer productivity tool** and lightweight **automation framework** for frontend teams - not a black-box plugin. Every skill is readable markdown on GitHub, with an optional npm package for apps and CI.
 
 [![npm version](https://img.shields.io/npm/v/@skillcodex/skills.svg)](https://www.npmjs.com/package/@skillcodex/skills)
 [![GitHub release](https://img.shields.io/github/v/release/bh611627/skillcodex)](https://github.com/bh611627/skillcodex/releases)
 [![license](https://img.shields.io/github/license/bh611627/skillcodex.svg)](LICENSE)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](.github/CONTRIBUTING.md)
 
-**Links:** [GitHub](https://github.com/bh611627/skillcodex) · [npm `@skillcodex/skills`](https://www.npmjs.com/package/@skillcodex/skills) · [Skill directory](./DIRECTORY.md)
-
----
-
-## What problem this solves
-
-AI coding agents are strong but inconsistent: they rewrite too much, skip accessibility, mix package managers, and rarely state what “done” means.
-
-SkillCodex fixes that with **reviewed agent instructions** — an **AI agent system** where each skill defines scope, `risk_level`, allowed tools, and measurable **outcomes**. You get the same install flow as skills.sh (`npx skills add`), plus full transparency and validation before merge.
-
----
-
-## Features
-
-- **12+ production skills** for React, Next.js, TypeScript, SEO, testing, a11y, Prisma, and env safety
-- **Dual distribution** — GitHub (`skills/*/SKILL.md`) + npm (`@skillcodex/skills`)
-- **Outcomes-first** — no fake install leaderboards; success criteria in every skill
-- **Safety metadata** — `risk_level`, `tools_allowed`, `requires_user_approval`
-- **Offline validation** — Unicode injection scans, frontmatter checks (`pnpm validate`)
-- **CI-ready** — validate, publish, and security workflows included
-- **Authoring tools** — `pnpm new-skill` scaffold, [SKILL_STANDARD.md](./SKILL_STANDARD.md), [skill-creator](./skills/skill-creator/SKILL.md)
-
----
-
-## Installation
-
-### For agents (recommended)
-
-```bash
-npx skills add https://github.com/bh611627/skillcodex --skill code-assistant
+```
+███████╗██╗  ██╗██╗██╗     ██╗     ███████╗
+██╔════╝██║ ██╔╝██║██║     ██║     ██╔════╝
+███████╗█████╔╝ ██║██║     ██║     ███████╗
+╚════██║██╔═██╗ ██║██║     ██║     ╚════██║
+███████║██║  ██╗██║███████╗███████╗███████║
+╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚══════╝
 ```
 
 Install into Cursor (`.cursor/skills/`), Claude Code, or skills.sh-compatible hosts.
@@ -119,10 +96,10 @@ With skill:     scoped diff, file:line findings, stated outcomes, safety limits
 
 ## Why this project matters
 
-- **Reusable workflows** — capture how your team *actually* ships (SEO, a11y, TS strictness) once, reuse everywhere.
-- **Trust** — full `SKILL.md` on GitHub; validation catches prompt-injection Unicode and missing safety sections.
-- **Modern dev tooling** — pnpm, Next.js App Router, Vitest, Playwright, Prisma patterns baked in.
-- **AI + human readable** — structured for agents *and* code review in PRs.
+- **Reusable workflows** - capture how your team *actually* ships (SEO, a11y, TS strictness) once, reuse everywhere.
+- **Trust** - full `SKILL.md` on GitHub; validation catches prompt-injection Unicode and missing safety sections.
+- **Modern dev tooling** - pnpm, Next.js App Router, Vitest, Playwright, Prisma patterns baked in.
+- **AI + human readable** - structured for agents *and* code review in PRs.
 
 Compared to [skills.sh](https://www.skills.sh/): same `npx skills add` discovery, but **outcomes** instead of install counts, and every skill is auditable markdown.
 
@@ -151,7 +128,7 @@ Compared to [skills.sh](https://www.skills.sh/): same `npx skills add` discovery
 
 | Path | Purpose |
 |------|---------|
-| `skills/` | Source of truth — one `SKILL.md` per skill |
+| `skills/` | Source of truth - one `SKILL.md` per skill |
 | `references/` | Shared rules (design, SEO, safety) |
 | `package/` | npm package `@skillcodex/skills` |
 | `docs/` | Introduction, usage, contributing |
@@ -176,11 +153,11 @@ Compared to [skills.sh](https://www.skills.sh/): same `npx skills add` discovery
 
 ## Roadmap
 
-1. **api-route-agent** — Route Handlers + zod validation
-2. **i18n-agent** — App Router i18n setup and audit
-3. **auth-agent** — Session/OAuth without secret leakage
-4. **monorepo-agent** — pnpm workspaces + Turborepo
-5. **storybook-agent** — Stories aligned with design-guidelines
+1. **api-route-agent** - Route Handlers + zod validation
+2. **i18n-agent** - App Router i18n setup and audit
+3. **auth-agent** - Session/OAuth without secret leakage
+4. **monorepo-agent** - pnpm workspaces + Turborepo
+5. **storybook-agent** - Stories aligned with design-guidelines
 
 ---
 

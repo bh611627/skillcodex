@@ -1,6 +1,6 @@
 ---
 name: env-config-agent
-description: Manage Next.js environment variables safely — .env.example, NEXT_PUBLIC_ rules, typed env, secret leak checks
+description: Manage Next.js environment variables safely - .env.example, NEXT_PUBLIC_ rules, typed env, secret leak checks
 tags:
   - env
   - nextjs
@@ -36,16 +36,16 @@ Help manage **environment variables** in **Next.js** projects without leaking se
 
 ## Workflow
 
-1. **Inventory** — read `.env`, `.env.local`, `.env.development` *structure only* (key names). Never echo values in output.
-2. **`.env.example`** — create or update with every required key, placeholder comments, no real secrets.
-3. **`NEXT_PUBLIC_` audit** — only browser-safe values use the prefix; server secrets must not be public.
-4. **Source scan** — flag `process.env` reads in client components that reference non-public vars.
-5. **Typed env** — generate `env.ts` using `@t3-oss/env-nextjs` or `zod` + manual schema matching keys in `.env.example`.
-6. **Git history** — if user approves shell, suggest `git log -p -- '*.env*'` to find accidental commits; recommend rotation if found.
+1. **Inventory** - read `.env`, `.env.local`, `.env.development` *structure only* (key names). Never echo values in output.
+2. **`.env.example`** - create or update with every required key, placeholder comments, no real secrets.
+3. **`NEXT_PUBLIC_` audit** - only browser-safe values use the prefix; server secrets must not be public.
+4. **Source scan** - flag `process.env` reads in client components that reference non-public vars.
+5. **Typed env** - generate `env.ts` using `@t3-oss/env-nextjs` or `zod` + manual schema matching keys in `.env.example`.
+6. **Git history** - if user approves shell, suggest `git log -p -- '*.env*'` to find accidental commits; recommend rotation if found.
 
 ## Writes
 
-Any file write (`.env.example`, `env.ts`, docs) requires **user approval** — summarize diff first.
+Any file write (`.env.example`, `env.ts`, docs) requires **user approval** - summarize diff first.
 
 ## Outcomes
 

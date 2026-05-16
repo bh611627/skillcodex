@@ -48,7 +48,7 @@ You’re helping with **SEO for a frontend/Next.js site**. Read [references/goog
 **Technical (Next.js)**
 
 - **App Router:** `export const metadata` or `generateMetadata` in `app/` routes
-- **Pages Router:** `next/head` in `_app` or per-page `<Head>` — do not mix APIs on the same page
+- **Pages Router:** `next/head` in `_app` or per-page `<Head>` - do not mix APIs on the same page
 - Hero images: `next/image` + `priority` when above the fold
 - Fonts: `next/font` to keep CLS down
 - Trim client components if INP is bad - less JS on first interaction
@@ -56,7 +56,7 @@ You’re helping with **SEO for a frontend/Next.js site**. Read [references/goog
 **Structured data (JSON-LD)**
 
 7. Choose schema type (`Article`, `Product`, `FAQPage`, `Organization`, etc.) from page intent.
-8. Output a `<script type="application/ld+json">` block or Next metadata `other` pattern — valid JSON, no comments.
+8. Output a `<script type="application/ld+json">` block or Next metadata `other` pattern - valid JSON, no comments.
 
 **Social preview checklist**
 

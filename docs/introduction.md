@@ -16,8 +16,8 @@ SkillCodex is an open-source **AI agent skills** library for **React** and **Nex
 SkillCodex is a **developer productivity tool**, not a hosted agent:
 
 - **GitHub** - browse, fork, and PR skills like code
-- **npm** - `import` skills in dashboards, CLIs, or internal tools
-- **skills.sh CLI** - `npx skills add` for one-command agent install
+- **npm** - `import` skills in dashboards, CLIs, or internal tools ([publishing guide](./publishing-skills-sh-and-npm.md))
+- **skills.sh CLI** - `npx skills add` for one-command agent install ([official docs](https://www.skills.sh/docs))
 
 ## Ecosystem
 
@@ -31,4 +31,4 @@ SkillCodex is a **developer productivity tool**, not a hosted agent:
 - Maintainers publishing **automation-friendly** instructions with safety metadata
 - Tool builders needing structured skill JSON via `skills-index.json`
 
-Next: [Usage](./usage.md) · [Contributing](./contributing.md)
+Next: [Usage](./usage.md) · [Install CLI](./install-skills-cli.md) · [Publishing (npm + skills.sh)](./publishing-skills-sh-and-npm.md) · [Read full docs](./read-full-documentation.md) · [Contributing](./contributing.md)

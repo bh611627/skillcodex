@@ -12,7 +12,8 @@ body:
         - web-design-guidelines
         - skillcodex-browser-ui
         - content-creator
-        - seo-agent
+        - seo-expert
+        - python-productive
         - code-assistant
         - skill-creator
         - typescript-refactor
@@ -21,6 +22,30 @@ body:
         - env-config-agent
         - performance-audit
         - database-schema-agent
+        - next-server-patterns
+        - api-handbook
+        - forms-and-validation
+        - i18n-handbook
+        - security-headers
+        - monorepo-tooling
+        - github-actions-ci
+        - dependency-migrations
+        - markdown-pipeline
+        - react-email-templates
+        - webhook-receivers
+        - edge-runtime-handbook
+        - error-loading-not-found
+        - semantic-html-css
+        - secure-dependencies
+        - client-data-fetching
+        - auth-handbook
+        - observability-handbook
+        - payments-handbook
+        - server-caching-handbook
+        - realtime-handbook
+        - container-local-dev
+        - storybook-handbook
+        - data-layer-handbook
         - other
     validations:
       required: true

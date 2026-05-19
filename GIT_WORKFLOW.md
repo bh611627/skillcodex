@@ -20,6 +20,7 @@ git checkout -b feature/my-change
 # Edit skills/*/, references/*, package when needed
 cd package && pnpm install && pnpm run sync && pnpm run build && pnpm run validate
 cd ..
+pnpm export-skills-sh
 
 git add -p   # review hunks
 git status   # confirm no .env, no dist/ unless you changed publish policy (dist is gitignored)
@@ -36,11 +37,13 @@ Open a **pull request** on GitHub into `main` (or merge locally if you are solo 
 - **`node_modules/`**
 - Editor-only paths under **`.cursor/`** (ignored)
 
-## Releases (npm)
+## Releases (npm + skills.sh context)
 
-1. Bump `version` in `package/package.json`
+1. Bump `version` in `package/package.json` and update [CHANGELOG.md](./CHANGELOG.md).
 2. `cd package && pnpm run sync && pnpm run build && pnpm run validate`
-3. `npm publish` (from `package/` with npm logged in) when ready
+3. `npm publish` (from `package/` with npm logged in) when ready.
+
+**skills.sh:** there is no second upload step for the public directory — see [docs/publishing-skills-sh-and-npm.md](./docs/publishing-skills-sh-and-npm.md) and [skills.sh/docs](https://www.skills.sh/docs).
 
 ## If you leaked a secret
 

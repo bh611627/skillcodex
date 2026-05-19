@@ -1,0 +1,127 @@
+import { defineSkill } from "../types.js";
+
+const skillMd = `---
+name: github-actions-ci
+description: GitHub Actions for Next.js and TypeScript — lint test build cache and PR checks
+tags:
+  - ci
+  - github-actions
+  - nextjs
+version: 1.0.1
+category: development
+outcomes:
+  - Workflow YAML with least-privilege permissions and cancel-in-progress concurrency
+  - pnpm frozen lockfile cache and Node LTS pin matching package engines
+  - Optional audit job and dependency-review pointer for lockfile PRs
+stack:
+  - github-actions
+  - pnpm
+  - node
+last_reviewed: 2026-05-19
+risk_level: low
+tools_allowed: repo-files
+requires_user_approval: false
+compatibility:
+  - cursor
+  - claude-code
+  - skills-sh
+  - generic-markdown
+references:
+  - references/skill-safety.md
+  - references/dependency-security.md
+---
+
+# Instructions
+
+Add or improve **GitHub Actions** for a **Next.js** + **pnpm** repo.
+
+1. **Workflow permissions:** default \`contents: read\` at workflow or job level; elevate \`id-token\` or \`packages\` only where OIDC/npm publish needs it — least privilege.
+2. **Concurrency:** \`group: \${{ github.workflow }}-\${{ github.ref }}\` + \`cancel-in-progress: true\` on PR workflows to save minutes and avoid stale deploys.
+3. Triggers: \`pull_request\` + \`push\` to \`main\`; optional \`workflow_dispatch\`.
+4. **pnpm:** \`pnpm/action-setup\` + cache via \`pnpm store path\` or built-in cache; always **\`pnpm install --frozen-lockfile\`** in CI.
+5. Jobs: \`lint\` → \`typecheck\` → \`test\` → \`build\` with \`needs\` where parallel is impossible; optional parallel **\`audit\`** job (\`pnpm audit --audit-level=high\` or org policy) — see \`secure-dependencies\`.
+6. **Next build:** set \`NODE_OPTIONS\` only if required; artifact \`next build\` trace for failures optional.
+7. **Fork PRs:** \`pull_request_target\` avoided unless user understands risk; default \`pull_request\`.
+8. **Node version:** pin \`22\` or \`20\` LTS with \`actions/setup-node\` and match \`engines\` in \`package.json\`.
+
+## Outcomes
+
+- Workflow file path + YAML body or diff against existing workflow.
+
+## Output Rules
+
+Fenced \`yaml\` for workflow; mention required secrets by name only.
+
+## Scope and boundaries
+
+- **In scope:** CI YAML, cache, job graph.
+- **Out of scope:** self-hosted runner fleet design, Kubernetes deploy.
+
+## Safety
+
+- Never echo \`GITHUB_TOKEN\` patterns; use \`\${{ secrets.* }}\` placeholders.
+
+## Troubleshooting
+
+- **pnpm frozen-lockfile fails:** align CI with lockfile version from contributor.
+- **OOM on build:** split build job memory or enable standalone output only if user wants.
+
+**GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/github-actions-ci/SKILL.md  
+**npm:** https://www.npmjs.com/package/@skillcodex/skills
+`;
+
+export const githubActionsCi = defineSkill({
+  name: "github-actions-ci",
+  description: "GitHub Actions for Next.js and TypeScript — lint test build cache and PR checks",
+  tags: ["ci","github-actions","nextjs"],
+  version: "1.0.1",
+  category: "development",
+  lastReviewed: "Tue May 19 2026 05:00:00 GMT+0500 (Pakistan Standard Time)",
+  riskLevel: "low",
+  toolsAllowed: "repo-files",
+  requiresUserApproval: false,
+  compatibility: ["cursor","claude-code","skills-sh","generic-markdown"],
+  outcomes: ["Workflow YAML with least-privilege permissions and cancel-in-progress concurrency","pnpm frozen lockfile cache and Node LTS pin matching package engines","Optional audit job and dependency-review pointer for lockfile PRs"],
+  stack: ["github-actions","pnpm","node"],
+  references: ["references/skill-safety.md","references/dependency-security.md"],
+  instructions: `# Instructions
+
+Add or improve **GitHub Actions** for a **Next.js** + **pnpm** repo.
+
+1. **Workflow permissions:** default \`contents: read\` at workflow or job level; elevate \`id-token\` or \`packages\` only where OIDC/npm publish needs it — least privilege.
+2. **Concurrency:** \`group: \${{ github.workflow }}-\${{ github.ref }}\` + \`cancel-in-progress: true\` on PR workflows to save minutes and avoid stale deploys.
+3. Triggers: \`pull_request\` + \`push\` to \`main\`; optional \`workflow_dispatch\`.
+4. **pnpm:** \`pnpm/action-setup\` + cache via \`pnpm store path\` or built-in cache; always **\`pnpm install --frozen-lockfile\`** in CI.
+5. Jobs: \`lint\` → \`typecheck\` → \`test\` → \`build\` with \`needs\` where parallel is impossible; optional parallel **\`audit\`** job (\`pnpm audit --audit-level=high\` or org policy) — see \`secure-dependencies\`.
+6. **Next build:** set \`NODE_OPTIONS\` only if required; artifact \`next build\` trace for failures optional.
+7. **Fork PRs:** \`pull_request_target\` avoided unless user understands risk; default \`pull_request\`.
+8. **Node version:** pin \`22\` or \`20\` LTS with \`actions/setup-node\` and match \`engines\` in \`package.json\`.
+
+## Outcomes
+
+- Workflow file path + YAML body or diff against existing workflow.`,
+  outputRules: `## Output Rules
+
+Fenced \`yaml\` for workflow; mention required secrets by name only.
+
+## Scope and boundaries
+
+- **In scope:** CI YAML, cache, job graph.
+- **Out of scope:** self-hosted runner fleet design, Kubernetes deploy.
+
+## Safety
+
+- Never echo \`GITHUB_TOKEN\` patterns; use \`\${{ secrets.* }}\` placeholders.
+
+## Troubleshooting
+
+- **pnpm frozen-lockfile fails:** align CI with lockfile version from contributor.
+- **OOM on build:** split build job memory or enable standalone output only if user wants.
+
+**GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/github-actions-ci/SKILL.md  
+**npm:** https://www.npmjs.com/package/@skillcodex/skills`,
+  skillMd,
+  githubPath: "skills/github-actions-ci/SKILL.md",
+});
+
+export default githubActionsCi;

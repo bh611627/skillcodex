@@ -3,18 +3,20 @@
 ## Install a skill
 
 ```bash
-npx skills add https://github.com/bh611627/skillcodex --skill seo-agent
+npx skills add https://github.com/bh611627/skillcodex --skill seo-expert
 ```
 
 Claude Code reads `SKILL.md` from the skills directory configured by your host.
 
-## Example 1: seo-agent
+Slugs: [DIRECTORY.md](../../DIRECTORY.md). **skills.sh vs npm:** [docs/publishing-skills-sh-and-npm.md](../../docs/publishing-skills-sh-and-npm.md).
+
+## Example 1: seo-expert
 
 **Without skill** - “Improve SEO for my About page.”
 
 Vague title suggestions, no JSON-LD, mixes Pages Router `next/head` with App Router APIs.
 
-**With `seo-agent` loaded**
+**With `seo-expert` loaded**
 
 Deliverables in order:
 

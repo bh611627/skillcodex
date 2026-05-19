@@ -1,0 +1,128 @@
+import { defineSkill } from "../types.js";
+
+const skillMd = `---
+name: data-layer-handbook
+description: Prisma vs Drizzle and SQL in Next.js — when to choose relations migrations serverless drivers and pairing with database-schema-agent
+tags:
+  - database
+  - drizzle
+  - prisma
+  - nextjs
+version: 1.0.0
+category: development
+outcomes:
+  - Decision matrix Prisma Drizzle raw SQL for greenfield vs legacy constraints
+  - Serverless and edge driver constraints connection pooling server vs edge split
+  - Pointer to database-schema-agent for Prisma deep schema work
+stack:
+  - next
+  - prisma
+  - drizzle-orm
+  - typescript
+last_reviewed: 2026-05-19
+risk_level: low
+tools_allowed: read-only
+requires_user_approval: false
+compatibility:
+  - cursor
+  - claude-code
+  - skills-sh
+  - generic-markdown
+references:
+  - references/stack-nextjs.md
+  - references/skill-safety.md
+  - references/data-layer-choice.md
+---
+
+# Instructions
+
+Pick a **data layer** for **Next.js** when Prisma is not assumed.
+
+1. **Prisma:** best when team wants **migrations**, **studio**, rich **relation** API, and mostly **Node** runtime. Use **\`database-schema-agent\`** for schema design and audits.
+2. **Drizzle:** strong when you want **SQL-first**, lighter runtime, **edge**-friendly drivers with explicit SQL; migrations via \`drizzle-kit\` — verify driver supports your DB (Postgres, SQLite, etc.).
+3. **Raw SQL / Kysely:** acceptable for reporting or tight performance paths — isolate in repository modules; parameterize queries (**no string concat** for user input).
+4. **Serverless pooling:** avoid unbounded \`new Client()\` per request; use **connection pooler** (PgBouncer, Neon, Supavisor, etc.) — name pattern, not vendor mandate.
+5. **Edge:** Prisma often needs **Data Proxy** or separate Node path; Drizzle edge drivers still have SQL dialect limits — align with **\`edge-runtime-handbook\`**.
+6. **Transactions:** boundary at use-case level; retry idempotency for user-facing writes documented in **\`api-handbook\`**.
+
+## Outcomes
+
+- One-page matrix: team skill, edge need, reporting, → recommended tool.
+- “If you already have X in repo, default to X” rule.
+
+## Output Rules
+
+No schema dumps; link to existing \`schema.prisma\` or \`drizzle/\` folder if present.
+
+## Scope and boundaries
+
+- **In scope:** ORM/SQL choice, pooling, edge constraints.
+- **Out of scope:** distributed saga orchestration, data warehouse ETL.
+
+## Safety
+
+- read-only; flag SQL injection if user shows string-built queries.
+
+## Troubleshooting
+
+- **Too many connections:** missing pooler or Prisma \`connection_limit\` in serverless.
+- **Type drift:** generate types from DB (\`drizzle-kit pull\`) vs hand models — pick one source of truth.
+
+**GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/data-layer-handbook/SKILL.md  
+**npm:** https://www.npmjs.com/package/@skillcodex/skills
+`;
+
+export const dataLayerHandbook = defineSkill({
+  name: "data-layer-handbook",
+  description: "Prisma vs Drizzle and SQL in Next.js — when to choose relations migrations serverless drivers and pairing with database-schema-agent",
+  tags: ["database","drizzle","prisma","nextjs"],
+  version: "1.0.0",
+  category: "development",
+  lastReviewed: "Tue May 19 2026 05:00:00 GMT+0500 (Pakistan Standard Time)",
+  riskLevel: "low",
+  toolsAllowed: "read-only",
+  requiresUserApproval: false,
+  compatibility: ["cursor","claude-code","skills-sh","generic-markdown"],
+  outcomes: ["Decision matrix Prisma Drizzle raw SQL for greenfield vs legacy constraints","Serverless and edge driver constraints connection pooling server vs edge split","Pointer to database-schema-agent for Prisma deep schema work"],
+  stack: ["next","prisma","drizzle-orm","typescript"],
+  references: ["references/stack-nextjs.md","references/skill-safety.md","references/data-layer-choice.md"],
+  instructions: `# Instructions
+
+Pick a **data layer** for **Next.js** when Prisma is not assumed.
+
+1. **Prisma:** best when team wants **migrations**, **studio**, rich **relation** API, and mostly **Node** runtime. Use **\`database-schema-agent\`** for schema design and audits.
+2. **Drizzle:** strong when you want **SQL-first**, lighter runtime, **edge**-friendly drivers with explicit SQL; migrations via \`drizzle-kit\` — verify driver supports your DB (Postgres, SQLite, etc.).
+3. **Raw SQL / Kysely:** acceptable for reporting or tight performance paths — isolate in repository modules; parameterize queries (**no string concat** for user input).
+4. **Serverless pooling:** avoid unbounded \`new Client()\` per request; use **connection pooler** (PgBouncer, Neon, Supavisor, etc.) — name pattern, not vendor mandate.
+5. **Edge:** Prisma often needs **Data Proxy** or separate Node path; Drizzle edge drivers still have SQL dialect limits — align with **\`edge-runtime-handbook\`**.
+6. **Transactions:** boundary at use-case level; retry idempotency for user-facing writes documented in **\`api-handbook\`**.
+
+## Outcomes
+
+- One-page matrix: team skill, edge need, reporting, → recommended tool.
+- “If you already have X in repo, default to X” rule.`,
+  outputRules: `## Output Rules
+
+No schema dumps; link to existing \`schema.prisma\` or \`drizzle/\` folder if present.
+
+## Scope and boundaries
+
+- **In scope:** ORM/SQL choice, pooling, edge constraints.
+- **Out of scope:** distributed saga orchestration, data warehouse ETL.
+
+## Safety
+
+- read-only; flag SQL injection if user shows string-built queries.
+
+## Troubleshooting
+
+- **Too many connections:** missing pooler or Prisma \`connection_limit\` in serverless.
+- **Type drift:** generate types from DB (\`drizzle-kit pull\`) vs hand models — pick one source of truth.
+
+**GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/data-layer-handbook/SKILL.md  
+**npm:** https://www.npmjs.com/package/@skillcodex/skills`,
+  skillMd,
+  githubPath: "skills/data-layer-handbook/SKILL.md",
+});
+
+export default dataLayerHandbook;

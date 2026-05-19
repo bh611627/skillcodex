@@ -41,6 +41,8 @@ Every `SKILL.md` must include:
 
 Optional but encouraged: `## Output Rules`, `## Troubleshooting`.
 
+Contributors and hosts should **read every linked `references/` file in full** before relying on a skill — see [docs/read-full-documentation.md](../docs/read-full-documentation.md).
+
 ### Scaffold a new skill locally
 
 ```bash
@@ -85,7 +87,16 @@ pnpm sync   # if you changed skills/ - regenerates package/src/skills/*.ts
 - [ ] `pnpm validate` passes with zero errors
 - [ ] Skill tested on at least one agent host (Cursor, Claude Code, or skills.sh)
 - [ ] [DIRECTORY.md](../DIRECTORY.md) updated if adding a user-facing skill row (maintainers may do this on merge)
+- [ ] [docs/skills-coverage-matrix.md](../docs/skills-coverage-matrix.md) updated for new concern rows
+- [ ] `pnpm export-skills-sh` run so [`skills-sh-catalog/`](../skills-sh-catalog/) matches `skills/`
 - [ ] No secrets, API keys, or real env values in the diff
+
+## Publishing (maintainers only)
+
+Releases use **two channels** (GitHub is always the source of truth):
+
+1. **npm** — bump `package/package.json` `version`, run `pnpm run sync && pnpm run validate && pnpm run build`, then `npm publish` from `package/`. See [docs/publishing-skills-sh-and-npm.md](../docs/publishing-skills-sh-and-npm.md).
+2. **skills.sh** — there is no repo-side bulk upload; users install via `npx skills add` per [skills.sh/docs](https://www.skills.sh/docs). Update [CHANGELOG.md](../CHANGELOG.md) and optional README badge when cutting a release.
 
 ## Security
 

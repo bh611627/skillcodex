@@ -7,6 +7,12 @@ Skills-Agent/                    # clone of github.com/bh611627/skillcodex
 ├── skills/                      # Source of truth: one folder per skill
 │   └── <skill-name>/
 │       └── SKILL.md
+├── skills-sh-catalog/           # Generated mirror: skills/<name>/SKILL.md (pnpm export-skills-sh)
+│   ├── README.md
+│   ├── REQUIREMENTS.md          # skills.sh docs alignment checklist
+│   └── skills/
+│       └── <skill-name>/
+│           └── SKILL.md         # copy of ../skills/<name>/SKILL.md
 ├── references/                  # Shared deep rules (linked from skills, keeps SKILL.md slim)
 ├── package/                     # @skillcodex/skills - sync + publish only
 │   ├── src/skills/              # Generated from ../skills/*/SKILL.md (do not hand-edit)
@@ -29,6 +35,7 @@ Skills-Agent/                    # clone of github.com/bh611627/skillcodex
 | Goal | Edit |
 |------|--------|
 | Skill behavior / outcomes | `skills/<name>/SKILL.md` |
+| skills.sh–shaped mirror | Run `pnpm export-skills-sh` (writes `skills-sh-catalog/skills/`) |
 | Long UI rules | `references/design-guidelines.md` (and link from skill) |
 | npm module text / exports | Run `pnpm run sync` in `package/` after SKILL changes |
 | Vercel CLI repo PR | `contrib/vercel-labs-skills/` → copy into a **fork** of `vercel-labs/skills` |

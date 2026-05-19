@@ -8,6 +8,8 @@ npx skills add https://github.com/bh611627/skillcodex --skill code-assistant
 
 Or copy `skills/<name>/SKILL.md` into `.cursor/skills/` (project) or `~/.cursor/skills/` (global).
 
+Slugs: [DIRECTORY.md](../../DIRECTORY.md). **skills.sh vs npm:** [docs/publishing-skills-sh-and-npm.md](../../docs/publishing-skills-sh-and-npm.md).
+
 ## Example 1: code-assistant
 
 **Without skill** - user asks: “Fix the login button styling.”

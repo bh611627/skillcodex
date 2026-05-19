@@ -83,7 +83,7 @@ Same structure as above. Fenced code with file paths.
 ## When NOT to use this skill
 
 - Large greenfield apps (use domain skills: \`web-design-guidelines\`, \`testing-agent\`, etc.).
-- SEO-only or content-only requests (use \`seo-agent\`, \`content-creator\`).
+- SEO-only or content-only requests (use \`seo-expert\`, \`content-creator\`).
 - Database schema design (use \`database-schema-agent\`).
 - Legal/compliance sign-off or production incident response.
 
@@ -170,7 +170,7 @@ Same structure as above. Fenced code with file paths.
 ## When NOT to use this skill
 
 - Large greenfield apps (use domain skills: \`web-design-guidelines\`, \`testing-agent\`, etc.).
-- SEO-only or content-only requests (use \`seo-agent\`, \`content-creator\`).
+- SEO-only or content-only requests (use \`seo-expert\`, \`content-creator\`).
 - Database schema design (use \`database-schema-agent\`).
 - Legal/compliance sign-off or production incident response.
 

@@ -8,7 +8,7 @@ tags:
   - nextjs
   - security
   - zod
-version: 1.0.0
+version: 1.0.1
 category: development
 outcomes:
   - .env.example lists all required keys with no secret values
@@ -18,7 +18,7 @@ stack:
   - zod
   - "@t3-oss/env-nextjs"
   - pnpm
-last_reviewed: 2026-05-16
+last_reviewed: 2026-05-19
 risk_level: medium
 tools_allowed: repo-files
 requires_user_approval: true
@@ -40,7 +40,7 @@ Help manage **environment variables** in **Next.js** projects without leaking se
 
 1. **Inventory** - read \`.env\`, \`.env.local\`, \`.env.development\` *structure only* (key names). Never echo values in output.
 2. **\`.env.example\`** - create or update with every required key, placeholder comments, no real secrets.
-3. **\`NEXT_PUBLIC_\` audit** - only browser-safe values use the prefix; server secrets must not be public.
+3. **\`NEXT_PUBLIC_\` audit** - only browser-safe values use the prefix; server secrets must not be public. For **Vite**, the equivalent is \`VITE_\` — same rule: never prefix secrets.
 4. **Source scan** - flag \`process.env\` reads in client components that reference non-public vars.
 5. **Typed env** - generate \`env.ts\` using \`@t3-oss/env-nextjs\` or \`zod\` + manual schema matching keys in \`.env.example\`.
 6. **Git history** - if user approves shell, suggest \`git log -p -- '*.env*'\` to find accidental commits; recommend rotation if found.
@@ -84,9 +84,9 @@ export const envConfigAgent = defineSkill({
   name: "env-config-agent",
   description: "Manage Next.js environment variables safely - .env.example, NEXT_PUBLIC_ rules, typed env, secret leak checks",
   tags: ["env","nextjs","security","zod"],
-  version: "1.0.0",
+  version: "1.0.1",
   category: "development",
-  lastReviewed: "Sat May 16 2026 05:00:00 GMT+0500 (Pakistan Standard Time)",
+  lastReviewed: "Tue May 19 2026 05:00:00 GMT+0500 (Pakistan Standard Time)",
   riskLevel: "medium",
   toolsAllowed: "repo-files",
   requiresUserApproval: true,
@@ -102,7 +102,7 @@ Help manage **environment variables** in **Next.js** projects without leaking se
 
 1. **Inventory** - read \`.env\`, \`.env.local\`, \`.env.development\` *structure only* (key names). Never echo values in output.
 2. **\`.env.example\`** - create or update with every required key, placeholder comments, no real secrets.
-3. **\`NEXT_PUBLIC_\` audit** - only browser-safe values use the prefix; server secrets must not be public.
+3. **\`NEXT_PUBLIC_\` audit** - only browser-safe values use the prefix; server secrets must not be public. For **Vite**, the equivalent is \`VITE_\` — same rule: never prefix secrets.
 4. **Source scan** - flag \`process.env\` reads in client components that reference non-public vars.
 5. **Typed env** - generate \`env.ts\` using \`@t3-oss/env-nextjs\` or \`zod\` + manual schema matching keys in \`.env.example\`.
 6. **Git history** - if user approves shell, suggest \`git log -p -- '*.env*'\` to find accidental commits; recommend rotation if found.

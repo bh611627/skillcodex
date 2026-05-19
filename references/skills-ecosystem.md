@@ -17,7 +17,7 @@ npx skills add https://github.com/bh611627/skillcodex --skill web-design-guideli
 npx skills add bh611627/skillcodex --list
 ```
 
-Same CLI as Vercel’s docs describe for [agent-skills](https://github.com/vercel-labs/agent-skills#installation).
+Same CLI as Vercel’s docs describe for [agent-skills](https://github.com/vercel-labs/agent-skills#installation). **SkillCodex publishing:** npm vs skills.sh leaderboard is documented in [docs/publishing-skills-sh-and-npm.md](../docs/publishing-skills-sh-and-npm.md) (aligned with [skills.sh/docs](https://www.skills.sh/docs)).
 
 ## Publish your design skill into **agent-skills** (PR workflow)
 

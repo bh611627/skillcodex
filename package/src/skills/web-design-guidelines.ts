@@ -9,11 +9,11 @@ tags:
   - accessibility
   - react
   - documentation
-version: 2.1.0
+version: 2.2.0
 category: development
 outcomes:
   - Doc UI implemented with design-guidelines checklist passed (tokens, skeletons, whitespace)
-  - OR file:line audit + pass/fail for a11y, motion, anti-SaaS violations
+  - OR file:line audit + pass/fail for a11y, motion, anti-sales-led violations
 stack:
   - react
   - typescript
@@ -44,7 +44,7 @@ This skill merges **doc UI implementation** (formerly \`documentation-ui\`) and 
 
 Canonical rules live in [design-guidelines.md](../../references/design-guidelines.md) only. **STRICT UI ONLY** - no backend, API, DB, auth.
 
-**Stack:** **React** + **TypeScript** + **Tailwind** + **react-markdown** + **remark-gfm** + **react-icons**. Next.js or Vite as host is fine. **Motion:** default to **\`<div>\` + Tailwind** transitions; **\`framer-motion\`** only in **client** components (\`'use client'\` in Next). If \`motion.div\` causes RSC or build errors, replace with **\`div\`** + Tailwind (see design-guidelines **Motion** section).
+**Motion:** use **shell + optional motion leaf** from [design-guidelines.md](../../references/design-guidelines.md): Tier 0 \`div\` + \`CARD_HOVER\` everywhere by default; Tier 2 \`framer-motion\` only in a dedicated \`*Motion.tsx\` with \`'use client'\`. **Never** mix \`motion.div\` and layout \`div\` in one file — split or drop Framer. Skeletons: always \`animate-pulse\` on \`div\`, never \`motion\`.
 
 ---
 
@@ -68,7 +68,7 @@ Use when the user asks to review, audit, or check accessibility.
 
 1. Read project TSX against [design-guidelines.md](../../references/design-guidelines.md).
 2. If file missing locally, fetch \`https://raw.githubusercontent.com/bh611627/skillcodex/main/references/design-guidelines.md\`.
-3. Flag: missing skeletons, weak whitespace, custom CSS over Tailwind, gradients, glass, SaaS landing/dashboard, a11y gaps; testimonials without **alt** on avatars; buttons without pointer/hover/focus; **\`motion\` / \`motion.div\` in Server Components** (Next) without \`'use client'\`.
+3. Flag: missing skeletons, weak whitespace, custom CSS over Tailwind, gradient-heavy backgrounds, glassmorphism, sales-led landing or vendor metric dashboard chrome, a11y gaps; testimonials without **alt** on avatars; buttons without pointer/hover/focus; **\`motion\` / \`motion.div\` in Server Components** (Next) without \`'use client'\`; **shell vs leaf** violations (Framer mixed with layout in one file); wrong **named style** or layout table row for stated industry.
 4. Optional deep pass: Vercel \`web-interface-guidelines/main/command.md\`.
 
 Output: grouped \`file:line\` findings + checklist. No preamble.
@@ -86,7 +86,7 @@ State which mode. Then evidence (files or findings).
 
 ## Scope and boundaries
 
-- Frontend documentation UIs only - not SaaS marketing sites.
+- Frontend documentation UIs only - not sales-led marketing sites.
 
 ## Safety
 
@@ -107,14 +107,14 @@ export const webDesignGuidelines = defineSkill({
   name: "web-design-guidelines",
   description: "Web design for SkillCodex doc UIs - React + TypeScript + Tailwind; build or audit per design-guidelines. Prefer div + CSS motion; use framer-motion only in client components.",
   tags: ["ui","design-system","accessibility","react","documentation"],
-  version: "2.1.0",
+  version: "2.2.0",
   category: "development",
   lastReviewed: "Sat May 16 2026 05:00:00 GMT+0500 (Pakistan Standard Time)",
   riskLevel: "low",
   toolsAllowed: "repo-files",
   requiresUserApproval: false,
   compatibility: ["generic-markdown","cursor","claude-code","skills-sh"],
-  outcomes: ["Doc UI implemented with design-guidelines checklist passed (tokens, skeletons, whitespace)","OR file:line audit + pass/fail for a11y, motion, anti-SaaS violations"],
+  outcomes: ["Doc UI implemented with design-guidelines checklist passed (tokens, skeletons, whitespace)","OR file:line audit + pass/fail for a11y, motion, anti-sales-led violations"],
   stack: ["react","typescript","tailwindcss","react-markdown","remark-gfm","react-icons","pnpm","framer-motion"],
   references: ["references/design-guidelines.md","references/react-stack.md","references/data-source.md"],
   instructions: `# Instructions
@@ -123,7 +123,7 @@ This skill merges **doc UI implementation** (formerly \`documentation-ui\`) and 
 
 Canonical rules live in [design-guidelines.md](../../references/design-guidelines.md) only. **STRICT UI ONLY** - no backend, API, DB, auth.
 
-**Stack:** **React** + **TypeScript** + **Tailwind** + **react-markdown** + **remark-gfm** + **react-icons**. Next.js or Vite as host is fine. **Motion:** default to **\`<div>\` + Tailwind** transitions; **\`framer-motion\`** only in **client** components (\`'use client'\` in Next). If \`motion.div\` causes RSC or build errors, replace with **\`div\`** + Tailwind (see design-guidelines **Motion** section).
+**Motion:** use **shell + optional motion leaf** from [design-guidelines.md](../../references/design-guidelines.md): Tier 0 \`div\` + \`CARD_HOVER\` everywhere by default; Tier 2 \`framer-motion\` only in a dedicated \`*Motion.tsx\` with \`'use client'\`. **Never** mix \`motion.div\` and layout \`div\` in one file — split or drop Framer. Skeletons: always \`animate-pulse\` on \`div\`, never \`motion\`.
 
 ---
 
@@ -147,7 +147,7 @@ Use when the user asks to review, audit, or check accessibility.
 
 1. Read project TSX against [design-guidelines.md](../../references/design-guidelines.md).
 2. If file missing locally, fetch \`https://raw.githubusercontent.com/bh611627/skillcodex/main/references/design-guidelines.md\`.
-3. Flag: missing skeletons, weak whitespace, custom CSS over Tailwind, gradients, glass, SaaS landing/dashboard, a11y gaps; testimonials without **alt** on avatars; buttons without pointer/hover/focus; **\`motion\` / \`motion.div\` in Server Components** (Next) without \`'use client'\`.
+3. Flag: missing skeletons, weak whitespace, custom CSS over Tailwind, gradient-heavy backgrounds, glassmorphism, sales-led landing or vendor metric dashboard chrome, a11y gaps; testimonials without **alt** on avatars; buttons without pointer/hover/focus; **\`motion\` / \`motion.div\` in Server Components** (Next) without \`'use client'\`; **shell vs leaf** violations (Framer mixed with layout in one file); wrong **named style** or layout table row for stated industry.
 4. Optional deep pass: Vercel \`web-interface-guidelines/main/command.md\`.
 
 Output: grouped \`file:line\` findings + checklist. No preamble.
@@ -164,7 +164,7 @@ State which mode. Then evidence (files or findings).
 
 ## Scope and boundaries
 
-- Frontend documentation UIs only - not SaaS marketing sites.
+- Frontend documentation UIs only - not sales-led marketing sites.
 
 ## Safety
 

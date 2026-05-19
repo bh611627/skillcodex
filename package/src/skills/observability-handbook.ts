@@ -1,0 +1,122 @@
+import { defineSkill } from "../types.js";
+
+const skillMd = `---
+name: observability-handbook
+description: Structured logs correlation IDs and error reporting for Next.js App Router — PII boundaries and tracing hooks without vendor lock-in
+tags:
+  - observability
+  - logging
+  - nextjs
+version: 1.0.0
+category: development
+outcomes:
+  - Log field contract timestamp level message requestId route without PII
+  - Where to log Server Action vs Route Handler vs client window error boundary
+  - Optional OpenTelemetry trace context propagation sketch server only
+stack:
+  - next
+  - typescript
+last_reviewed: 2026-05-19
+risk_level: low
+tools_allowed: repo-files
+requires_user_approval: false
+compatibility:
+  - cursor
+  - claude-code
+  - skills-sh
+  - generic-markdown
+references:
+  - references/stack-nextjs.md
+  - references/skill-safety.md
+---
+
+# Instructions
+
+Add **observability** that works with **Next.js App Router**: logs, errors, and light tracing.
+
+1. **Correlation:** generate or forward **\`x-request-id\`** (or trace id) in Route Handlers and middleware; pass through Server Actions via async context or explicit argument — pick one pattern per app.
+2. **Structured logs:** JSON lines in server runtime; fields: \`level\`, \`msg\`, \`time\`, \`route\`, \`requestId\` — **no** raw emails, tokens, or full query strings with secrets.
+3. **Client errors:** \`error.tsx\` / reporting hook sends **sanitized** message + stack fingerprint only; pair with **\`error-loading-not-found\`**.
+4. **PII:** log user ids (opaque), not names/emails, unless audited retention policy says otherwise.
+5. **External APM (optional):** if repo has Sentry/Datadog/etc., initialize **server-only** SDK in instrumentation file pattern; never ship server DSN in client bundles.
+6. **Performance signals:** log slow query thresholds as metrics names, not raw SQL with literals.
+
+## Outcomes
+
+- Logging contract markdown + file list (\`instrumentation.ts\`, logger util) matching repo.
+
+## Output Rules
+
+Redact examples; use \`req_***\` style ids.
+
+## Scope and boundaries
+
+- **In scope:** app-side logging and error capture wiring.
+- **Out of scope:** Kubernetes operator setup, log warehouse schema design.
+
+## Safety
+
+- repo-files only when user asks for edits; never paste production DSNs.
+
+## Troubleshooting
+
+- **Double logging:** middleware + layout both log same request — dedupe with id guard.
+- **Edge vs Node:** OpenTelemetry exporters often Node-only — split instrumentation.
+
+**GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/observability-handbook/SKILL.md  
+**npm:** https://www.npmjs.com/package/@skillcodex/skills
+`;
+
+export const observabilityHandbook = defineSkill({
+  name: "observability-handbook",
+  description: "Structured logs correlation IDs and error reporting for Next.js App Router — PII boundaries and tracing hooks without vendor lock-in",
+  tags: ["observability","logging","nextjs"],
+  version: "1.0.0",
+  category: "development",
+  lastReviewed: "Tue May 19 2026 05:00:00 GMT+0500 (Pakistan Standard Time)",
+  riskLevel: "low",
+  toolsAllowed: "repo-files",
+  requiresUserApproval: false,
+  compatibility: ["cursor","claude-code","skills-sh","generic-markdown"],
+  outcomes: ["Log field contract timestamp level message requestId route without PII","Where to log Server Action vs Route Handler vs client window error boundary","Optional OpenTelemetry trace context propagation sketch server only"],
+  stack: ["next","typescript"],
+  references: ["references/stack-nextjs.md","references/skill-safety.md"],
+  instructions: `# Instructions
+
+Add **observability** that works with **Next.js App Router**: logs, errors, and light tracing.
+
+1. **Correlation:** generate or forward **\`x-request-id\`** (or trace id) in Route Handlers and middleware; pass through Server Actions via async context or explicit argument — pick one pattern per app.
+2. **Structured logs:** JSON lines in server runtime; fields: \`level\`, \`msg\`, \`time\`, \`route\`, \`requestId\` — **no** raw emails, tokens, or full query strings with secrets.
+3. **Client errors:** \`error.tsx\` / reporting hook sends **sanitized** message + stack fingerprint only; pair with **\`error-loading-not-found\`**.
+4. **PII:** log user ids (opaque), not names/emails, unless audited retention policy says otherwise.
+5. **External APM (optional):** if repo has Sentry/Datadog/etc., initialize **server-only** SDK in instrumentation file pattern; never ship server DSN in client bundles.
+6. **Performance signals:** log slow query thresholds as metrics names, not raw SQL with literals.
+
+## Outcomes
+
+- Logging contract markdown + file list (\`instrumentation.ts\`, logger util) matching repo.`,
+  outputRules: `## Output Rules
+
+Redact examples; use \`req_***\` style ids.
+
+## Scope and boundaries
+
+- **In scope:** app-side logging and error capture wiring.
+- **Out of scope:** Kubernetes operator setup, log warehouse schema design.
+
+## Safety
+
+- repo-files only when user asks for edits; never paste production DSNs.
+
+## Troubleshooting
+
+- **Double logging:** middleware + layout both log same request — dedupe with id guard.
+- **Edge vs Node:** OpenTelemetry exporters often Node-only — split instrumentation.
+
+**GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/observability-handbook/SKILL.md  
+**npm:** https://www.npmjs.com/package/@skillcodex/skills`,
+  skillMd,
+  githubPath: "skills/observability-handbook/SKILL.md",
+});
+
+export default observabilityHandbook;

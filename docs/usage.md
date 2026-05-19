@@ -3,10 +3,10 @@
 ## Install into an AI agent
 
 ```bash
-npx skills add https://github.com/bh611627/skillcodex --skill seo-agent
+npx skills add https://github.com/bh611627/skillcodex --skill seo-expert
 ```
 
-Replace `seo-agent` with any slug from [DIRECTORY.md](../DIRECTORY.md).
+Replace `seo-expert` with any slug from [DIRECTORY.md](../DIRECTORY.md).
 
 ### Cursor
 
@@ -42,7 +42,7 @@ Object.keys(skills);
 ```ts
 import { loadSkill } from "@skillcodex/skills";
 
-const { frontmatter, body } = loadSkill("seo-agent");
+const { frontmatter, body } = loadSkill("seo-expert");
 ```
 
 ## Validate locally
@@ -66,8 +66,12 @@ Then edit `skills/<name>/SKILL.md` and run `pnpm validate`.
 | Skill | Prompt |
 |-------|--------|
 | `code-assistant` | “Fix X with a minimal diff, max 3 files” |
-| `seo-agent` | “Title, meta, JSON-LD, and OG checklist for /pricing” |
+| `seo-expert` | “Title, meta, JSON-LD, and OG checklist for /pricing” |
 | `accessibility-audit` | “WCAG audit for `src/components/Form.tsx`” |
 | `testing-agent` | “Vitest tests for `Button` with user-event” |
 
 See [README.md](../README.md) for the full catalog.
+
+## Publishing (maintainers)
+
+Releasing **npm** and understanding **skills.sh** discovery are separate: [publishing-skills-sh-and-npm.md](./publishing-skills-sh-and-npm.md).

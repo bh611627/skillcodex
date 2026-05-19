@@ -22,13 +22,13 @@ importers:
         version: 4.0.3
     devDependencies:
       '@types/node':
-        specifier: ^22.15.21
+        specifier: ^22.19.0
         version: 22.19.19
       tsx:
-        specifier: ^4.19.4
-        version: 4.22.0
+        specifier: ^4.22.3
+        version: 4.22.3
       typescript:
-        specifier: ^5.8.3
+        specifier: ^5.9.3
         version: 5.9.3
 
 packages:
@@ -246,6 +246,11 @@ packages:
     engines: {node: '>=18.0.0'}
     hasBin: true
 
+  tsx@4.22.3:
+    resolution: {integrity: sha512-mdoNxBC/cSQObGGVQ5Bpn5i+yv7j68gk3Nfm3wFjcJg3Z0Mix9jzAFfP12prmm5eVGmDKtp0yyArrs0Q+8gZHg==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
+
   typescript@5.9.3:
     resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
     engines: {node: '>=14.17'}
@@ -406,6 +411,12 @@ snapshots:
   strip-bom-string@1.0.0: {}
 
   tsx@4.22.0:
+    dependencies:
+      esbuild: 0.28.0
+    optionalDependencies:
+      fsevents: 2.3.3
+
+  tsx@4.22.3:
     dependencies:
       esbuild: 0.28.0
     optionalDependencies:

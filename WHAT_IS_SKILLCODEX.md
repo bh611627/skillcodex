@@ -27,6 +27,8 @@ Premium **documentation-style** browser - UI/UX only. Spec: [references/design-g
 | Need | File |
 |------|------|
 | Skill directory (skills.sh-style) | [DIRECTORY.md](./DIRECTORY.md) |
+| skills.sh folder mirror (generated) | [skills-sh-catalog/](skills-sh-catalog/) — `pnpm export-skills-sh` |
+| Publish npm + skills.sh facts | [docs/publishing-skills-sh-and-npm.md](./docs/publishing-skills-sh-and-npm.md) |
 | Repo layout (folders) | [REPO_LAYOUT.md](./REPO_LAYOUT.md) |
 | SKILL format | [SKILL_STANDARD.md](./SKILL_STANDARD.md) |
 | Stack / pnpm | [references/react-stack.md](./references/react-stack.md) |

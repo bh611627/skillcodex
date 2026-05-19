@@ -1,6 +1,6 @@
 {
   "name": "@skillcodex/skills",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "AI agent skills and reusable workflows for React & Next.js - curated SKILL.md library for Cursor, Claude Code, and automation tools",
   "type": "module",
   "main": "./dist/index.js",
@@ -15,29 +15,121 @@
       "types": "./dist/skills/accessibility-audit.d.ts",
       "import": "./dist/skills/accessibility-audit.js"
     },
+    "./api-handbook": {
+      "types": "./dist/skills/api-handbook.d.ts",
+      "import": "./dist/skills/api-handbook.js"
+    },
+    "./auth-handbook": {
+      "types": "./dist/skills/auth-handbook.d.ts",
+      "import": "./dist/skills/auth-handbook.js"
+    },
+    "./client-data-fetching": {
+      "types": "./dist/skills/client-data-fetching.d.ts",
+      "import": "./dist/skills/client-data-fetching.js"
+    },
     "./code-assistant": {
       "types": "./dist/skills/code-assistant.d.ts",
       "import": "./dist/skills/code-assistant.js"
+    },
+    "./container-local-dev": {
+      "types": "./dist/skills/container-local-dev.d.ts",
+      "import": "./dist/skills/container-local-dev.js"
     },
     "./content-creator": {
       "types": "./dist/skills/content-creator.d.ts",
       "import": "./dist/skills/content-creator.js"
     },
+    "./data-layer-handbook": {
+      "types": "./dist/skills/data-layer-handbook.d.ts",
+      "import": "./dist/skills/data-layer-handbook.js"
+    },
     "./database-schema-agent": {
       "types": "./dist/skills/database-schema-agent.d.ts",
       "import": "./dist/skills/database-schema-agent.js"
+    },
+    "./dependency-migrations": {
+      "types": "./dist/skills/dependency-migrations.d.ts",
+      "import": "./dist/skills/dependency-migrations.js"
+    },
+    "./edge-runtime-handbook": {
+      "types": "./dist/skills/edge-runtime-handbook.d.ts",
+      "import": "./dist/skills/edge-runtime-handbook.js"
     },
     "./env-config-agent": {
       "types": "./dist/skills/env-config-agent.d.ts",
       "import": "./dist/skills/env-config-agent.js"
     },
+    "./error-loading-not-found": {
+      "types": "./dist/skills/error-loading-not-found.d.ts",
+      "import": "./dist/skills/error-loading-not-found.js"
+    },
+    "./forms-and-validation": {
+      "types": "./dist/skills/forms-and-validation.d.ts",
+      "import": "./dist/skills/forms-and-validation.js"
+    },
+    "./github-actions-ci": {
+      "types": "./dist/skills/github-actions-ci.d.ts",
+      "import": "./dist/skills/github-actions-ci.js"
+    },
+    "./i18n-handbook": {
+      "types": "./dist/skills/i18n-handbook.d.ts",
+      "import": "./dist/skills/i18n-handbook.js"
+    },
+    "./markdown-pipeline": {
+      "types": "./dist/skills/markdown-pipeline.d.ts",
+      "import": "./dist/skills/markdown-pipeline.js"
+    },
+    "./monorepo-tooling": {
+      "types": "./dist/skills/monorepo-tooling.d.ts",
+      "import": "./dist/skills/monorepo-tooling.js"
+    },
+    "./next-server-patterns": {
+      "types": "./dist/skills/next-server-patterns.d.ts",
+      "import": "./dist/skills/next-server-patterns.js"
+    },
+    "./observability-handbook": {
+      "types": "./dist/skills/observability-handbook.d.ts",
+      "import": "./dist/skills/observability-handbook.js"
+    },
+    "./payments-handbook": {
+      "types": "./dist/skills/payments-handbook.d.ts",
+      "import": "./dist/skills/payments-handbook.js"
+    },
     "./performance-audit": {
       "types": "./dist/skills/performance-audit.d.ts",
       "import": "./dist/skills/performance-audit.js"
     },
-    "./seo-agent": {
-      "types": "./dist/skills/seo-agent.d.ts",
-      "import": "./dist/skills/seo-agent.js"
+    "./python-productive": {
+      "types": "./dist/skills/python-productive.d.ts",
+      "import": "./dist/skills/python-productive.js"
+    },
+    "./react-email-templates": {
+      "types": "./dist/skills/react-email-templates.d.ts",
+      "import": "./dist/skills/react-email-templates.js"
+    },
+    "./realtime-handbook": {
+      "types": "./dist/skills/realtime-handbook.d.ts",
+      "import": "./dist/skills/realtime-handbook.js"
+    },
+    "./secure-dependencies": {
+      "types": "./dist/skills/secure-dependencies.d.ts",
+      "import": "./dist/skills/secure-dependencies.js"
+    },
+    "./security-headers": {
+      "types": "./dist/skills/security-headers.d.ts",
+      "import": "./dist/skills/security-headers.js"
+    },
+    "./semantic-html-css": {
+      "types": "./dist/skills/semantic-html-css.d.ts",
+      "import": "./dist/skills/semantic-html-css.js"
+    },
+    "./seo-expert": {
+      "types": "./dist/skills/seo-expert.d.ts",
+      "import": "./dist/skills/seo-expert.js"
+    },
+    "./server-caching-handbook": {
+      "types": "./dist/skills/server-caching-handbook.d.ts",
+      "import": "./dist/skills/server-caching-handbook.js"
     },
     "./skill-creator": {
       "types": "./dist/skills/skill-creator.d.ts",
@@ -46,6 +138,10 @@
     "./skillcodex-browser-ui": {
       "types": "./dist/skills/skillcodex-browser-ui.d.ts",
       "import": "./dist/skills/skillcodex-browser-ui.js"
+    },
+    "./storybook-handbook": {
+      "types": "./dist/skills/storybook-handbook.d.ts",
+      "import": "./dist/skills/storybook-handbook.js"
     },
     "./testing-agent": {
       "types": "./dist/skills/testing-agent.d.ts",
@@ -58,6 +154,10 @@
     "./web-design-guidelines": {
       "types": "./dist/skills/web-design-guidelines.d.ts",
       "import": "./dist/skills/web-design-guidelines.js"
+    },
+    "./webhook-receivers": {
+      "types": "./dist/skills/webhook-receivers.d.ts",
+      "import": "./dist/skills/webhook-receivers.js"
     }
   },
   "files": [
@@ -106,9 +206,9 @@
     "gray-matter": "^4.0.3"
   },
   "devDependencies": {
-    "@types/node": "^22.15.21",
-    "tsx": "^4.19.4",
-    "typescript": "^5.8.3"
+    "@types/node": "^22.19.0",
+    "tsx": "^4.22.3",
+    "typescript": "^5.9.3"
   },
   "engines": {
     "node": ">=18"

@@ -6,7 +6,8 @@
     "validate": "cd package && pnpm run validate",
     "build": "cd package && pnpm run build",
     "sync": "cd package && pnpm run sync",
-    "new-skill": "tsx scripts/new-skill.ts"
+    "new-skill": "tsx scripts/new-skill.ts",
+    "export-skills-sh": "tsx scripts/export-skills-sh-catalog.ts"
   },
   "devDependencies": {
     "tsx": "^4.19.4",

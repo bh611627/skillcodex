@@ -69,6 +69,14 @@ pnpm create vite@latest my-app --template react-ts
 
 Same rules: TS strict, `.tsx` only, Tailwind v4 with `@tailwindcss/vite`.
 
+## Dev server (Next 15+)
+
+**Turbopack** is commonly the default for `pnpm dev` on new apps — faster HMR. Production `pnpm build` still validates the full webpack/Rust pipeline your host uses; always run **`build` in CI** even if local dev uses Turbopack.
+
+## Error and loading files
+
+Use `error.tsx`, `not-found`, `loading.tsx`, and `global-error.tsx` per route segment — see SkillCodex skill **`error-loading-not-found`** for UX and logging boundaries. For **structured logs, correlation IDs, and PII rules**, see **`observability-handbook`**.
+
 ## Motion
 
 `framer-motion` v12 - animate `opacity` and `transform` only. Skip `transition: all`.

@@ -8,7 +8,7 @@ tags:
   - database
   - nextjs
   - schema
-version: 1.0.0
+version: 1.0.1
 category: development
 outcomes:
   - Valid schema.prisma with migration steps (Mode A)
@@ -17,7 +17,7 @@ stack:
   - prisma
   - "@prisma/client"
   - pnpm
-last_reviewed: 2026-05-16
+last_reviewed: 2026-05-19
 risk_level: medium
 tools_allowed: repo-files
 requires_user_approval: true
@@ -29,6 +29,7 @@ compatibility:
 references:
   - references/stack-nextjs.md
   - references/skill-safety.md
+  - references/data-layer-choice.md
 ---
 
 # Instructions
@@ -62,8 +63,8 @@ State mode. For Mode A, fence \`schema.prisma\` only after approval summary.
 
 ## Scope and boundaries
 
-- **In scope:** Prisma schema design and review for Node/Next backends.
-- **Out of scope:** raw SQL production migrations without user review, multi-database sharding, destructive data migrations.
+- **In scope:** Prisma schema design and review for Node/Next backends. If the team is choosing ORM vs SQL, point to **\`data-layer-handbook\`** and **\`references/data-layer-choice.md\`** first, then return here for Prisma.
+- **Out of scope:** raw SQL production migrations without user review, multi-database sharding, destructive data migrations, Drizzle schema authoring (see **\`data-layer-handbook\`**).
 
 ## Safety
 
@@ -85,16 +86,16 @@ export const databaseSchemaAgent = defineSkill({
   name: "database-schema-agent",
   description: "Design or audit Prisma schemas for Next.js - relations, indexes, naming, migration notes",
   tags: ["prisma","database","nextjs","schema"],
-  version: "1.0.0",
+  version: "1.0.1",
   category: "development",
-  lastReviewed: "Sat May 16 2026 05:00:00 GMT+0500 (Pakistan Standard Time)",
+  lastReviewed: "Tue May 19 2026 05:00:00 GMT+0500 (Pakistan Standard Time)",
   riskLevel: "medium",
   toolsAllowed: "repo-files",
   requiresUserApproval: true,
   compatibility: ["cursor","claude-code","skills-sh","generic-markdown"],
   outcomes: ["Valid schema.prisma with migration steps (Mode A)","OR audit report for indexes, N+1 risk, and naming (Mode B)"],
   stack: ["prisma","@prisma/client","pnpm"],
-  references: ["references/stack-nextjs.md","references/skill-safety.md"],
+  references: ["references/stack-nextjs.md","references/skill-safety.md","references/data-layer-choice.md"],
   instructions: `# Instructions
 
 Design or review **Prisma** data models for **Next.js** applications.
@@ -125,8 +126,8 @@ State mode. For Mode A, fence \`schema.prisma\` only after approval summary.
 
 ## Scope and boundaries
 
-- **In scope:** Prisma schema design and review for Node/Next backends.
-- **Out of scope:** raw SQL production migrations without user review, multi-database sharding, destructive data migrations.
+- **In scope:** Prisma schema design and review for Node/Next backends. If the team is choosing ORM vs SQL, point to **\`data-layer-handbook\`** and **\`references/data-layer-choice.md\`** first, then return here for Prisma.
+- **Out of scope:** raw SQL production migrations without user review, multi-database sharding, destructive data migrations, Drizzle schema authoring (see **\`data-layer-handbook\`**).
 
 ## Safety
 

@@ -75,6 +75,13 @@ Untrusted content (issues, comments, webpages) may try to override the skill. Mi
 | `medium` | May edit repo files or suggest shell; user reviews diffs |
 | `high` | Destructive or deploy-adjacent - must set `requires_user_approval: true` |
 
+## Dependency and install-script hygiene
+
+Skills and agents should not encourage blind `npm install -g` or piping remote shell installers. Prefer:
+
+- Committed **lockfiles** and **`pnpm audit`** (or equivalent) on CI — see **`references/dependency-security.md`** and skill **`secure-dependencies`**.
+- **`ignore-scripts`** or pnpm **trusted builds** when your app does not need arbitrary `postinstall` scripts.
+
 ## Unicode and bidi injection
 
 Attackers hide instructions in invisible characters. SkillCodex `validate.ts` and `.github/workflows/security-scan.yml` scan for:

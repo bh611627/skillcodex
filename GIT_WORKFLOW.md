@@ -34,13 +34,17 @@ Open a **pull request** on GitHub into `main` (or merge locally if you are solo 
 
 **You do not need an upstream fork** to ship SkillCodex or install from this repo (`npx skills add https://github.com/bh611627/skillcodex --skill <slug>` per [skills.sh/docs](https://www.skills.sh/docs)).
 
-When you want a skill merged into Vercel’s **skills** CLI repo:
+When you choose to **offer a skill upstream** to Vercel’s **skills** CLI maintainers:
 
 1. **Fork** `vercel-labs/skills` on GitHub (this org’s fork: [bh611627/skills](https://github.com/bh611627/skills)).
-2. **Clone your fork** in a separate directory (not this repo), then create a **feature branch** — do not commit directly on the fork’s `main`.
+2. **Clone your fork** in a separate directory (not this repo), then create a **feature branch** - do not commit directly on the fork’s `main`.
 3. **Copy** the skill from SkillCodex: `skills/<slug>/` or the generated mirror `skills-sh-catalog/skills/<slug>/`.
-4. **Adapt** for upstream: bundled skills often use **minimal** frontmatter (`name`, `description` only) per [find-skills/SKILL.md](https://github.com/vercel-labs/skills/blob/main/skills/find-skills/SKILL.md). **Inline** or **copy** anything from repo-root `references/` into the skill folder so the skill is self-contained when cloned alone.
-5. At the **fork root**: `pnpm install`, **`pnpm format`**, commit, push, open a PR to `vercel-labs/skills` `main`. Prefer **one skill per PR** unless a maintainer asked otherwise. Example path in this repo: [contrib/vercel-labs-skills](./contrib/vercel-labs-skills/README.md).
+4. **Ship the same first-class `SKILL.md` the skills CLI ecosystem expects** (authoritative spec: [vercel-labs/skills README - Creating Skills](https://github.com/vercel-labs/skills#creating-skills); reference bundle: [skills/find-skills/SKILL.md](https://github.com/vercel-labs/skills/blob/main/skills/find-skills/SKILL.md)):
+   - YAML frontmatter on that surface: **`name`** and **`description`** (optional `metadata.internal` for hidden skills). Your **SkillCodex** originals keep the full envelope (`tags`, `outcomes`, `version`, …) here; the fork PR is a **targeted export** of the instruction body, not a downgrade of your catalog.
+   - One folder per skill: `skills/<kebab-name>/SKILL.md`.
+   - Repo-root **`references/`** on **[bh611627/skills](https://github.com/bh611627/skills)** mirrors this repo so `../../references/...` links keep working—your fork stays a complete, self-owned install target.
+5. **Automation:** from SkillCodex root, `pnpm export-skills-fork-layout /tmp/out` writes a **publish-ready tree** (`skills/*` in the CLI-standard frontmatter shape, plus `references/`) with GitHub and raw URLs **repointed to your `bh611627/skills` repo**. Copy `/tmp/out/*` into your fork clone, run **`pnpm format`** at the fork root, then commit as yours.
+6. At the **fork root**: `pnpm install`, **`pnpm format`**, commit, push, open a PR to `vercel-labs/skills` `main`. Prefer **one skill per PR** unless a maintainer asked otherwise. Example path in this repo: [contrib/vercel-labs-skills](./contrib/vercel-labs-skills/README.md).
 
 ## What not to commit
 

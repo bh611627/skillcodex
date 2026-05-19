@@ -65,7 +65,7 @@ Then edit `skills/<name>/SKILL.md` and run `pnpm validate`.
 
 | Skill | Prompt |
 |-------|--------|
-| `code-assistant` | “Fix X with a minimal diff, max 3 files” |
+| `code-assistant` | “Fix X with a surgical diff, max 3 files” |
 | `seo-expert` | “Title, meta, JSON-LD, and OG checklist for /pricing” |
 | `accessibility-audit` | “WCAG audit for `src/components/Form.tsx`” |
 | `testing-agent` | “Vitest tests for `Button` with user-event” |

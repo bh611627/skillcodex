@@ -9,6 +9,17 @@ Versioning: [Semantic Versioning](https://semver.org/)
 
 _No user-facing changes yet._
 
+## [1.3.0] - 2026-05-20
+
+### Added
+
+- **`pnpm export-skills-fork-layout`** — exports `skills/*` and `references/` in the **skills CLI public contract** (YAML `name` + `description`) with GitHub and raw URLs repointed to **[bh611627/skills](https://github.com/bh611627/skills)**; script at [`scripts/export-to-skills-fork-layout.ts`](./scripts/export-to-skills-fork-layout.ts).
+
+### Changed
+
+- `@skillcodex/skills` npm package **1.3.0** (regenerated exports and `skills-index.json` via `pnpm run sync`).
+- [GIT_WORKFLOW.md](./GIT_WORKFLOW.md), [skills-sh-catalog/REQUIREMENTS.md](./skills-sh-catalog/REQUIREMENTS.md), [contrib/vercel-labs-skills/README.md](./contrib/vercel-labs-skills/README.md), [references/skills-ecosystem.md](./references/skills-ecosystem.md), [docs/usage.md](./docs/usage.md) — fork and upstream workflow documentation (catalog ownership, CLI-standard frontmatter wording).
+
 ## [1.2.0] - 2026-05-19
 
 ### Added

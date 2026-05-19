@@ -33,6 +33,6 @@ From [skills.sh/docs - Badge](https://www.skills.sh/docs):
 
 ## Optional: bundled skill in [vercel-labs/skills](https://github.com/vercel-labs/skills)
 
-Upstream uses **fork + feature branch + PR**; skills there often have **minimal** YAML (`name`, `description` only) per [`find-skills/SKILL.md`](https://github.com/vercel-labs/skills/blob/main/skills/find-skills/SKILL.md). Full workflow: [GIT_WORKFLOW.md](../GIT_WORKFLOW.md) (*Optional: PR to vercel-labs/skills*). Example bundle folder: [contrib/vercel-labs-skills](../contrib/vercel-labs-skills/README.md).
+Upstream uses **fork + feature branch + PR**; bundled skills follow the **standard CLI frontmatter** (`name`, `description` only) per [`find-skills/SKILL.md`](https://github.com/vercel-labs/skills/blob/main/skills/find-skills/SKILL.md). Your **[bh611627/skills](https://github.com/bh611627/skills)** fork can carry the full catalog via `pnpm export-skills-fork-layout`. Full workflow: [GIT_WORKFLOW.md](../GIT_WORKFLOW.md) (*Optional: PR to vercel-labs/skills*). Example bundle folder: [contrib/vercel-labs-skills](../contrib/vercel-labs-skills/README.md).
 
 ## Publishing

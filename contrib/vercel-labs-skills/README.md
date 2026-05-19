@@ -1,6 +1,6 @@
 # Add this skill to [vercel-labs/skills](https://github.com/vercel-labs/skills)
 
-**Full upstream + [skills.sh](https://www.skills.sh/) workflow** (fork, branch, minimal frontmatter, `pnpm format`, PR, releases): [GIT_WORKFLOW.md](../../GIT_WORKFLOW.md) (*Optional: PR to vercel-labs/skills*).
+**Full upstream + [skills.sh](https://www.skills.sh/) workflow** (fork, branch, CLI-standard `SKILL.md` frontmatter, `pnpm format`, PR, releases): [GIT_WORKFLOW.md](../../GIT_WORKFLOW.md) (*Optional: PR to vercel-labs/skills*).
 
 You **cannot** push to Vercel’s repo directly. You **fork** it, copy this bundle into your fork, then open a **pull request**.
 

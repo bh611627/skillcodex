@@ -1,6 +1,6 @@
 ---
 name: semantic-html-css
-description: Semantic HTML, landmarks, focus, and modern CSS — fast accessible UI that pairs with WCAG audits
+description: Semantic HTML, landmarks, focus, and modern CSS - fast accessible UI that pairs with WCAG audits
 tags:
   - html
   - css
@@ -35,10 +35,10 @@ references:
 Raise baseline **HTML semantics** and **CSS quality** before or alongside `accessibility-audit`.
 
 1. **Landmarks:** one `main`; `nav` for primary nav; `header`/`footer` roles clear; skip redundant `role` when native element suffices.
-2. **Headings:** single logical `h1` per page/view; no level skips for styling — fix with CSS.
+2. **Headings:** single logical `h1` per page/view; no level skips for styling - fix with CSS.
 3. **Interactive:** native `button` vs `div` onClick; `a` with real `href` for navigation; hit targets ≥ 24px (prefer 44px touch).
 4. **Focus:** `:focus-visible` styles never removed without replacement; no `outline: none` without visible focus ring.
-5. **Motion:** `prefers-reduced-motion: reduce` — replace auto-play loops with static or instant state.
+5. **Motion:** `prefers-reduced-motion: reduce` - replace auto-play loops with static or instant state.
 6. **Layout:** prefer `flex`/`grid` + `gap`; avoid deep absolute positioning for primary reading flow.
 
 ## Outcomes
@@ -60,7 +60,7 @@ File:line when auditing existing code; for greenfield, component tree with eleme
 
 ## Troubleshooting
 
-- **Landmark duplication:** multiple `main` from portals — consolidate or `aria-hidden` on duplicate decorative wrappers only with care.
+- **Landmark duplication:** multiple `main` from portals - consolidate or `aria-hidden` on duplicate decorative wrappers only with care.
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/semantic-html-css/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills

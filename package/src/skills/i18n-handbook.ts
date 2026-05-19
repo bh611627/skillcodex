@@ -2,7 +2,7 @@ import { defineSkill } from "../types.js";
 
 const skillMd = `---
 name: i18n-handbook
-description: Internationalization for Next.js App Router — locale routing, message files, and RTL layout checks
+description: Internationalization for Next.js App Router - locale routing, message files, and RTL layout checks
 tags:
   - i18n
   - nextjs
@@ -35,11 +35,11 @@ references:
 
 Plan **i18n** for **Next.js App Router** without locking to one vendor library unless the repo already uses it.
 
-1. Routing: \`[locale]\` segment vs subdomain — pros for SEO and DX; pick one.
+1. Routing: \`[locale]\` segment vs subdomain - pros for SEO and DX; pick one.
 2. Message catalogs: namespace per feature; avoid mega JSON files.
 3. **SEO:** \`hreflang\` pairs, canonical per locale, localized titles in \`metadata\`.
 4. **RTL:** \`dir\` on \`html\` or layout wrapper; mirror spacing where needed.
-5. Dates and numbers: \`Intl\` or established lib — match stack.
+5. Dates and numbers: \`Intl\` or established lib - match stack.
 
 ## Outcomes
 
@@ -69,7 +69,7 @@ Bullets; no full translation file content unless user provides strings.
 
 export const i18nHandbook = defineSkill({
   name: "i18n-handbook",
-  description: "Internationalization for Next.js App Router — locale routing, message files, and RTL layout checks",
+  description: "Internationalization for Next.js App Router - locale routing, message files, and RTL layout checks",
   tags: ["i18n","nextjs","localization"],
   version: "1.0.0",
   category: "development",
@@ -85,11 +85,11 @@ export const i18nHandbook = defineSkill({
 
 Plan **i18n** for **Next.js App Router** without locking to one vendor library unless the repo already uses it.
 
-1. Routing: \`[locale]\` segment vs subdomain — pros for SEO and DX; pick one.
+1. Routing: \`[locale]\` segment vs subdomain - pros for SEO and DX; pick one.
 2. Message catalogs: namespace per feature; avoid mega JSON files.
 3. **SEO:** \`hreflang\` pairs, canonical per locale, localized titles in \`metadata\`.
 4. **RTL:** \`dir\` on \`html\` or layout wrapper; mirror spacing where needed.
-5. Dates and numbers: \`Intl\` or established lib — match stack.
+5. Dates and numbers: \`Intl\` or established lib - match stack.
 
 ## Outcomes
 

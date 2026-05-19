@@ -1,6 +1,6 @@
 ---
 name: monorepo-tooling
-description: pnpm workspaces and Turborepo with Next.js apps — boundaries caching and shared packages
+description: pnpm workspaces and Turborepo with Next.js apps - boundaries caching and shared packages
 tags:
   - monorepo
   - pnpm
@@ -59,7 +59,7 @@ Commands use `pnpm` and `turbo` only; match user lockfile if mixed.
 ## Troubleshooting
 
 - **Module not found across workspace:** check `package.json` `exports` and TypeScript paths.
-- **Turbo cache too aggressive:** `outputs` keys wrong for Next — fix globs.
+- **Turbo cache too aggressive:** `outputs` keys wrong for Next - fix globs.
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/monorepo-tooling/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills

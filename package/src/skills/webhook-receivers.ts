@@ -2,7 +2,7 @@ import { defineSkill } from "../types.js";
 
 const skillMd = `---
 name: webhook-receivers
-description: Secure Next.js Route Handlers for webhooks — signature verify idempotency and replay protection
+description: Secure Next.js Route Handlers for webhooks - signature verify idempotency and replay protection
 tags:
   - webhooks
   - nextjs
@@ -34,7 +34,7 @@ references:
 
 Implement **webhook receivers** in **Next.js Route Handlers**.
 
-1. **Verify** signatures using provider docs (Stripe, GitHub, etc.) — use **\`crypto.timingSafeEqual\`** (or equivalent) on decoded buffers for HMAC; never \`===\` on user-controlled strings.
+1. **Verify** signatures using provider docs (Stripe, GitHub, etc.) - use **\`crypto.timingSafeEqual\`** (or equivalent) on decoded buffers for HMAC; never \`===\` on user-controlled strings.
 2. **Raw body:** read bytes before JSON parse when signature covers raw body.
 3. **Idempotency:** store event id or dedupe key; return 200 if already processed.
 4. **Timeouts:** respond quickly; queue heavy work to background job pattern user owns.
@@ -55,7 +55,7 @@ Do not paste sample secrets; use \`whsec_...\` style placeholders.
 
 ## Safety
 
-- **requires_user_approval:** true — webhooks touch security and billing.
+- **requires_user_approval:** true - webhooks touch security and billing.
 
 ## Troubleshooting
 
@@ -68,7 +68,7 @@ Do not paste sample secrets; use \`whsec_...\` style placeholders.
 
 export const webhookReceivers = defineSkill({
   name: "webhook-receivers",
-  description: "Secure Next.js Route Handlers for webhooks — signature verify idempotency and replay protection",
+  description: "Secure Next.js Route Handlers for webhooks - signature verify idempotency and replay protection",
   tags: ["webhooks","nextjs","security"],
   version: "1.0.1",
   category: "development",
@@ -84,7 +84,7 @@ export const webhookReceivers = defineSkill({
 
 Implement **webhook receivers** in **Next.js Route Handlers**.
 
-1. **Verify** signatures using provider docs (Stripe, GitHub, etc.) — use **\`crypto.timingSafeEqual\`** (or equivalent) on decoded buffers for HMAC; never \`===\` on user-controlled strings.
+1. **Verify** signatures using provider docs (Stripe, GitHub, etc.) - use **\`crypto.timingSafeEqual\`** (or equivalent) on decoded buffers for HMAC; never \`===\` on user-controlled strings.
 2. **Raw body:** read bytes before JSON parse when signature covers raw body.
 3. **Idempotency:** store event id or dedupe key; return 200 if already processed.
 4. **Timeouts:** respond quickly; queue heavy work to background job pattern user owns.
@@ -104,7 +104,7 @@ Do not paste sample secrets; use \`whsec_...\` style placeholders.
 
 ## Safety
 
-- **requires_user_approval:** true — webhooks touch security and billing.
+- **requires_user_approval:** true - webhooks touch security and billing.
 
 ## Troubleshooting
 

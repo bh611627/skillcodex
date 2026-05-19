@@ -2,7 +2,7 @@ import { defineSkill } from "../types.js";
 
 const skillMd = `---
 name: react-email-templates
-description: Transactional email with React components — layout tables text version and test sends
+description: Transactional email with React components - layout tables text version and test sends
 tags:
   - email
   - react
@@ -66,7 +66,7 @@ No marketing growth hacks; transactional tone only.
 
 export const reactEmailTemplates = defineSkill({
   name: "react-email-templates",
-  description: "Transactional email with React components — layout tables text version and test sends",
+  description: "Transactional email with React components - layout tables text version and test sends",
   tags: ["email","react","transactional"],
   version: "1.0.0",
   category: "development",

@@ -39,7 +39,7 @@ import { skills, skillList } from "@skillcodex/skills";
 Object.keys(skills); // ["content-creator", "seo-expert", ...]
 ```
 
-## CLI (skills.sh — one skill)
+## CLI (skills.sh - one skill)
 
 Per [skills.sh documentation](https://www.skills.sh/docs), install **only** the skill you need:
 
@@ -47,7 +47,7 @@ Per [skills.sh documentation](https://www.skills.sh/docs), install **only** the 
 npx skills add https://github.com/bh611627/skillcodex --skill web-design-guidelines
 ```
 
-The npm package below ships **all** skills as subpaths for programmatic use — not the same as a single-skill CLI install. **Maintainers:** [Publishing (repo docs)](https://github.com/bh611627/skillcodex/blob/main/docs/publishing-skills-sh-and-npm.md).
+The npm package below ships **all** skills as subpaths for programmatic use - not the same as a single-skill CLI install. **Maintainers:** [Publishing (repo docs)](https://github.com/bh611627/skillcodex/blob/main/docs/publishing-skills-sh-and-npm.md).
 
 ## SKILL.md format
 

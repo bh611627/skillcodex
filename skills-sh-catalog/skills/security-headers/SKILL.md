@@ -1,6 +1,6 @@
 ---
 name: security-headers
-description: HTTP security headers and CSP for Next.js — safe defaults, nonces, and report-only rollout
+description: HTTP security headers and CSP for Next.js - safe defaults, nonces, and report-only rollout
 tags:
   - security
   - nextjs
@@ -35,7 +35,7 @@ Design **CSP** and companion headers (`HSTS`, `X-Content-Type-Options`, `Referre
 1. Inventory inline scripts and styles; decide **nonce** vs hash strategy for App Router.
 2. Start **Content-Security-Policy-Report-Only** with `report-to` or `report-uri` if used.
 3. Third parties: list each script domain in `script-src`; avoid `unsafe-inline` unless documented exception.
-4. `next.config` headers vs middleware — match deployment (Vercel self-hosted).
+4. `next.config` headers vs middleware - match deployment (Vercel self-hosted).
 5. Document break-glass: how to widen policy for emergency hotfix.
 
 ## Outcomes
@@ -53,7 +53,7 @@ Fenced blocks for `next.config` header snippets only after user approves writes.
 
 ## Safety
 
-- **requires_user_approval:** true — wrong CSP breaks production.
+- **requires_user_approval:** true - wrong CSP breaks production.
 - Never paste real nonce secrets; use placeholders.
 
 ## Troubleshooting

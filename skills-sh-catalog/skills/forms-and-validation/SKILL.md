@@ -1,6 +1,6 @@
 ---
 name: forms-and-validation
-description: Accessible forms in React and Next.js with zod validation — server actions or client submit patterns
+description: Accessible forms in React and Next.js with zod validation - server actions or client submit patterns
 tags:
   - forms
   - react
@@ -34,7 +34,7 @@ references:
 
 Build or audit **forms** with **zod** and accessible markup.
 
-1. Choose pattern: **Server Action** with **`useActionState`** (React 19) or legacy `useFormState` naming in older docs — progressive enhancement vs controlled client form; match repo and installed `react` types.
+1. Choose pattern: **Server Action** with **`useActionState`** (React 19) or legacy `useFormState` naming in older docs - progressive enhancement vs controlled client form; match repo and installed `react` types.
 2. Single zod schema (or layered: base + refine); map `flatten().fieldErrors` to fields.
 3. Labels, `htmlFor`, `aria-invalid`, `aria-describedby` for errors; no placeholder-only labels.
 4. Disable double-submit; optimistic UI only when user asks.

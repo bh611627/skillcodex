@@ -2,7 +2,7 @@ import { defineSkill } from "../types.js";
 
 const skillMd = `---
 name: github-actions-ci
-description: GitHub Actions for Next.js and TypeScript — lint test build cache and PR checks
+description: GitHub Actions for Next.js and TypeScript - lint test build cache and PR checks
 tags:
   - ci
   - github-actions
@@ -35,11 +35,11 @@ references:
 
 Add or improve **GitHub Actions** for a **Next.js** + **pnpm** repo.
 
-1. **Workflow permissions:** default \`contents: read\` at workflow or job level; elevate \`id-token\` or \`packages\` only where OIDC/npm publish needs it — least privilege.
+1. **Workflow permissions:** default \`contents: read\` at workflow or job level; elevate \`id-token\` or \`packages\` only where OIDC/npm publish needs it - least privilege.
 2. **Concurrency:** \`group: \${{ github.workflow }}-\${{ github.ref }}\` + \`cancel-in-progress: true\` on PR workflows to save minutes and avoid stale deploys.
 3. Triggers: \`pull_request\` + \`push\` to \`main\`; optional \`workflow_dispatch\`.
 4. **pnpm:** \`pnpm/action-setup\` + cache via \`pnpm store path\` or built-in cache; always **\`pnpm install --frozen-lockfile\`** in CI.
-5. Jobs: \`lint\` → \`typecheck\` → \`test\` → \`build\` with \`needs\` where parallel is impossible; optional parallel **\`audit\`** job (\`pnpm audit --audit-level=high\` or org policy) — see \`secure-dependencies\`.
+5. Jobs: \`lint\` → \`typecheck\` → \`test\` → \`build\` with \`needs\` where parallel is impossible; optional parallel **\`audit\`** job (\`pnpm audit --audit-level=high\` or org policy) - see \`secure-dependencies\`.
 6. **Next build:** set \`NODE_OPTIONS\` only if required; artifact \`next build\` trace for failures optional.
 7. **Fork PRs:** \`pull_request_target\` avoided unless user understands risk; default \`pull_request\`.
 8. **Node version:** pin \`22\` or \`20\` LTS with \`actions/setup-node\` and match \`engines\` in \`package.json\`.
@@ -72,7 +72,7 @@ Fenced \`yaml\` for workflow; mention required secrets by name only.
 
 export const githubActionsCi = defineSkill({
   name: "github-actions-ci",
-  description: "GitHub Actions for Next.js and TypeScript — lint test build cache and PR checks",
+  description: "GitHub Actions for Next.js and TypeScript - lint test build cache and PR checks",
   tags: ["ci","github-actions","nextjs"],
   version: "1.0.1",
   category: "development",
@@ -88,11 +88,11 @@ export const githubActionsCi = defineSkill({
 
 Add or improve **GitHub Actions** for a **Next.js** + **pnpm** repo.
 
-1. **Workflow permissions:** default \`contents: read\` at workflow or job level; elevate \`id-token\` or \`packages\` only where OIDC/npm publish needs it — least privilege.
+1. **Workflow permissions:** default \`contents: read\` at workflow or job level; elevate \`id-token\` or \`packages\` only where OIDC/npm publish needs it - least privilege.
 2. **Concurrency:** \`group: \${{ github.workflow }}-\${{ github.ref }}\` + \`cancel-in-progress: true\` on PR workflows to save minutes and avoid stale deploys.
 3. Triggers: \`pull_request\` + \`push\` to \`main\`; optional \`workflow_dispatch\`.
 4. **pnpm:** \`pnpm/action-setup\` + cache via \`pnpm store path\` or built-in cache; always **\`pnpm install --frozen-lockfile\`** in CI.
-5. Jobs: \`lint\` → \`typecheck\` → \`test\` → \`build\` with \`needs\` where parallel is impossible; optional parallel **\`audit\`** job (\`pnpm audit --audit-level=high\` or org policy) — see \`secure-dependencies\`.
+5. Jobs: \`lint\` → \`typecheck\` → \`test\` → \`build\` with \`needs\` where parallel is impossible; optional parallel **\`audit\`** job (\`pnpm audit --audit-level=high\` or org policy) - see \`secure-dependencies\`.
 6. **Next build:** set \`NODE_OPTIONS\` only if required; artifact \`next build\` trace for failures optional.
 7. **Fork PRs:** \`pull_request_target\` avoided unless user understands risk; default \`pull_request\`.
 8. **Node version:** pin \`22\` or \`20\` LTS with \`actions/setup-node\` and match \`engines\` in \`package.json\`.

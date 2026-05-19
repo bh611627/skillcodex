@@ -2,7 +2,7 @@ import { defineSkill } from "../types.js";
 
 const skillMd = `---
 name: python-productive
-description: Modern Python with uv, Pydantic v2, strict typing, and fast paths — projects, tooling, optional native extensions
+description: Modern Python with uv, Pydantic v2, strict typing, and fast paths - projects, tooling, optional native extensions
 tags:
   - python
   - uv
@@ -36,25 +36,25 @@ references:
 
 # Instructions
 
-Help teams ship **Python 3.11+** with **uv** (installer + resolver + lock), **Pydantic v2**, and **strict typing**. Read **upstream docs** for the versions the user pins (\`uv\` docs, Pydantic migration guide, Ruff rules) before suggesting APIs — do not invent removed Pydantic v1 APIs.
+Help teams ship **Python 3.11+** with **uv** (installer + resolver + lock), **Pydantic v2**, and **strict typing**. Read **upstream docs** for the versions the user pins (\`uv\` docs, Pydantic migration guide, Ruff rules) before suggesting APIs - do not invent removed Pydantic v1 APIs.
 
-## Mode A — greenfield or refresh
+## Mode A - greenfield or refresh
 
 1. Prefer **\`pyproject.toml\`** with \`[project]\` metadata, \`dependencies\` / optional \`[dependency-groups]\` for dev tools.
 2. Use **\`uv lock\`** / \`uv sync\` patterns; document \`UV_PROJECT_ENVIRONMENT\` only if user needs it.
 3. **Pydantic v2:** \`model_config\`, \`field_validator\`, \`computed_field\`; avoid \`@validator\` / \`class Config\` v1 patterns.
-4. **Ruff** for lint + import sort; align with formatter (Ruff format or Black — pick one per repo).
-5. **Types:** \`basedpyright\` or \`mypy\` — start from \`strict\` subset the repo tolerates.
+4. **Ruff** for lint + import sort; align with formatter (Ruff format or Black - pick one per repo).
+5. **Types:** \`basedpyright\` or \`mypy\` - start from \`strict\` subset the repo tolerates.
 6. **Tests:** \`pytest\` layout (\`tests/\` or src layout); one example test command.
 
-## Mode B — audit
+## Mode B - audit
 
 1. List deprecated patterns (Pydantic v1, setuptools-only layout without \`pyproject\`).
 2. Flag slow hot paths; suggest **profile first**, then optional **Rust extension** (\`maturin\`) or **Cython** only when user owns build complexity.
 
 ## Native speed-ups (when asked)
 
-- **Small inner loops:** C extension or \`maturin\` crate behind a thin Python API — document build (\`uv build\`) and platform wheels.
+- **Small inner loops:** C extension or \`maturin\` crate behind a thin Python API - document build (\`uv build\`) and platform wheels.
 - **Validation-heavy paths:** Pydantic core is already Rust-backed; prefer model design over custom C unless profiling proves need.
 
 ## Outcomes
@@ -86,7 +86,7 @@ State Mode A or B. Show exact \`uv\` / \`pytest\` commands matching the repo.
 
 export const pythonProductive = defineSkill({
   name: "python-productive",
-  description: "Modern Python with uv, Pydantic v2, strict typing, and fast paths — projects, tooling, optional native extensions",
+  description: "Modern Python with uv, Pydantic v2, strict typing, and fast paths - projects, tooling, optional native extensions",
   tags: ["python","uv","pydantic","typing"],
   version: "1.0.0",
   category: "development",
@@ -100,25 +100,25 @@ export const pythonProductive = defineSkill({
   references: ["references/skill-safety.md"],
   instructions: `# Instructions
 
-Help teams ship **Python 3.11+** with **uv** (installer + resolver + lock), **Pydantic v2**, and **strict typing**. Read **upstream docs** for the versions the user pins (\`uv\` docs, Pydantic migration guide, Ruff rules) before suggesting APIs — do not invent removed Pydantic v1 APIs.
+Help teams ship **Python 3.11+** with **uv** (installer + resolver + lock), **Pydantic v2**, and **strict typing**. Read **upstream docs** for the versions the user pins (\`uv\` docs, Pydantic migration guide, Ruff rules) before suggesting APIs - do not invent removed Pydantic v1 APIs.
 
-## Mode A — greenfield or refresh
+## Mode A - greenfield or refresh
 
 1. Prefer **\`pyproject.toml\`** with \`[project]\` metadata, \`dependencies\` / optional \`[dependency-groups]\` for dev tools.
 2. Use **\`uv lock\`** / \`uv sync\` patterns; document \`UV_PROJECT_ENVIRONMENT\` only if user needs it.
 3. **Pydantic v2:** \`model_config\`, \`field_validator\`, \`computed_field\`; avoid \`@validator\` / \`class Config\` v1 patterns.
-4. **Ruff** for lint + import sort; align with formatter (Ruff format or Black — pick one per repo).
-5. **Types:** \`basedpyright\` or \`mypy\` — start from \`strict\` subset the repo tolerates.
+4. **Ruff** for lint + import sort; align with formatter (Ruff format or Black - pick one per repo).
+5. **Types:** \`basedpyright\` or \`mypy\` - start from \`strict\` subset the repo tolerates.
 6. **Tests:** \`pytest\` layout (\`tests/\` or src layout); one example test command.
 
-## Mode B — audit
+## Mode B - audit
 
 1. List deprecated patterns (Pydantic v1, setuptools-only layout without \`pyproject\`).
 2. Flag slow hot paths; suggest **profile first**, then optional **Rust extension** (\`maturin\`) or **Cython** only when user owns build complexity.
 
 ## Native speed-ups (when asked)
 
-- **Small inner loops:** C extension or \`maturin\` crate behind a thin Python API — document build (\`uv build\`) and platform wheels.
+- **Small inner loops:** C extension or \`maturin\` crate behind a thin Python API - document build (\`uv build\`) and platform wheels.
 - **Validation-heavy paths:** Pydantic core is already Rust-backed; prefer model design over custom C unless profiling proves need.
 
 ## Outcomes

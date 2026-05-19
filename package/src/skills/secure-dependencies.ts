@@ -2,7 +2,7 @@ import { defineSkill } from "../types.js";
 
 const skillMd = `---
 name: secure-dependencies
-description: Lockfiles, audits, install-script risk, and CI dependency review for Node and pnpm — reduce supply-chain surprises
+description: Lockfiles, audits, install-script risk, and CI dependency review for Node and pnpm - reduce supply-chain surprises
 tags:
   - security
   - dependencies
@@ -37,10 +37,10 @@ Improve **dependency hygiene** and **supply-chain** posture for a **Node** repo 
 
 1. Confirm **lockfile is committed** and CI uses **frozen install** (\`pnpm install --frozen-lockfile\`).
 2. Add or verify **audit on PR** (\`pnpm audit --audit-level=high\` or org standard); document exit code policy.
-3. Enable **dependency review** on lockfile PRs when on GitHub — link to org setting if missing.
+3. Enable **dependency review** on lockfile PRs when on GitHub - link to org setting if missing.
 4. **Lifecycle scripts:** evaluate \`ignore-scripts\` / pnpm **trusted dependency builds**; list packages that truly need \`postinstall\`.
 5. **New deps:** require justification, scoped name when possible, link to repo + last release date.
-6. Pair with **\`dependency-migrations\`** for majors — never stack unrelated major bumps.
+6. Pair with **\`dependency-migrations\`** for majors - never stack unrelated major bumps.
 
 ## Outcomes
 
@@ -70,7 +70,7 @@ suggest-shell: give exact commands; user runs them. No \`curl | sh\` from untrus
 
 export const secureDependencies = defineSkill({
   name: "secure-dependencies",
-  description: "Lockfiles, audits, install-script risk, and CI dependency review for Node and pnpm — reduce supply-chain surprises",
+  description: "Lockfiles, audits, install-script risk, and CI dependency review for Node and pnpm - reduce supply-chain surprises",
   tags: ["security","dependencies","pnpm"],
   version: "1.0.0",
   category: "development",
@@ -88,10 +88,10 @@ Improve **dependency hygiene** and **supply-chain** posture for a **Node** repo 
 
 1. Confirm **lockfile is committed** and CI uses **frozen install** (\`pnpm install --frozen-lockfile\`).
 2. Add or verify **audit on PR** (\`pnpm audit --audit-level=high\` or org standard); document exit code policy.
-3. Enable **dependency review** on lockfile PRs when on GitHub — link to org setting if missing.
+3. Enable **dependency review** on lockfile PRs when on GitHub - link to org setting if missing.
 4. **Lifecycle scripts:** evaluate \`ignore-scripts\` / pnpm **trusted dependency builds**; list packages that truly need \`postinstall\`.
 5. **New deps:** require justification, scoped name when possible, link to repo + last release date.
-6. Pair with **\`dependency-migrations\`** for majors — never stack unrelated major bumps.
+6. Pair with **\`dependency-migrations\`** for majors - never stack unrelated major bumps.
 
 ## Outcomes
 

@@ -2,7 +2,7 @@ import { defineSkill } from "../types.js";
 
 const skillMd = `---
 name: markdown-pipeline
-description: Markdown and MDX pipelines with remark rehype — security performance and GFM parity
+description: Markdown and MDX pipelines with remark rehype - security performance and GFM parity
 tags:
   - markdown
   - mdx
@@ -36,7 +36,7 @@ Design a **markdown/MDX** rendering pipeline for **docs or blogs** in Next.js.
 
 1. **User-generated content:** sanitize HTML; forbid raw \`dangerouslySetInnerHTML\` without allowlist.
 2. **GFM:** tables, task lists, strikethrough via \`remark-gfm\`.
-3. **Syntax highlight:** server vs client component for Shiki or prism — pick based on bundle budget.
+3. **Syntax highlight:** server vs client component for Shiki or prism - pick based on bundle budget.
 4. **Links:** \`rel\` on external; heading slug plugin alignment with TOC.
 5. **Images:** \`next/image\` in MDX wrapper components with dimensions.
 
@@ -68,7 +68,7 @@ No unbounded HTML pass-through in examples.
 
 export const markdownPipeline = defineSkill({
   name: "markdown-pipeline",
-  description: "Markdown and MDX pipelines with remark rehype — security performance and GFM parity",
+  description: "Markdown and MDX pipelines with remark rehype - security performance and GFM parity",
   tags: ["markdown","mdx","documentation"],
   version: "1.0.0",
   category: "development",
@@ -86,7 +86,7 @@ Design a **markdown/MDX** rendering pipeline for **docs or blogs** in Next.js.
 
 1. **User-generated content:** sanitize HTML; forbid raw \`dangerouslySetInnerHTML\` without allowlist.
 2. **GFM:** tables, task lists, strikethrough via \`remark-gfm\`.
-3. **Syntax highlight:** server vs client component for Shiki or prism — pick based on bundle budget.
+3. **Syntax highlight:** server vs client component for Shiki or prism - pick based on bundle budget.
 4. **Links:** \`rel\` on external; heading slug plugin alignment with TOC.
 5. **Images:** \`next/image\` in MDX wrapper components with dimensions.
 

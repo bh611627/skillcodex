@@ -42,7 +42,7 @@ This skill merges **doc UI implementation** (formerly `documentation-ui`) and **
 
 Canonical rules live in [design-guidelines.md](../../references/design-guidelines.md) only. **STRICT UI ONLY** - no backend, API, DB, auth.
 
-**Motion:** use **shell + optional motion leaf** from [design-guidelines.md](../../references/design-guidelines.md): Tier 0 `div` + `CARD_HOVER` everywhere by default; Tier 2 `framer-motion` only in a dedicated `*Motion.tsx` with `'use client'`. **Never** mix `motion.div` and layout `div` in one file — split or drop Framer. Skeletons: always `animate-pulse` on `div`, never `motion`.
+**Motion:** use **shell + optional motion leaf** from [design-guidelines.md](../../references/design-guidelines.md): Tier 0 `div` + `CARD_HOVER` everywhere by default; Tier 2 `framer-motion` only in a dedicated `*Motion.tsx` with `'use client'`. **Never** mix `motion.div` and layout `div` in one file - split or drop Framer. Skeletons: always `animate-pulse` on `div`, never `motion`.
 
 ---
 

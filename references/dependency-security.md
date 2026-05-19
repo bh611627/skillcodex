@@ -11,13 +11,13 @@ Short reference for skills. Pair with `secure-dependencies` and `github-actions-
 ## Audits and automation
 
 - Run **`pnpm audit`** (or `npm audit`) on every PR; treat **high** as merge blockers unless documented exception with expiry date.
-- **GitHub Dependency review** (or equivalent) on PRs that touch lockfiles — blocks known-vulnerable versions.
+- **GitHub Dependency review** (or equivalent) on PRs that touch lockfiles - blocks known-vulnerable versions.
 - **Renovate or Dependabot** with grouped minor/patch updates reduces noise; major bumps stay manual with `dependency-migrations` skill.
 
 ## Install scripts and postinstall
 
 - Malicious or compromised packages run **`preinstall` / `postinstall`**. Prefer **`ignore-scripts=true`** in `.npmrc` when feasible, then allowlist only packages that need lifecycle scripts (document each).
-- **pnpm** `onlyBuiltDependencies` / `pnpm approve-builds` (pnpm 9+) — review native compile steps before approving.
+- **pnpm** `onlyBuiltDependencies` / `pnpm approve-builds` (pnpm 9+) - review native compile steps before approving.
 
 ## Names and typosquatting
 

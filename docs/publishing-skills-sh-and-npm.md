@@ -1,6 +1,6 @@
 # Publishing: skills.sh ecosystem vs npm
 
-SkillCodex ships skills in **two separate channels**. They are **not** the same upload — treat them independently.
+SkillCodex ships skills in **two separate channels**. They are **not** the same upload - treat them independently.
 
 | Channel | What you ship | Who consumes it |
 |---------|----------------|-----------------|
@@ -11,13 +11,15 @@ Official skills CLI source: [github.com/vercel-labs/skills](https://github.com/v
 
 ## skills.sh catalog mirror (this repo)
 
-All skills are also copied into **`skills-sh-catalog/skills/<slug>/SKILL.md`** so the tree matches the familiar [skills.sh](https://www.skills.sh/docs) layout (`skills/<name>/SKILL.md`). That folder is **generated** — edit only `skills/` then run:
+All skills are also copied into **`skills-sh-catalog/skills/<slug>/SKILL.md`** so the tree matches the familiar [skills.sh](https://www.skills.sh/docs) layout (`skills/<name>/SKILL.md`). That folder is **generated** - edit only `skills/` then run:
 
 ```bash
 pnpm export-skills-sh
 ```
 
 Checklist for docs vs CLI: [`skills-sh-catalog/REQUIREMENTS.md`](../skills-sh-catalog/REQUIREMENTS.md).
+
+**Contributing bundled skills to [vercel-labs/skills](https://github.com/vercel-labs/skills)** (fork, branch, PR, alignment with [skills.sh](https://www.skills.sh/docs) ecosystem): [GIT_WORKFLOW.md](../GIT_WORKFLOW.md) (section *Optional: PR to vercel-labs/skills*).
 
 ---
 
@@ -27,7 +29,7 @@ Checklist for docs vs CLI: [`skills-sh-catalog/REQUIREMENTS.md`](../skills-sh-ca
 
 Per [skills.sh documentation](https://www.skills.sh/docs):
 
-- The **leaderboard** ranks skills using **anonymous install telemetry** from the `skills` CLI when users install skills — not a manual bulk upload of markdown.
+- The **leaderboard** ranks skills using **anonymous install telemetry** from the `skills` CLI when users install skills - not a manual bulk upload of markdown.
 - **Security:** routine audits are described on [skills.sh/docs](https://www.skills.sh/docs); report issues via [security.vercel.com](https://security.vercel.com/).
 
 **What you do as maintainer:**
@@ -75,7 +77,7 @@ Publish when `skills/` or package exports change and consumers need a new **semv
    cd package && npm publish --access public
    ```
 
-   Use `pnpm publish` if your org standardizes on pnpm for publish — either is fine if the tarball is the same.
+   Use `pnpm publish` if your org standardizes on pnpm for publish - either is fine if the tarball is the same.
 
 4. **GitHub Release** (optional but nice): tag `v1.2.0` and paste changelog summary so `skills.sh` badge / links stay aligned with Git tags.
 
@@ -92,7 +94,7 @@ Publish when `skills/` or package exports change and consumers need a new **semv
 |--------|--------|-----|
 | New `skills/foo/SKILL.md` | Commit + push | Run `pnpm run sync`, bump version, `npm publish` |
 | Docs only under `docs/` | Commit + push | No npm publish unless you want README on npmjs updated from package README |
-| `references/*.md` only | Commit + push | Same as docs — republish if packaged copies matter (sync copies skills into `package/skills/`) |
+| `references/*.md` only | Commit + push | Same as docs - republish if packaged copies matter (sync copies skills into `package/skills/`) |
 
 `pnpm run sync` copies each `skills/<slug>/SKILL.md` into `package/skills/<slug>/` and regenerates `src/index.ts` and `package.json` **exports**.
 
@@ -100,7 +102,7 @@ Publish when `skills/` or package exports change and consumers need a new **semv
 
 ## 4. Related repo docs
 
-- [install-skills-cli.md](./install-skills-cli.md) — `npx skills add` vs npm
-- [skills-discovery.md](./skills-discovery.md) — leaderboard context
-- [skills-coverage-matrix.md](./skills-coverage-matrix.md) — which skill covers which concern
-- [references/skills-ecosystem.md](../references/skills-ecosystem.md) — Vercel CLI vs agent-skills bundle
+- [install-skills-cli.md](./install-skills-cli.md) - `npx skills add` vs npm
+- [skills-discovery.md](./skills-discovery.md) - leaderboard context
+- [skills-coverage-matrix.md](./skills-coverage-matrix.md) - which skill covers which concern
+- [references/skills-ecosystem.md](../references/skills-ecosystem.md) - Vercel CLI vs agent-skills bundle

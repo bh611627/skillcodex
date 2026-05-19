@@ -66,7 +66,7 @@ All slugs: [DIRECTORY.md](../DIRECTORY.md).
 - Single place to **browse every \`SKILL.md\`** in the skills.sh–expected shape (\`skills/<slug>/SKILL.md\`).
 - Easier to compare with [vercel-labs/skills](https://github.com/vercel-labs/skills) layout when preparing upstream PRs (see [contrib/vercel-labs-skills](../contrib/vercel-labs-skills/README.md)).
 
-**Last export:** ${new Date().toISOString()} — **${count}** skills.
+**Last export:** ${new Date().toISOString()} - **${count}** skills.
 `;
 
 writeFileSync(join(repoRoot, "skills-sh-catalog", "README.md"), readme, "utf8");

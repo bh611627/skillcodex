@@ -29,26 +29,26 @@ INP replaced FID. Use Search Console → **Experience → Core Web Vitals** (or 
 
 ## Search Console workflows (check in this order)
 
-1. **Page indexing** — why URLs are indexed, crawled but not indexed, excluded, or duplicate
-2. **URL Inspection** — live URL test, request indexing after meaningful fixes, view rendered HTML
-3. **Performance** — queries, pages, countries, devices; CTR vs position; allow ~2–3 days lag for fresh data
-4. **Sitemaps** — submit `sitemap.xml`; fix “couldn’t fetch” or 404 sitemap URLs
-5. **Core Web Vitals** — fix “Poor” templates first (hero media, fonts, layout shift, long tasks)
-6. **Mobile usability** — viewport, text size, tap targets, intrusive interstitials
-7. **Security & manual actions** — resolve hacked content or policy issues before chasing rankings
-8. **Enhancements / rich results** — validate structured data after deploy (Article, FAQ, Product, etc.)
+1. **Page indexing** - why URLs are indexed, crawled but not indexed, excluded, or duplicate
+2. **URL Inspection** - live URL test, request indexing after meaningful fixes, view rendered HTML
+3. **Performance** - queries, pages, countries, devices; CTR vs position; allow ~2–3 days lag for fresh data
+4. **Sitemaps** - submit `sitemap.xml`; fix “couldn’t fetch” or 404 sitemap URLs
+5. **Core Web Vitals** - fix “Poor” templates first (hero media, fonts, layout shift, long tasks)
+6. **Mobile usability** - viewport, text size, tap targets, intrusive interstitials
+7. **Security & manual actions** - resolve hacked content or policy issues before chasing rankings
+8. **Enhancements / rich results** - validate structured data after deploy (Article, FAQ, Product, etc.)
 
 ---
 
 ## URL and information architecture (SEO-friendly)
 
-- **Short, descriptive slugs** — lowercase, hyphens; avoid dates or opaque IDs in evergreen URLs unless needed
-- **One topic per URL** — avoid one page ranking for unrelated head terms; split when intent diverges
-- **Stable URLs** — redirects (301) when renaming; update internal links and sitemap
-- **Pagination** — `rel=next`/`prev` deprecated in practice; prefer clear page numbers in path or `?page=` with self-canonical per page and unique titles
-- **Parameters** — strip tracking params in canonical; avoid infinite crawl spaces (`?sort=` combinations)
-- **Trailing slashes** — pick one convention sitewide; redirect the other
-- **International** — `hreflang` annotations for equivalent locale pages; reciprocal consistency
+- **Short, descriptive slugs** - lowercase, hyphens; avoid dates or opaque IDs in evergreen URLs unless needed
+- **One topic per URL** - avoid one page ranking for unrelated head terms; split when intent diverges
+- **Stable URLs** - redirects (301) when renaming; update internal links and sitemap
+- **Pagination** - `rel=next`/`prev` deprecated in practice; prefer clear page numbers in path or `?page=` with self-canonical per page and unique titles
+- **Parameters** - strip tracking params in canonical; avoid infinite crawl spaces (`?sort=` combinations)
+- **Trailing slashes** - pick one convention sitewide; redirect the other
+- **International** - `hreflang` annotations for equivalent locale pages; reciprocal consistency
 
 ---
 
@@ -88,7 +88,7 @@ INP replaced FID. Use Search Console → **Experience → Core Web Vitals** (or 
 - Map each URL to **one primary intent** (informational, navigational, transactional, commercial investigation)
 - Cover **sub-questions** competitors answer (comparison tables, prerequisites, limits, pricing transparency where relevant)
 - **Internal links** with descriptive anchors to hub pages and related guides
-- **Freshness** where the topic demands it (docs, regulations, release notes) — update visible dates when materially changed
+- **Freshness** where the topic demands it (docs, regulations, release notes) - update visible dates when materially changed
 
 ---
 
@@ -104,7 +104,7 @@ INP replaced FID. Use Search Console → **Experience → Core Web Vitals** (or 
 
 ## Quick reference: high-intent checks before shipping a template
 
-- [ ] Field LCP/INP/CLS acceptable for template in Search Console (or not yet measured — state that)
+- [ ] Field LCP/INP/CLS acceptable for template in Search Console (or not yet measured - state that)
 - [ ] Canonical correct for parameterized and duplicate paths
 - [ ] Title + description unique and aligned to H1/H2
 - [ ] JSON-LD valid and matches on-page content
@@ -116,16 +116,16 @@ INP replaced FID. Use Search Console → **Experience → Core Web Vitals** (or 
 ## Experience, expertise, and trust (on-page signals)
 
 - **Clear bylines** or team attribution where the topic needs credibility (health, finance, legal).
-- **Primary sources** — link to official docs, standards, or data; avoid orphan claims.
-- **Update history** — visible “last updated” when facts change (regulations, pricing ranges, APIs).
-- **Contact and policies** — about, editorial policy, or support paths for YMYL-style topics.
-- **Thin aggregation** — do not copy competitor paragraphs; add synthesis, tables, or steps they omit.
+- **Primary sources** - link to official docs, standards, or data; avoid orphan claims.
+- **Update history** - visible “last updated” when facts change (regulations, pricing ranges, APIs).
+- **Contact and policies** - about, editorial policy, or support paths for YMYL-style topics.
+- **Thin aggregation** - do not copy competitor paragraphs; add synthesis, tables, or steps they omit.
 
 ---
 
 ## Keyword demand without stuffing
 
-- Use **Search Console Performance** (queries + pages) for *your* site’s real demand — not generic volume guesses.
+- Use **Search Console Performance** (queries + pages) for *your* site’s real demand - not generic volume guesses.
 - Complement with **related searches**, **People Also Ask**, and **competitor headings** for gap ideas.
 - Place terms in **title, H1, first paragraph, and URL slug** only when they match intent; avoid footer or hidden repetition.
 - One primary phrase per URL; use supporting phrases in H2s and body naturally.
@@ -135,7 +135,7 @@ INP replaced FID. Use Search Console → **Experience → Core Web Vitals** (or 
 ## URL slug checklist (SEO-friendly paths)
 
 - Lowercase, hyphens, **no** underscore in public marketing URLs unless legacy forces it.
-- **Match intent** — `/docs/install-cli` beats `/page?id=3` for evergreen topics.
+- **Match intent** - `/docs/install-cli` beats `/page?id=3` for evergreen topics.
 - Avoid **keyword stuffing** in path segments (`/buy-best-cheap-widgets-widgets`).
 - Keep depth reasonable; every extra folder dilutes perceived focus unless IA requires it.
 - When renaming: **301**, internal links, sitemap, GSC URL Inspection after deploy.
@@ -166,7 +166,7 @@ Per [skills.sh documentation](https://www.skills.sh/docs), installs use the open
 npx skills add https://github.com/bh611627/skillcodex --skill seo-expert
 ```
 
-That pulls **one** skill into the host — not the whole npm bundle. Use `npm install @skillcodex/skills` when you need **programmatic** imports in Node.
+That pulls **one** skill into the host - not the whole npm bundle. Use `npm install @skillcodex/skills` when you need **programmatic** imports in Node.
 
 ---
 

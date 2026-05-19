@@ -1,8 +1,8 @@
 # SkillCodex design guidelines
 
-> **STRICTLY UI/UX ONLY** — no backend, no APIs, no database, no authentication logic.
+> **STRICTLY UI/UX ONLY** - no backend, no APIs, no database, no authentication logic.
 >
-> Build a **premium documentation-style** UI for browsing, reading, and creating `SKILL.md` files (like [skills.sh](https://www.skills.sh/) but clearer). Inspired by SkillCodex — not SkillForge.
+> Build a **premium documentation-style** UI for browsing, reading, and creating `SKILL.md` files (like [skills.sh](https://www.skills.sh/) but clearer). Inspired by SkillCodex - not SkillForge.
 
 **Feel:** extremely clean, highly readable, Apple-level refined, documentation-first, calm, structured, minimal, professional. **NOT** generic template churn or flashy visuals; **no** gradient-heavy treatment; **no** glassmorphism (`backdrop-blur`); avoid vendor-style metric dashboards and sales-led landing chrome.
 
@@ -20,20 +20,20 @@ If the user names an industry or product type, use the **tables in this document
 | Install `@skillcodex/skills` | **npm** |
 | Existing user project | **Match lockfile** (`pnpm-lock.yaml` → pnpm, `package-lock.json` → npm) |
 
-**UI stack (React — do not drop the core):** **React**, **TypeScript**, **Tailwind CSS**, **react-markdown**, **remark-gfm**, **react-icons**. Host with **Next.js (App Router)** or **Vite + React**; same layout and component rules apply.
+**UI stack (React - do not drop the core):** **React**, **TypeScript**, **Tailwind CSS**, **react-markdown**, **remark-gfm**, **react-icons**. Host with **Next.js (App Router)** or **Vite + React**; same layout and component rules apply.
 
 ```bash
 # Next.js (common for doc UIs)
 pnpm create next-app@latest skillcodex-ui --ts --tailwind --eslint --app --src-dir --import-alias "@/*"
 cd skillcodex-ui && pnpm install
 pnpm add react-markdown remark-gfm react-icons
-# optional — only after reading "Motion policy" below:
+# optional - only after reading "Motion policy" below:
 pnpm add framer-motion
 pnpm dev
 ```
 
 ```bash
-# Vite + React — install Tailwind per current Vite + Tailwind docs, then:
+# Vite + React - install Tailwind per current Vite + Tailwind docs, then:
 pnpm add react-markdown remark-gfm react-icons
 pnpm dev
 ```
@@ -47,27 +47,27 @@ Use the same words in specs, comments, and generated output so nothing drifts be
 | Term | Meaning for SkillCodex doc UIs |
 |------|--------------------------------|
 | **Surface** | Card, panel, or page region with one background token (`--surface` / `bg-[var(--surface)]`) |
-| **Rhythm** | Vertical spacing from the whitespace scale — never arbitrary one-off `mt-7` |
+| **Rhythm** | Vertical spacing from the whitespace scale - never arbitrary one-off `mt-7` |
 | **Scannability** | Headings, lists, and tags let users find a skill in under 10 seconds |
 | **Information scent** | Headings, breadcrumbs, and previews hint at what is inside the next click |
 | **Affordance** | Hover, focus, and cursor states prove something is clickable |
 | **Density** | **Comfortable** (default docs), **compact** (tables/filters only), never **cramped** vendor-style metric dashboards |
-| **Elevation** | Border + subtle shadow or border-only — no heavy drop shadows |
-| **Accent** | **One** muted sage/stone family — no rainbow CTAs |
-| **Conversion pressure** | How hard the UI pushes a funnel — **low** for docs (SkillCodex default) |
+| **Elevation** | Border + subtle shadow or border-only - no heavy drop shadows |
+| **Accent** | **One** muted sage/stone family - no rainbow CTAs |
+| **Conversion pressure** | How hard the UI pushes a funnel - **low** for docs (SkillCodex default) |
 | **Motion tier** | **0** = opacity/transform micro-states on `div` only; **1** = CSS keyframes / `animate-*` / `@keyframes` on `div` only (still no Framer); **2** = Framer `motion` in **one** named `*Motion.tsx` / `*Client.tsx` leaf only |
-| **Motion API** | **Per file, one API only:** either **DOM+CSS** (tiers 0–1) **or** **Framer** (tier 2). Mixing `motion.*` and plain layout `div` in the same file is forbidden — split or pick Tier 0 |
+| **Motion API** | **Per file, one API only:** either **DOM+CSS** (tiers 0–1) **or** **Framer** (tier 2). Mixing `motion.*` and plain layout `div` in the same file is forbidden - split or pick Tier 0 |
 | **Shell vs leaf** | **Shell** = layout, lists, cards, typography (Tier 0). **Leaf** = optional Tier 2 file that owns all `motion` for one widget |
 | **Hydration boundary** | Next App Router: any file with `motion` or `framer-motion` import must start with `'use client'` and live outside RSC parents as a child import |
 | **Skeleton honesty** | Placeholders match final layout width/height bands so layout does not jump |
 | **Doc-trust** | Testimonials read as documentation quotes, not marketing carousel |
-| **Module boundary** | Server file vs `*Motion.tsx` / `*Client.tsx` — Framer never crosses back into RSC parents |
-| **Token stability** | One shared class string (e.g. `CARD_HOVER`) per interaction pattern — do not duplicate in `motion` props and `className` |
+| **Module boundary** | Server file vs `*Motion.tsx` / `*Client.tsx` - Framer never crosses back into RSC parents |
+| **Token stability** | One shared class string (e.g. `CARD_HOVER`) per interaction pattern - do not duplicate in `motion` props and `className` |
 | **Stack fidelity** | Patterns match the real stack (Next App Router vs Vite) without inventing APIs |
 
 ---
 
-## Motion policy (single source of truth — avoids refactor / token confusion)
+## Motion policy (single source of truth - avoids refactor / token confusion)
 
 **Problem:** Implementors bounce between `motion.div` and `<div>`, duplicate `className` strings on both, leave dead `framer-motion` imports, and break RSC. That wastes tokens and produces inconsistent hover. **Rule:** default UI is **100% DOM + Tailwind**. Framer is an **opt-in leaf**, never a refactor ping-pong inside one file.
 
@@ -79,49 +79,49 @@ Use the same words in specs, comments, and generated output so nothing drifts be
 | **Surface** | same or `SkillCardSurface.tsx` | Borders, padding, static visuals | 0 |
 | **Motion leaf** | `SkillCardMotion.tsx` **only** | All `motion.*` for one widget | 2 |
 
-- **Never** put `motion` next to layout `div` in the same module — split the leaf or delete Framer.
-- **Never** rename `motion.div` → `div` while keeping `import { motion }` — remove the import or keep Tier 2 in the leaf file only.
+- **Never** put `motion` next to layout `div` in the same module - split the leaf or delete Framer.
+- **Never** rename `motion.div` → `div` while keeping `import { motion }` - remove the import or keep Tier 2 in the leaf file only.
 
-### Tier 0 — Default (no Framer)
+### Tier 0 - Default (no Framer)
 
 - Use **`<div>`** (or semantic elements) + Tailwind: `transition-[transform,opacity]`, `duration-200`, `hover:-translate-y-0.5`, `motion-reduce:transform-none`.
 - **All** Server Components, layouts, lists, cards, grids, nav, and skeletons stay Tier 0.
 - **Do not** import `framer-motion` in files without `'use client'`.
-- Prefer **explicit** transition properties — never `transition-all`.
+- Prefer **explicit** transition properties - never `transition-all`.
 
-### Tier 1 — CSS animation on `div` only (still no Framer)
+### Tier 1 - CSS animation on `div` only (still no Framer)
 
 - `animate-pulse`, `animate-spin`, small `@keyframes` for success checkmarks, **native `<details>`** open affordance.
 - **Still no** `motion` import. OK in Server Components if the animation is class-only and does not read `window`.
 
-### Tier 2 — Framer only in isolated client leaves
+### Tier 2 - Framer only in isolated client leaves
 
 Use **only** when CSS cannot do the job (coordinated enter/exit, shared layout, drag, staggered list mount **and** the user asked for it). Then:
 
 1. **New file** with `'use client'` at line 1, suffix **`Motion`** or **`Client`** (e.g. `SkillCardMotion.tsx`).
-2. **All** `motion.div` / `motion.span` for that widget live **only** in that file — no `motion` in parents.
+2. **All** `motion.div` / `motion.span` for that widget live **only** in that file - no `motion` in parents.
 3. **Props contract:** leaf receives data + callbacks; parent stays dumb shell. **No** `motion.*` in `layout.tsx`, `page.tsx`, or route shells (compose: `<SkillCardMotion … />` from a small client wrapper if the page is otherwise server).
-4. **Downgrade path:** Tier 2 → Tier 0 = delete leaf file’s `framer-motion` usage **and** move hover back to `CARD_HOVER` on shell — one PR, one direction, no mixed state.
-5. **Skeletons:** always `<div className="animate-pulse …">` — **never** `motion` for pulse.
+4. **Downgrade path:** Tier 2 → Tier 0 = delete leaf file’s `framer-motion` usage **and** move hover back to `CARD_HOVER` on shell - one PR, one direction, no mixed state.
+5. **Skeletons:** always `<div className="animate-pulse …">` - **never** `motion` for pulse.
 
-### Shared motion tokens (define once — single string of truth)
+### Shared motion tokens (define once - single string of truth)
 
 Define **once** (e.g. `lib/ui-motion.ts`):
 
 ```ts
-/** Tier 0 card hover — every card shell uses this unless a Tier 2 leaf fully owns hover */
+/** Tier 0 card hover - every card shell uses this unless a Tier 2 leaf fully owns hover */
 export const CARD_HOVER =
   "transition-[transform,opacity] duration-200 ease-out hover:-translate-y-0.5 motion-reduce:transform-none motion-reduce:hover:translate-y-0 motion-reduce:transition-none";
 ```
 
-**Do not** copy this string into `motion` `whileHover` **and** `className` — pick one layer (shell uses `CARD_HOVER`; leaf uses `motion` props **or** duplicates intentionally with a comment — prefer shell hover only, motion leaf for enter/exit only).
+**Do not** copy this string into `motion` `whileHover` **and** `className` - pick one layer (shell uses `CARD_HOVER`; leaf uses `motion` props **or** duplicates intentionally with a comment - prefer shell hover only, motion leaf for enter/exit only).
 
 ### Decision tree
 
 1. Skeleton / loading placeholder? → **Tier 0**, `animate-pulse` `div`.
 2. Hover / tap / focus ring only? → **Tier 0**, `div` + `CARD_HOVER` or Tailwind states.
 3. Simple reveal (`opacity`, `max-height` on `<details>`)? → **Tier 1**, still `div` / native elements.
-4. Orchestrated mount, shared layout, drag? → **Tier 2**, new `*Motion.tsx` only — **after** user confirms motion is worth the client bundle.
+4. Orchestrated mount, shared layout, drag? → **Tier 2**, new `*Motion.tsx` only - **after** user confirms motion is worth the client bundle.
 
 ### Fixing common errors (apply exactly one row)
 
@@ -130,11 +130,11 @@ export const CARD_HOVER =
 | RSC error with `motion` / `onClick` on server file | Extract to `*Motion.tsx` with `'use client'` **or** replace with Tier 0 `div` + `CARD_HOVER`. |
 | Same file mixes `motion.div` and layout `div` | Split: static markup stays in shell; move **all** `motion` lines to `*Motion.tsx`. |
 | Refactor replaced `motion.div` with `div` but import remains | Delete `framer-motion` import from that file; add `CARD_HOVER` to shell. |
-| Hover feels “lost” after removing Framer | You removed motion props but not restored `CARD_HOVER` on the shell — add it. |
+| Hover feels “lost” after removing Framer | You removed motion props but not restored `CARD_HOVER` on the shell - add it. |
 | Type errors on `motion` | Tier 0 unless leaf is client-only and dependency is installed. |
 
 ```tsx
-// Tier 0 — default card shell (Server or Client)
+// Tier 0 - default card shell (Server or Client)
 <div className={CARD_HOVER}>…</div>
 ```
 
@@ -144,7 +144,7 @@ export const CARD_HOVER =
 
 | skills.sh | SkillCodex UI should add |
 |-----------|---------------------------|
-| Install leaderboard | **Outcomes** per skill (what you get) — no fake install counts |
+| Install leaderboard | **Outcomes** per skill (what you get) - no fake install counts |
 | `npx skills add owner/repo` | Show **GitHub path** + `npm install @skillcodex/skills` + clone command |
 | Opaque listing | Full **SKILL.md** readable; metadata visible before install |
 | Directory only | Dual format: GitHub markdown + npm module |
@@ -164,14 +164,14 @@ export const CARD_HOVER =
 - Custom CSS classes when Tailwind utilities suffice
 - Multiple accent colors or default blue buttons
 - **Motion churn:** alternating `motion.div` ↔ `<div>` in one file, or mixing Framer imports with Tier 0 shells
-- **Hover duplication:** same hover values in `motion` props and `className` on different layers — pick **shell + `CARD_HOVER`** or **motion leaf only** for that widget’s motion
+- **Hover duplication:** same hover values in `motion` props and `className` on different layers - pick **shell + `CARD_HOVER`** or **motion leaf only** for that widget’s motion
 
 ---
 
 ## Core principles
 
 - clarity over decoration
-- **whitespace is a design feature** — generous vertical rhythm
+- **whitespace is a design feature** - generous vertical rhythm
 - content-first; readability is highest priority
 - mobile-first, then `md:` / `lg:`
 - Tailwind utilities in TSX; CSS vars only for theme tokens (`bg-[var(--bg)]`, etc.)
@@ -266,7 +266,7 @@ Use these **named styles** in specs and code comments so implementors pick a coh
 
 ## Industry and product layout tables
 
-Use this as a **lookup**: when the user names an industry, align **density**, **tone**, and **motion tier** defaults. SkillCodex doc UIs stay **documentation-first** everywhere — retail catalog contexts here mean **catalog readability**, not checkout marketing chrome.
+Use this as a **lookup**: when the user names an industry, align **density**, **tone**, and **motion tier** defaults. SkillCodex doc UIs stay **documentation-first** everywhere - retail catalog contexts here mean **catalog readability**, not checkout marketing chrome.
 
 **Columns:** archetype | layout bias | type scale | color mood | motion default | SkillCodex note
 
@@ -764,22 +764,22 @@ Use this as a **lookup**: when the user names an industry, align **density**, **
 
 ### Testimonials / trust quotes (doc UIs only)
 
-Allowed when they read as **documentation trust** (short quotes, calm cards) — not a marketing page.
+Allowed when they read as **documentation trust** (short quotes, calm cards) - not a marketing page.
 
 - **Avatar:** In **Next.js**, use `next/image` with fixed `width` / `height`. In **Vite/plain React**, use `<img>` with explicit `width`/`height` (or CSS aspect + `object-cover`) and the same **`alt`** rules. Shape: `rounded-full` or `rounded-xl`.
-- **Quote:** bounded width, generous padding, body typography — no star-rating widgets or “As seen in” logo strips
+- **Quote:** bounded width, generous padding, body typography - no star-rating widgets or “As seen in” logo strips
 - **Motion:** Tier 0 only unless a dedicated client quote component needs Tier 2
 
 ### Buttons and links (interaction)
 
-- **`<button type="button">`** for on-page actions; **`next/link`** (Next) or **`react-router` `<Link>`** / **`<a href>`** for navigation — never a `div` with `onClick` for navigation
+- **`<button type="button">`** for on-page actions; **`next/link`** (Next) or **`react-router` `<Link>`** / **`<a href>`** for navigation - never a `div` with `onClick` for navigation
 - **Cursor:** `cursor-pointer` on interactive elements; `cursor-not-allowed` when `disabled`
 - **Hover:** visible state change (background, border, or lift per motion rules)
 - **Focus:** `focus-visible` ring; never bare `outline-none` without a replacement
 
 **Icons:** react-icons only (one library). Emoji Mart `set="apple"` only if user asks for picker.
 
-**Footer:** `© {new Date().getFullYear()} {brand}` in root layout (`app/layout.tsx` on Next or root component on Vite) — never hardcode year.
+**Footer:** `© {new Date().getFullYear()} {brand}` in root layout (`app/layout.tsx` on Next or root component on Vite) - never hardcode year.
 
 ---
 
@@ -813,7 +813,7 @@ Optional deep audit: fetch `vercel-labs/web-interface-guidelines/main/command.md
 
 ---
 
-## Pages (route shape — adapt to your router)
+## Pages (route shape - adapt to your router)
 
 **Next.js:** `app/page.tsx`, `app/skills/[slug]/page.tsx`, etc. **Vite + react-router:** `/`, `/skills/:slug`, same UX.
 
@@ -827,7 +827,7 @@ Centered markdown reader; header with title, description, tags, version, **outco
 
 ### 3. Create `/create` (UI only)
 
-Split: left form (name, description, tags, instructions, output format) + right live markdown preview. Labels, validation, toast on copy/export. Client download .md only — no server save.
+Split: left form (name, description, tags, instructions, output format) + right live markdown preview. Labels, validation, toast on copy/export. Client download .md only - no server save.
 
 ### 4. Guidelines `/guidelines`
 
@@ -837,7 +837,7 @@ Doc layout explaining design + web interface rules; same spacing/tokens.
 
 ## SkillCodex platform (two formats)
 
-**GitHub (primary):** `skills/<name>/SKILL.md` — browse, fork, copy into skill hosts (Cursor, Claude Code, skills.sh, and similar).
+**GitHub (primary):** `skills/<name>/SKILL.md` - browse, fork, copy into skill hosts (Cursor, Claude Code, skills.sh, and similar).
 
 **npm (developer):** `npm install @skillcodex/skills` then `import x from "@skillcodex/skills/<name>"`.
 
@@ -847,15 +847,15 @@ Write once as SKILL.md; share on GitHub; optional npm mirror. Every skill lists 
 
 ## Checklist
 
-- [ ] STRICT UI only — no backend/API/DB/auth
+- [ ] STRICT UI only - no backend/API/DB/auth
 - [ ] Mobile-first Tailwind; whitespace rhythm; **no** sales-led chrome, **no** heavy gradients, **no** glass
 - [ ] Skeletons on all content surfaces (`<div className="animate-pulse">`); motion via **Tier 0** unless an isolated `*Motion.tsx` client file uses Tier 2
-- [ ] Motion policy — **shell vs leaf** respected; no `motion` in Server files; no mixed motion API in one module
-- [ ] Tier 1 only on `div` / native elements — never `transition-all`
+- [ ] Motion policy - **shell vs leaf** respected; no `motion` in Server files; no mixed motion API in one module
+- [ ] Tier 1 only on `div` / native elements - never `transition-all`
 - [ ] Shared `CARD_HOVER` (or equivalent) defined once if using CSS hover widely
 - [ ] Outcomes visible on detail; skills.sh gaps addressed
 - [ ] Buttons: `cursor-pointer`, hover, `focus-visible`, disabled cursor; real `<button>` / `Link`
-- [ ] Testimonials (if any): `next/image` avatars with **alt**, doc-trust layout — not marketing carousel
-- [ ] Closest layout table row chosen when user names an industry — defaults applied consistently
+- [ ] Testimonials (if any): `next/image` avatars with **alt**, doc-trust layout - not marketing carousel
+- [ ] Closest layout table row chosen when user names an industry - defaults applied consistently
 - [ ] Package manager matches user project lockfile
 - [ ] `pnpm dev` runs

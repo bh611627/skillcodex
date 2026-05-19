@@ -4,7 +4,7 @@ Skills are **short policies**, but they link to longer `references/*.md` files. 
 
 ## Rules for anyone applying a skill
 
-1. Open the skill’s **`SKILL.md` from top to bottom** — frontmatter sets risk, tools, and outcomes.
+1. Open the skill’s **`SKILL.md` from top to bottom** - frontmatter sets risk, tools, and outcomes.
 2. Open **every `references/` path** listed in frontmatter before editing code or giving SEO advice.
 3. Prefer the **raw GitHub URL** when the file is missing locally:
 

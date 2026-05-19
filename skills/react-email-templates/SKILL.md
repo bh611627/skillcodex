@@ -1,6 +1,6 @@
 ---
 name: react-email-templates
-description: Transactional email with React components — layout tables text version and test sends
+description: Transactional email with React components - layout tables text version and test sends
 tags:
   - email
   - react

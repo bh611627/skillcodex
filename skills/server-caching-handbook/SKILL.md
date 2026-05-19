@@ -34,11 +34,11 @@ references:
 
 Design **server-side caching** for **Next.js** under load. Pair with **`next-server-patterns`**.
 
-1. Classify data: **public static**, **public dynamic**, **per-user** — each needs different cache keys and invalidation.
+1. Classify data: **public static**, **public dynamic**, **per-user** - each needs different cache keys and invalidation.
 2. **Tags:** use granular `revalidateTag` keys; document which Server Actions invalidate which tags.
-3. **Stampedes:** when tag expires, many misses hit origin — apply **singleflight**, **stale-while-revalidate**, or **TTL jitter** (see **`references/server-caching-patterns.md`**).
+3. **Stampedes:** when tag expires, many misses hit origin - apply **singleflight**, **stale-while-revalidate**, or **TTL jitter** (see **`references/server-caching-patterns.md`**).
 4. **`unstable_cache` / `cache`:** wrap DB or HTTP fan-out; keys must include tenant and all inputs that affect output.
-5. **External Redis:** use for cross-region or cross-runtime shared cache; define serialization, TTL, and namespacing; handle Redis down (degrade or fail closed — user chooses).
+5. **External Redis:** use for cross-region or cross-runtime shared cache; define serialization, TTL, and namespacing; handle Redis down (degrade or fail closed - user chooses).
 6. **Personalization:** never cache HTML that embeds private user data under a shared URL.
 
 ## Outcomes
@@ -47,7 +47,7 @@ Design **server-side caching** for **Next.js** under load. Pair with **`next-ser
 
 ## Output Rules
 
-State Next version from lockfile; behavior differs by minor — say “verify against installed Next”.
+State Next version from lockfile; behavior differs by minor - say “verify against installed Next”.
 
 ## Scope and boundaries
 

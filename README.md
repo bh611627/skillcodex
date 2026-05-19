@@ -27,7 +27,7 @@ Install into Cursor (`.cursor/skills/`), Claude Code, or skills.sh-compatible ho
 npx skills add https://github.com/bh611627/skillcodex --skill seo-expert
 ```
 
-Only **that** skill is added to the host — not the whole repo. Replace `seo-expert` with any slug from [DIRECTORY.md](./DIRECTORY.md). Details: [docs/install-skills-cli.md](./docs/install-skills-cli.md).
+Only **that** skill is added to the host - not the whole repo. Replace `seo-expert` with any slug from [DIRECTORY.md](./DIRECTORY.md). Details: [docs/install-skills-cli.md](./docs/install-skills-cli.md).
 
 ### For Node.js / tooling
 
@@ -37,7 +37,7 @@ npm install @skillcodex/skills
 pnpm add @skillcodex/skills
 ```
 
-Requires **Node.js 18+**. **Publishing:** npm package and [skills.sh](https://www.skills.sh/) CLI discovery are separate — see [docs/publishing-skills-sh-and-npm.md](./docs/publishing-skills-sh-and-npm.md).
+Requires **Node.js 18+**. **Publishing:** npm package and [skills.sh](https://www.skills.sh/) CLI discovery are separate - see [docs/publishing-skills-sh-and-npm.md](./docs/publishing-skills-sh-and-npm.md).
 
 ### For contributors
 
@@ -56,7 +56,7 @@ pnpm validate
 
 1. Pick a skill from the [directory](./DIRECTORY.md) or table below.
 2. Run `npx skills add https://github.com/bh611627/skillcodex --skill <slug>` **or** copy `skills/<slug>/SKILL.md` into your host skills folder.
-3. Read the **full** `SKILL.md` plus linked `references/` files before acting — see [docs/read-full-documentation.md](./docs/read-full-documentation.md).
+3. Read the **full** `SKILL.md` plus linked `references/` files before acting - see [docs/read-full-documentation.md](./docs/read-full-documentation.md).
 4. Invoke with a concrete task (see [examples](./examples/)).
 
 ### Import from npm (TypeScript)
@@ -93,7 +93,7 @@ More detail: [docs/usage.md](./docs/usage.md)
 | Safe env setup | [env-config-agent](./skills/env-config-agent/SKILL.md) | “Create `.env.example` and typed env with zod” |
 | Prisma schema | [database-schema-agent](./skills/database-schema-agent/SKILL.md) | “Review schema for missing indexes” |
 | Doc UI (skills.sh-style) | [web-design-guidelines](./skills/web-design-guidelines/SKILL.md) | “Build a skill browser with skeletons and outcomes” |
-| App Router server vs client | [next-server-patterns](./skills/next-server-patterns/SKILL.md) | “Where should this data fetch live — RSC, Route Handler, or client?” |
+| App Router server vs client | [next-server-patterns](./skills/next-server-patterns/SKILL.md) | “Where should this data fetch live - RSC, Route Handler, or client?” |
 | REST / Route Handlers | [api-handbook](./skills/api-handbook/SKILL.md) | “Design CRUD handlers with zod and consistent errors” |
 | Forms + zod | [forms-and-validation](./skills/forms-and-validation/SKILL.md) | “Server Actions form with accessible errors” |
 | Locales + routing | [i18n-handbook](./skills/i18n-handbook/SKILL.md) | “Add `en`/`de` with metadata and hreflang” |
@@ -136,7 +136,7 @@ With skill:     scoped diff, file:line findings, stated outcomes, safety limits
 - **Quality bar** - skills target **stable LTS** stacks (see `references/stack-nextjs.md`), spell out security tradeoffs, and cross-link related skills so agents do not contradict each other.
 - **AI + human readable** - structured for agents *and* code review in PRs.
 
-Compared to [skills.sh](https://www.skills.sh/): same `npx skills add` install path ([docs](https://www.skills.sh/docs)), but SkillCodex emphasizes **outcomes** and **auditable** markdown. The skills.sh leaderboard ranks by **anonymous CLI telemetry**, not manual uploads — see [docs/publishing-skills-sh-and-npm.md](./docs/publishing-skills-sh-and-npm.md).
+Compared to [skills.sh](https://www.skills.sh/): same `npx skills add` install path ([docs](https://www.skills.sh/docs)), but SkillCodex emphasizes **outcomes** and **auditable** markdown. The skills.sh leaderboard ranks by **anonymous CLI telemetry**, not manual uploads - see [docs/publishing-skills-sh-and-npm.md](./docs/publishing-skills-sh-and-npm.md).
 
 ---
 
@@ -189,10 +189,10 @@ Compared to [skills.sh](https://www.skills.sh/): same `npx skills add` install p
 | Path | Purpose |
 |------|---------|
 | `skills/` | Source of truth - one `SKILL.md` per skill |
-| `skills-sh-catalog/skills/` | **Generated** mirror of `skills/` for [skills.sh](https://www.skills.sh/docs) layout — run `pnpm export-skills-sh` after skill changes |
+| `skills-sh-catalog/skills/` | **Generated** mirror of `skills/` for [skills.sh](https://www.skills.sh/docs) layout - run `pnpm export-skills-sh` after skill changes |
 | `references/` | Shared rules (design, SEO, safety) |
 | `package/` | npm package `@skillcodex/skills` |
-| `docs/` | Introduction, usage, contributing |
+| `docs/` | Usage, publishing, contributing |
 | `examples/` | Cursor and Claude Code guides |
 
 [REPO_LAYOUT.md](./REPO_LAYOUT.md) · [GIT_WORKFLOW.md](./GIT_WORKFLOW.md) · [CHANGELOG.md](./CHANGELOG.md)
@@ -203,26 +203,25 @@ Compared to [skills.sh](https://www.skills.sh/): same `npx skills add` install p
 
 | Doc | Description |
 |-----|-------------|
-| [docs/introduction.md](./docs/introduction.md) | Concepts and ecosystem |
 | [docs/usage.md](./docs/usage.md) | Install paths and npm API |
 | [docs/install-skills-cli.md](./docs/install-skills-cli.md) | `npx skills add` vs npm; [skills.sh](https://www.skills.sh/docs) alignment |
 | [docs/read-full-documentation.md](./docs/read-full-documentation.md) | Read full `SKILL.md` + references before acting |
 | [docs/skills-coverage-matrix.md](./docs/skills-coverage-matrix.md) | Which skill covers which engineering concern |
 | [docs/publishing-skills-sh-and-npm.md](./docs/publishing-skills-sh-and-npm.md) | npm publish vs [skills.sh](https://www.skills.sh/docs) CLI / leaderboard (no bulk upload) |
+| [GIT_WORKFLOW.md](./GIT_WORKFLOW.md) | Branches, releases, optional PR to [vercel-labs/skills](https://github.com/vercel-labs/skills) |
 | [docs/skills-discovery.md](./docs/skills-discovery.md) | Discovery, scope, leaderboard context |
 | [docs/contributing.md](./docs/contributing.md) | Add or improve skills |
 | [SKILL_STANDARD.md](./SKILL_STANDARD.md) | `SKILL.md` format spec |
-| [WHAT_IS_SKILLCODEX.md](./WHAT_IS_SKILLCODEX.md) | Short overview |
 | [SECURITY.md](./SECURITY.md) · [TRUST.md](./TRUST.md) | Safety model |
 
 ---
 
 ## Roadmap
 
-1. **Kubernetes-handbook** — deploy manifests, probes, and Next standalone beyond Docker Compose  
-2. **Passkeys-webauthn** — deep skill when auth-handbook is not enough for passwordless-only products  
-3. **Visual-regression-handbook** — Playwright screenshots + policy beyond Storybook a11y  
-4. **Rate-limiting-handbook** — token bucket at edge + app coordination (today split across `api-handbook` / infra)
+1. **Kubernetes-handbook** - deploy manifests, probes, and Next standalone beyond Docker Compose  
+2. **Passkeys-webauthn** - deep skill when auth-handbook is not enough for passwordless-only products  
+3. **Visual-regression-handbook** - Playwright screenshots + policy beyond Storybook a11y  
+4. **Rate-limiting-handbook** - token bucket at edge + app coordination (today split across `api-handbook` / infra)
 
 ---
 

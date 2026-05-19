@@ -22,6 +22,7 @@ Thank you for improving SkillCodex. Full guidelines live in [.github/CONTRIBUTIN
 
 - [SKILL_STANDARD.md](../SKILL_STANDARD.md)
 - [SKILL_TEMPLATE.md](../SKILL_TEMPLATE.md)
-- [docs/skills-coverage-matrix.md](./skills-coverage-matrix.md) — where a new skill should fit
-- [docs/publishing-skills-sh-and-npm.md](./publishing-skills-sh-and-npm.md) — npm vs [skills.sh](https://www.skills.sh/docs) for maintainers
+- [docs/skills-coverage-matrix.md](./skills-coverage-matrix.md) - where a new skill should fit
+- [docs/publishing-skills-sh-and-npm.md](./publishing-skills-sh-and-npm.md) - npm vs [skills.sh](https://www.skills.sh/docs) for maintainers
+- [GIT_WORKFLOW.md](../GIT_WORKFLOW.md) - branches, releases, optional fork / PR to [vercel-labs/skills](https://github.com/vercel-labs/skills)
 - [references/skill-safety.md](../references/skill-safety.md)

@@ -12,7 +12,7 @@ npx skills add https://github.com/bh611627/skillcodex --skill web-design-guideli
 
 Replace `web-design-guidelines` with any slug from [DIRECTORY.md](../DIRECTORY.md). This matches the `npx skills add <owner/repo>` pattern described on [skills.sh](https://www.skills.sh/docs) with an extra `--skill` flag for monorepos that ship many skills.
 
-**Why this matters:** you do **not** need to clone the whole repo or install every skill — only the folder you select.
+**Why this matters:** you do **not** need to clone the whole repo or install every skill - only the folder you select.
 
 ## Full npm package (Node apps and CI)
 
@@ -26,7 +26,7 @@ npm install @skillcodex/skills
 import { skills } from "@skillcodex/skills";
 ```
 
-This bundles **all** published skills as subpaths (`@skillcodex/skills/seo-expert`, etc.). Use it when tooling must load many skills programmatically — not when you only want one markdown file in an editor.
+This bundles **all** published skills as subpaths (`@skillcodex/skills/seo-expert`, etc.). Use it when tooling must load many skills programmatically - not when you only want one markdown file in an editor.
 
 ## SkillCodex vs leaderboard installs
 

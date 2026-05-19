@@ -2,7 +2,7 @@
 
 SkillCodex defines how AI agent skills are stored in a GitHub repository. Each skill is one folder with one `SKILL.md` file.
 
-> This repo is **markdown only**. For UI design (build + audit doc UIs), use `web-design-guidelines` - see [WHAT_IS_SKILLCODEX.md](./WHAT_IS_SKILLCODEX.md).
+> This repo is **markdown only**. For UI design (build + audit doc UIs), use [web-design-guidelines](./skills/web-design-guidelines/SKILL.md).
 
 ## Repository layout
 

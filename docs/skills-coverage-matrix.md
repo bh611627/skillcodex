@@ -36,8 +36,8 @@ How SkillCodex skills map to **product engineering** concerns for **Next.js 15+*
 | **Skill browser UI** | `skillcodex-browser-ui` | `web-design-guidelines` |
 | **Type system** | `typescript-refactor` | `code-assistant` |
 | **Tests** | `testing-agent` | `accessibility-audit`, `forms-and-validation` |
-| **Python** | `python-productive` | — |
-| **Marketing copy** | `content-creator` | — |
+| **Python** | `python-productive` | - |
+| **Marketing copy** | `content-creator` | - |
 | **Authoring skills** | `skill-creator` | [`SKILL_STANDARD.md`](../SKILL_STANDARD.md) |
 | **Day-to-day edits** | `code-assistant` | `typescript-refactor` |
 

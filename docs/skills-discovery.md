@@ -4,22 +4,22 @@
 
 The public directory at [skills.sh](https://www.skills.sh/) lists skills from many GitHub repos. Official behavior is documented at [skills.sh/docs](https://www.skills.sh/docs), including:
 
-- **Ranking** — anonymous **install telemetry** from the `skills` CLI (which skills get installed), not editorial “upload” of markdown to a central CMS.
-- **Security** — routine audits are described there; report issues via [security.vercel.com](https://security.vercel.com/).
-- **Badge** — optional install badge for your README: see [Publishing: skills.sh vs npm](./publishing-skills-sh-and-npm.md).
+- **Ranking** - anonymous **install telemetry** from the `skills` CLI (which skills get installed), not editorial “upload” of markdown to a central CMS.
+- **Security** - routine audits are described there; report issues via [security.vercel.com](https://security.vercel.com/).
+- **Badge** - optional install badge for your README: see [Publishing: skills.sh vs npm](./publishing-skills-sh-and-npm.md).
 
 SkillCodex **does not** mirror every leaderboard entry. We optimize for:
 
-- **Depth** — full `SKILL.md`, `references/`, validation, typed npm exports
+- **Depth** - full `SKILL.md`, `references/`, validation, typed npm exports
 - **React / Next.js** focus plus selected adjacent stacks (e.g. Python productivity)
-- **Safety metadata** — `risk_level`, `tools_allowed`, `requires_user_approval`
+- **Safety metadata** - `risk_level`, `tools_allowed`, `requires_user_approval`
 
 ## How users get SkillCodex skills
 
 | Path | Command / action |
 |------|------------------|
-| **One skill into an agent** | `npx skills add https://github.com/bh611627/skillcodex --skill <slug>` — slugs in [DIRECTORY.md](../DIRECTORY.md) |
-| **All skills in Node/CI** | `npm install @skillcodex/skills` — see [usage.md](./usage.md) |
+| **One skill into an agent** | `npx skills add https://github.com/bh611627/skillcodex --skill <slug>` - slugs in [DIRECTORY.md](../DIRECTORY.md) |
+| **All skills in Node/CI** | `npm install @skillcodex/skills` - see [usage.md](./usage.md) |
 | **Maintainer: npm release** | [publishing-skills-sh-and-npm.md](./publishing-skills-sh-and-npm.md) |
 
 ## Requesting a new skill

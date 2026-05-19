@@ -1,6 +1,6 @@
 # Skill directory (skills.sh-style)
 
-Same install model as [skills.sh](https://www.skills.sh/) — one row per skill; CLI docs: [skills.sh/docs](https://www.skills.sh/docs). SkillCodex adds **outcomes** in each `SKILL.md` and documents **npm vs CLI** in [docs/publishing-skills-sh-and-npm.md](../docs/publishing-skills-sh-and-npm.md). A **generated** parallel tree for the skills.sh folder shape lives under [`skills-sh-catalog/skills/`](../skills-sh-catalog/) (run `pnpm export-skills-sh` after edits).
+Same install model as [skills.sh](https://www.skills.sh/) - one row per skill; CLI docs: [skills.sh/docs](https://www.skills.sh/docs). SkillCodex adds **outcomes** in each `SKILL.md` and documents **npm vs CLI** in [docs/publishing-skills-sh-and-npm.md](../docs/publishing-skills-sh-and-npm.md). A **generated** parallel tree for the skills.sh folder shape lives under [`skills-sh-catalog/skills/`](../skills-sh-catalog/) (run `pnpm export-skills-sh` after edits).
 
 | # | Skill | Topics | GitHub `SKILL.md` | Add with CLI |
 |---|--------|--------|-------------------|----------------|

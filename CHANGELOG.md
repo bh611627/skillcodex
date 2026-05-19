@@ -7,15 +7,14 @@ Versioning: [Semantic Versioning](https://semver.org/)
 
 ## [Unreleased]
 
-### Added
-
-- `skills-sh-catalog/` — generated mirror of all `skills/<slug>/SKILL.md` under `skills-sh-catalog/skills/` for [skills.sh/docs](https://www.skills.sh/docs) layout; `pnpm export-skills-sh`; [`REQUIREMENTS.md`](skills-sh-catalog/REQUIREMENTS.md) checklist.
+_No user-facing changes yet._
 
 ## [1.2.0] - 2026-05-19
 
 ### Added
 
 - **37 skills** in the catalog (handbooks: auth, observability, payments, server-caching, realtime, container-local-dev, storybook, data-layer, api, i18n, security-headers, edge, webhooks, github-actions-ci, dependency-migrations, markdown, react-email, monorepo, next-server-patterns, forms, client-data-fetching, error-loading-not-found, semantic-html-css, secure-dependencies; agents: code-assistant, testing-agent, typescript-refactor, env-config-agent, performance-audit, accessibility-audit, database-schema-agent, seo-expert, content-creator, python-productive; meta/UI: skill-creator, web-design-guidelines, skillcodex-browser-ui).
+- **`skills-sh-catalog/`** - generated mirror of `skills/<slug>/SKILL.md` for [skills.sh/docs](https://www.skills.sh/docs) layout (`pnpm export-skills-sh`; checklist in [`REQUIREMENTS.md`](skills-sh-catalog/REQUIREMENTS.md)).
 - **Docs:** [docs/publishing-skills-sh-and-npm.md](./docs/publishing-skills-sh-and-npm.md) (npm publish vs [skills.sh/docs](https://www.skills.sh/docs) CLI, telemetry, optional badge, security audits), [docs/skills-coverage-matrix.md](./docs/skills-coverage-matrix.md).
 - **References:** `dependency-security.md`, `server-caching-patterns.md`, `data-layer-choice.md`.
 - **README / DIRECTORY:** [skills.sh](https://skills.sh/bh611627/skillcodex) badge; publishing links; DIRECTORY intro aligned with official discovery model.
@@ -23,8 +22,8 @@ Versioning: [Semantic Versioning](https://semver.org/)
 ### Changed
 
 - `@skillcodex/skills` npm package version **1.2.0** (all skill subpath exports regenerated via `pnpm run sync`).
-- `next-server-patterns` (1.0.2), `api-handbook` (1.0.2), `database-schema-agent` (1.0.1), `github-actions-ci`, `webhook-receivers`, `env-config-agent`, `forms-and-validation` — cross-links and security/CI hardening.
-- `docs/skills-discovery.md`, `docs/install-skills-cli.md`, `docs/introduction.md`, `docs/usage.md`, `docs/contributing.md`, `.github/CONTRIBUTING.md`, `package/README.md`, `WHAT_IS_SKILLCODEX.md`, `references/skills-ecosystem.md` — publishing and skills.sh documentation accuracy.
+- `next-server-patterns` (1.0.2), `api-handbook` (1.0.2), `database-schema-agent` (1.0.1), `github-actions-ci`, `webhook-receivers`, `env-config-agent`, `forms-and-validation` - cross-links and security/CI hardening.
+- `docs/skills-discovery.md`, `docs/install-skills-cli.md`, `docs/usage.md`, `docs/contributing.md`, `.github/CONTRIBUTING.md`, `package/README.md`, `references/skills-ecosystem.md`, [GIT_WORKFLOW.md](./GIT_WORKFLOW.md) - publishing and skills.sh documentation accuracy; redundant overview docs removed in favor of README + `GIT_WORKFLOW`.
 
 ## [1.0.0] - 2026-05-16
 

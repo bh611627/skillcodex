@@ -34,11 +34,11 @@ references:
 Add **Docker** and **Compose** for **local** and **CI-like** runs of **Next.js** (Node **20/22** LTS, **pnpm**).
 
 1. **`.dockerignore`:** exclude `.git`, `node_modules`, `.next`, `dist`, `.env*` (use build args or runtime mount for secrets in dev only).
-2. **Multi-stage:** `deps` (pnpm fetch/install) → `builder` (`pnpm build`) → `runner` (minimal: `node_modules` prod slice + `.next/standalone` if user enabled standalone output — match their `next.config`).
+2. **Multi-stage:** `deps` (pnpm fetch/install) → `builder` (`pnpm build`) → `runner` (minimal: `node_modules` prod slice + `.next/standalone` if user enabled standalone output - match their `next.config`).
 3. **User:** non-root `USER node` or numeric uid in final stage.
-4. **Compose:** `app` + `postgres` + optional `redis`; healthchecks; named volumes; **no secrets in compose YAML** — `.env` local only gitignored.
-5. **Dev vs prod:** `docker compose -f compose.yaml -f compose.override.yaml` pattern for hot reload optional — keep prod Dockerfile lean.
-6. **CI:** same Dockerfile build in GitHub Actions to prove reproducibility — link **`github-actions-ci`**.
+4. **Compose:** `app` + `postgres` + optional `redis`; healthchecks; named volumes; **no secrets in compose YAML** - `.env` local only gitignored.
+5. **Dev vs prod:** `docker compose -f compose.yaml -f compose.override.yaml` pattern for hot reload optional - keep prod Dockerfile lean.
+6. **CI:** same Dockerfile build in GitHub Actions to prove reproducibility - link **`github-actions-ci`**.
 
 ## Outcomes
 

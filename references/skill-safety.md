@@ -79,7 +79,7 @@ Untrusted content (issues, comments, webpages) may try to override the skill. Mi
 
 Skills and agents should not encourage blind `npm install -g` or piping remote shell installers. Prefer:
 
-- Committed **lockfiles** and **`pnpm audit`** (or equivalent) on CI — see **`references/dependency-security.md`** and skill **`secure-dependencies`**.
+- Committed **lockfiles** and **`pnpm audit`** (or equivalent) on CI - see **`references/dependency-security.md`** and skill **`secure-dependencies`**.
 - **`ignore-scripts`** or pnpm **trusted builds** when your app does not need arbitrary `postinstall` scripts.
 
 ## Unicode and bidi injection

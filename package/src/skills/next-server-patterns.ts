@@ -7,7 +7,7 @@ tags:
   - nextjs
   - react
   - rsc
-version: 1.0.2
+version: 1.1.0
 category: development
 outcomes:
   - List of which routes should be Server vs Client with rationale
@@ -17,7 +17,7 @@ stack:
   - next
   - react
   - typescript
-last_reviewed: 2026-05-19
+last_reviewed: 2026-05-20
 risk_level: low
 tools_allowed: read-only
 requires_user_approval: false
@@ -44,6 +44,7 @@ compatibility:
 references:
   - references/stack-nextjs.md
   - references/skill-safety.md
+  - references/server-caching-patterns.md
 ---
 
 # Instructions
@@ -56,14 +57,25 @@ references:
 
 Guide **Next.js App Router** layout: **Server Components** by default, **Client** only where hooks, browser APIs, or event handlers require it.
 
-1. Map each route segment: static generation, dynamic with \`fetch\` cache, or \`force-dynamic\` - justify in one line each.
-2. Identify **client islands**: smallest \`'use client'\` files; no client wrapper around entire layout unless required.
-3. **Streaming:** propose \`loading.tsx\` and Suspense boundaries for slow I/O; avoid waterfall fetches where parallel is possible.
-4. **Data fetching:** Server Component \`fetch\` cache tags vs \`unstable_cache\` - name tradeoffs; no invented Next flags.
+### Placement cheat sheet
+
+| Concern | Put it in |
+|---------|-----------|
+| Data read for a page | Server Component / \`fetch\` |
+| UI event handlers | Client island (\`'use client'\`) |
+| Same-origin mutation | Server Action (\`forms-and-validation\`) |
+| External HTTP API | Route Handler (\`api-handbook\`) |
+| Cache invalidation design | \`server-caching-handbook\` |
+
+1. Map each route segment: static, dynamic with \`fetch\` cache, or \`force-dynamic\` - justify in one line each.
+2. Identify **client islands**: smallest \`'use client'\` files; no client wrapper around entire layouts unless required.
+3. **Streaming:** propose \`loading.tsx\` and Suspense boundaries for slow I/O; avoid waterfalls where parallel is possible.
+4. **Data fetching:** Server Component \`fetch\` cache tags vs \`unstable_cache\` / \`cache\` - name tradeoffs; no invented Next flags; verify against installed Next.
 5. **Metadata:** keep in server files; never duplicate head logic in client trees.
-6. **React 19+ in Next 15+:** prefer \`useActionState\` / server-first flows from \`forms-and-validation\`; use \`React.cache\` for per-request dedupe of expensive server-only calls when appropriate.
-7. **User-visible failures:** pair with \`error-loading-not-found\` - do not catch errors only in client toasts while the server returns 500 HTML.
-8. **Hot paths:** for tag-based revalidation and stampedes see **\`server-caching-handbook\`** and **\`references/server-caching-patterns.md\`**.
+6. **React 19+ in Next 15+:** prefer \`useActionState\` / server-first flows from \`forms-and-validation\`; use \`React.cache\` for per-request dedupe when appropriate.
+7. **User-visible failures:** pair with \`error-loading-not-found\` - do not catch only in client toasts while the server returns 500 HTML.
+8. **Hot paths:** tag-based revalidation and stampedes → **\`server-caching-handbook\`** + [server-caching-patterns.md](../../references/server-caching-patterns.md).
+
 ## Outcomes
 
 - Boundary diagram (bullet list: server file → client leaf).
@@ -72,23 +84,24 @@ Guide **Next.js App Router** layout: **Server Components** by default, **Client*
 
 ## Output Rules
 
-Use headings: Boundaries · Caching · Streaming · Metadata. No full app rewrite unless user asks.
+Use headings: Boundaries · Caching · Streaming · Metadata. No full app rewrite unless the user asks.
 
 ## Scope and boundaries
 
 - **In scope:** App Router RSC patterns, fetch cache, streaming, client split.
-- **Out of scope:** Pages Router migration project, backend DB design, auth secret storage.
+- **Out of scope:** Pages Router migration projects, backend DB design, auth secret storage.
 
 ## Safety
 
-- Read-only unless user requests file edits.
-- Do not paste real \`NEXTAUTH_SECRET\` or tokens.
+- Read-only unless the user requests file edits.
+- Do not paste real secrets or tokens.
 
 ## Troubleshooting
 
-- **Hydration mismatch:** trace client-only state leaking into server HTML.
+- **Hydration mismatch:** client-only state leaking into server HTML.
 - **Stale data:** verify \`revalidatePath\` / \`revalidateTag\` after mutations.
 - **Huge client bundle:** list largest imports in client leaves only.
+- **Accidental dynamic:** missing cache opts or cookies()/headers() forcing dynamic.
 
 ## Related skills
 
@@ -96,6 +109,7 @@ Use headings: Boundaries · Caching · Streaming · Metadata. No full app rewrit
 - [\`client-data-fetching\`](../client-data-fetching/SKILL.md) - hydrate QueryClient
 - [\`next-architecture\`](../next-architecture/SKILL.md) - app-wide boundaries
 - [\`edge-runtime-handbook\`](../edge-runtime-handbook/SKILL.md) - Edge vs Node
+- [\`forms-and-validation\`](../forms-and-validation/SKILL.md) - Server Actions
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/next-server-patterns/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills
@@ -105,16 +119,16 @@ export const nextServerPatterns = defineSkill({
   name: "next-server-patterns",
   description: "Next.js App Router server components, streaming, caching, and client boundaries without guesswork",
   tags: ["nextjs","react","rsc"],
-  version: "1.0.2",
+  version: "1.1.0",
   category: "development",
-  lastReviewed: "Tue May 19 2026 05:00:00 GMT+0500 (Pakistan Standard Time)",
+  lastReviewed: "Wed May 20 2026 05:00:00 GMT+0500 (Pakistan Standard Time)",
   riskLevel: "low",
   toolsAllowed: "read-only",
   requiresUserApproval: false,
   compatibility: ["generic-markdown","skills-sh","cursor","claude-code","antigravity","codex","github-copilot","windsurf","gemini-cli","cline","amp","opencode","roo","goose","kilo","kiro-cli","droid","openclaw","trae"],
   outcomes: ["List of which routes should be Server vs Client with rationale","Caching strategy notes per segment static dynamic revalidate","Streaming and Suspense boundaries sketched for slow data"],
   stack: ["next","react","typescript"],
-  references: ["references/stack-nextjs.md","references/skill-safety.md"],
+  references: ["references/stack-nextjs.md","references/skill-safety.md","references/server-caching-patterns.md"],
   instructions: `# Instructions
 
 ## When to Use
@@ -125,14 +139,25 @@ export const nextServerPatterns = defineSkill({
 
 Guide **Next.js App Router** layout: **Server Components** by default, **Client** only where hooks, browser APIs, or event handlers require it.
 
-1. Map each route segment: static generation, dynamic with \`fetch\` cache, or \`force-dynamic\` - justify in one line each.
-2. Identify **client islands**: smallest \`'use client'\` files; no client wrapper around entire layout unless required.
-3. **Streaming:** propose \`loading.tsx\` and Suspense boundaries for slow I/O; avoid waterfall fetches where parallel is possible.
-4. **Data fetching:** Server Component \`fetch\` cache tags vs \`unstable_cache\` - name tradeoffs; no invented Next flags.
+### Placement cheat sheet
+
+| Concern | Put it in |
+|---------|-----------|
+| Data read for a page | Server Component / \`fetch\` |
+| UI event handlers | Client island (\`'use client'\`) |
+| Same-origin mutation | Server Action (\`forms-and-validation\`) |
+| External HTTP API | Route Handler (\`api-handbook\`) |
+| Cache invalidation design | \`server-caching-handbook\` |
+
+1. Map each route segment: static, dynamic with \`fetch\` cache, or \`force-dynamic\` - justify in one line each.
+2. Identify **client islands**: smallest \`'use client'\` files; no client wrapper around entire layouts unless required.
+3. **Streaming:** propose \`loading.tsx\` and Suspense boundaries for slow I/O; avoid waterfalls where parallel is possible.
+4. **Data fetching:** Server Component \`fetch\` cache tags vs \`unstable_cache\` / \`cache\` - name tradeoffs; no invented Next flags; verify against installed Next.
 5. **Metadata:** keep in server files; never duplicate head logic in client trees.
-6. **React 19+ in Next 15+:** prefer \`useActionState\` / server-first flows from \`forms-and-validation\`; use \`React.cache\` for per-request dedupe of expensive server-only calls when appropriate.
-7. **User-visible failures:** pair with \`error-loading-not-found\` - do not catch errors only in client toasts while the server returns 500 HTML.
-8. **Hot paths:** for tag-based revalidation and stampedes see **\`server-caching-handbook\`** and **\`references/server-caching-patterns.md\`**.
+6. **React 19+ in Next 15+:** prefer \`useActionState\` / server-first flows from \`forms-and-validation\`; use \`React.cache\` for per-request dedupe when appropriate.
+7. **User-visible failures:** pair with \`error-loading-not-found\` - do not catch only in client toasts while the server returns 500 HTML.
+8. **Hot paths:** tag-based revalidation and stampedes → **\`server-caching-handbook\`** + [server-caching-patterns.md](../../references/server-caching-patterns.md).
+
 ## Outcomes
 
 - Boundary diagram (bullet list: server file → client leaf).
@@ -140,23 +165,24 @@ Guide **Next.js App Router** layout: **Server Components** by default, **Client*
 - Copy-paste checklist for code review.`,
   outputRules: `## Output Rules
 
-Use headings: Boundaries · Caching · Streaming · Metadata. No full app rewrite unless user asks.
+Use headings: Boundaries · Caching · Streaming · Metadata. No full app rewrite unless the user asks.
 
 ## Scope and boundaries
 
 - **In scope:** App Router RSC patterns, fetch cache, streaming, client split.
-- **Out of scope:** Pages Router migration project, backend DB design, auth secret storage.
+- **Out of scope:** Pages Router migration projects, backend DB design, auth secret storage.
 
 ## Safety
 
-- Read-only unless user requests file edits.
-- Do not paste real \`NEXTAUTH_SECRET\` or tokens.
+- Read-only unless the user requests file edits.
+- Do not paste real secrets or tokens.
 
 ## Troubleshooting
 
-- **Hydration mismatch:** trace client-only state leaking into server HTML.
+- **Hydration mismatch:** client-only state leaking into server HTML.
 - **Stale data:** verify \`revalidatePath\` / \`revalidateTag\` after mutations.
 - **Huge client bundle:** list largest imports in client leaves only.
+- **Accidental dynamic:** missing cache opts or cookies()/headers() forcing dynamic.
 
 ## Related skills
 
@@ -164,6 +190,7 @@ Use headings: Boundaries · Caching · Streaming · Metadata. No full app rewrit
 - [\`client-data-fetching\`](../client-data-fetching/SKILL.md) - hydrate QueryClient
 - [\`next-architecture\`](../next-architecture/SKILL.md) - app-wide boundaries
 - [\`edge-runtime-handbook\`](../edge-runtime-handbook/SKILL.md) - Edge vs Node
+- [\`forms-and-validation\`](../forms-and-validation/SKILL.md) - Server Actions
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/next-server-patterns/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills`,

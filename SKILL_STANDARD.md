@@ -141,6 +141,7 @@ Put repeatable rules in `references/` - short markdown agents load instead of fu
 | [references/payments-pci.md](./references/payments-pci.md) | PCI boundaries and webhook pairing |
 | [references/csp-headers.md](./references/csp-headers.md) | CSP rollout and companion headers |
 | [references/realtime-transports.md](./references/realtime-transports.md) | SSE vs WebSocket choice matrix |
+| [references/observability-basics.md](./references/observability-basics.md) | Log field contract and PII boundaries |
 
 Link from skill frontmatter: `references: [references/react-stack.md]`
 

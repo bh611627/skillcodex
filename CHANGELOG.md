@@ -7,20 +7,26 @@ Versioning: [Semantic Versioning](https://semver.org/)
 
 ## [Unreleased]
 
+_No user-facing changes yet._
+
+## [1.4.0] - 2026-05-20
+
 ### Added
 
-- Domain references: `auth-sessions.md`, `payments-pci.md`, `csp-headers.md`, `realtime-transports.md`.
+- Domain references: `auth-sessions.md`, `payments-pci.md`, `csp-headers.md`, `realtime-transports.md`, `observability-basics.md`.
 - Expanded `compatibility` across all skills (incl. `antigravity`, `codex`, `github-copilot`, `windsurf`, `gemini-cli`, `cline`, `amp`, `opencode`, `roo`, `goose`, `kilo`, `kiro-cli`, `droid`, `openclaw`, `trae`).
 - New skills: **`pr-review-workflow`**, **`tdd-vitest`**, **`next-architecture`** (workflow depth without cloning vercel-labs/agent-skills).
-- **When to Use** + **Related skills** on the full catalog (40 skills).
+- **When to Use** + **Related skills** on the full catalog (**40** skills).
 
 ### Changed
 
-- Thickened `auth-handbook`, `payments-handbook`, `security-headers`, `webhook-receivers`, `realtime-handbook`, `react-email-templates` (When to Use, Related skills, deeper failure modes).
+- Thickened security/product handbooks: `auth-handbook`, `payments-handbook`, `security-headers`, `webhook-receivers`, `realtime-handbook`, `react-email-templates`.
+- Thickened core App Router handbooks: `api-handbook`, `forms-and-validation`, `observability-handbook`, `edge-runtime-handbook`, `next-server-patterns`, `server-caching-handbook` (decision tables + failure modes).
 - Aligned `skillcodex-browser-ui` motion policy with Tier 0 / Tier 2 leaf rules.
 - Hardened `package/src/validate.ts` (Scope/Safety, reference existence, compatibility set, skills-sh-catalog parity).
 - CI runs `pnpm export-skills-sh` before validate; fixed `DIRECTORY.md` relative links.
 - Removed empty orphan `package/src/skills/web-interface-guidelines.ts`.
+- `@skillcodex/skills` npm package **1.4.0**.
 
 ## [1.3.0] - 2026-05-20
 

@@ -22,4 +22,4 @@ All slugs: [DIRECTORY.md](../DIRECTORY.md).
 - Single place to **browse every `SKILL.md`** in the skills.sh–expected shape (`skills/<slug>/SKILL.md`).
 - Easier to compare with [vercel-labs/skills](https://github.com/vercel-labs/skills) layout when preparing upstream PRs (see [contrib/vercel-labs-skills](../contrib/vercel-labs-skills/README.md)).
 
-**Last export:** 2026-08-30T19:01:18.321Z - **40** skills.
+**Last export:** 2026-08-30T19:04:29.406Z - **40** skills.

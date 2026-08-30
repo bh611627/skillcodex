@@ -22,10 +22,25 @@ risk_level: low
 tools_allowed: read-only
 requires_user_approval: false
 compatibility:
+  - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
-  - generic-markdown
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 references:
   - references/stack-nextjs.md
   - references/skill-safety.md
@@ -81,7 +96,7 @@ export const apiHandbook = defineSkill({
   riskLevel: "low",
   toolsAllowed: "read-only",
   requiresUserApproval: false,
-  compatibility: ["cursor","claude-code","skills-sh","generic-markdown"],
+  compatibility: ["generic-markdown","skills-sh","cursor","claude-code","antigravity","codex","github-copilot","windsurf","gemini-cli","cline","amp","opencode","roo","goose","kilo","kiro-cli","droid","openclaw","trae"],
   outcomes: ["Resource-oriented URL sketch and verb map for the feature","Error shape convention JSON problem details or minimal stable keys","Idempotency notes for POST retries and webhooks"],
   stack: ["next","typescript","zod"],
   references: ["references/stack-nextjs.md","references/skill-safety.md"],

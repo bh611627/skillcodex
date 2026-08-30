@@ -25,9 +25,24 @@ tools_allowed: read-only
 requires_user_approval: false
 compatibility:
   - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 references:
   - references/google-seo.md
   - references/stack-nextjs.md

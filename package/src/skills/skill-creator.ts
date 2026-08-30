@@ -28,9 +28,24 @@ tools_allowed: repo-files
 requires_user_approval: false
 compatibility:
   - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 ---
 
 # Instructions
@@ -86,7 +101,7 @@ export const skillCreator = defineSkill({
   riskLevel: "low",
   toolsAllowed: "repo-files",
   requiresUserApproval: false,
-  compatibility: ["generic-markdown","cursor","claude-code","skills-sh"],
+  compatibility: ["generic-markdown","skills-sh","cursor","claude-code","antigravity","codex","github-copilot","windsurf","gemini-cli","cline","amp","opencode","roo","goose","kilo","kiro-cli","droid","openclaw","trae"],
   outcomes: ["Valid SKILL.md passing package validator with zero errors","README table row and validation-ready frontmatter","risk_level suggested with one-line reasoning"],
   stack: ["pnpm","next"],
   references: ["references/design-guidelines.md","references/react-stack.md","references/publishing.md","references/skill-safety.md","references/interoperability.md"],

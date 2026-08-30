@@ -23,10 +23,25 @@ risk_level: low
 tools_allowed: repo-files
 requires_user_approval: false
 compatibility:
+  - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
-  - generic-markdown
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 references:
   - references/design-guidelines.md
   - references/stack-nextjs.md
@@ -80,7 +95,7 @@ export const storybookHandbook = defineSkill({
   riskLevel: "low",
   toolsAllowed: "repo-files",
   requiresUserApproval: false,
-  compatibility: ["cursor","claude-code","skills-sh","generic-markdown"],
+  compatibility: ["generic-markdown","skills-sh","cursor","claude-code","antigravity","codex","github-copilot","windsurf","gemini-cli","cline","amp","opencode","roo","goose","kilo","kiro-cli","droid","openclaw","trae"],
   outcomes: ["Main config framework vite or webpack aligned with repo Next transpilePackages if monorepo","Story patterns CSF3 args controls docs autodocs toggle","a11y addon thresholds and visual smoke optional chromatic mention without requiring purchase"],
   stack: ["storybook","react","typescript","vite"],
   references: ["references/design-guidelines.md","references/stack-nextjs.md","references/skill-safety.md"],

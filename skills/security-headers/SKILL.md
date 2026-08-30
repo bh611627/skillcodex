@@ -5,7 +5,7 @@ tags:
   - security
   - nextjs
   - csp
-version: 1.0.0
+version: 1.1.0
 category: development
 outcomes:
   - Header set table with values suited to Next static and dynamic routes
@@ -14,37 +14,60 @@ outcomes:
 stack:
   - next
   - typescript
-last_reviewed: 2026-05-19
+last_reviewed: 2026-05-20
 risk_level: medium
 tools_allowed: repo-files
 requires_user_approval: true
 compatibility:
+  - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
-  - generic-markdown
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 references:
+  - references/csp-headers.md
   - references/skill-safety.md
   - references/stack-nextjs.md
 ---
 
 # Instructions
 
-Design **CSP** and companion headers (`HSTS`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`, `COOP`) for **Next.js**.
+Design **CSP** and companion headers (`HSTS`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`, `COOP`) for **Next.js**. Read [csp-headers.md](../../references/csp-headers.md) before changing production headers.
 
-1. Inventory inline scripts and styles; decide **nonce** vs hash strategy for App Router.
+## When to Use
+
+- Use when rolling out CSP, HSTS, or Permissions-Policy on App Router or Pages.
+- Prefer **`auth-handbook`** first if OAuth popups or cookies are already broken.
+- Prefer **`observability-handbook`** when wiring CSP report endpoints (no PII dumps).
+
+1. Inventory inline scripts and styles; decide **nonce** vs hash strategy for App Router (see [csp-headers.md](../../references/csp-headers.md)).
 2. Start **Content-Security-Policy-Report-Only** with `report-to` or `report-uri` if used.
-3. Third parties: list each script domain in `script-src`; avoid `unsafe-inline` unless documented exception.
-4. `next.config` headers vs middleware - match deployment (Vercel self-hosted).
-5. Document break-glass: how to widen policy for emergency hotfix.
+3. Third parties: list each script domain in `script-src`; avoid `unsafe-inline` unless a documented exception.
+4. Prefer `next.config` headers vs middleware based on deployment (Vercel vs self-hosted).
+5. Document break-glass: who can widen policy for an emergency hotfix.
+6. After enforce: verify hydration, images/fonts, and IdP `frame-src` for OAuth.
 
 ## Outcomes
 
-- Header table + CSP lines + rollout steps.
+- Header table + CSP lines + phased rollout (report-only → enforce).
 
 ## Output Rules
 
-Fenced blocks for `next.config` header snippets only after user approves writes.
+Fenced blocks for `next.config` header snippets only after the user approves writes.
 
 ## Scope and boundaries
 
@@ -60,6 +83,12 @@ Fenced blocks for `next.config` header snippets only after user approves writes.
 
 - **CSP blocks hydration:** check nonce on `next/script` strategy.
 - **Images blocked:** add `img-src` and `media-src` as needed.
+- **Login popup blank:** widen `frame-src` / `form-action` for the IdP carefully.
+
+## Related skills
+
+- [`auth-handbook`](../auth-handbook/SKILL.md) - sessions before tightening CSP
+- [`observability-handbook`](../observability-handbook/SKILL.md) - report endpoint hygiene
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/security-headers/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills

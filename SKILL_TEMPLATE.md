@@ -17,9 +17,24 @@ tools_allowed: read-only
 requires_user_approval: false
 compatibility:
   - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 outcomes:
   - Concrete result one
   - Concrete result two
@@ -32,7 +47,12 @@ stack:
 
 # Instructions
 
-Short steps. Link `references/` instead of repeating rules. UI work: [design-guidelines.md](./references/design-guidelines.md) only.
+Short steps. Link `references/` instead of repeating rules. UI work: [design-guidelines.md](../../references/design-guidelines.md) only.
+
+## When to Use
+
+- Use when …
+- Prefer another skill when …
 
 ## Outcomes
 
@@ -53,9 +73,17 @@ Section order for the reply.
 - Read/analyze/suggest only unless stated otherwise.
 - User runs shell commands.
 
+## Troubleshooting
+
+- **Common failure:** fix outline.
+
+## Related skills
+
+- Link sibling skills when useful.
+
 ## Recommended stack
 
-[react-stack.md](./references/react-stack.md) · [publishing.md](./references/publishing.md)
+[react-stack.md](../../references/react-stack.md) · [publishing.md](../../references/publishing.md)
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/your-skill-name/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills

@@ -22,10 +22,25 @@ risk_level: low
 tools_allowed: suggest-shell
 requires_user_approval: false
 compatibility:
+  - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
-  - generic-markdown
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 references:
   - references/dependency-security.md
   - references/skill-safety.md
@@ -78,7 +93,7 @@ export const secureDependencies = defineSkill({
   riskLevel: "low",
   toolsAllowed: "suggest-shell",
   requiresUserApproval: false,
-  compatibility: ["cursor","claude-code","skills-sh","generic-markdown"],
+  compatibility: ["generic-markdown","skills-sh","cursor","claude-code","antigravity","codex","github-copilot","windsurf","gemini-cli","cline","amp","opencode","roo","goose","kilo","kiro-cli","droid","openclaw","trae"],
   outcomes: ["Checklist frozen lockfile audit dependency-review for the repo","Decision on ignore-scripts or pnpm onlyBuiltDependencies with rationale","Policy for new packages scoped names typosquat red flags"],
   stack: ["pnpm","node","github-actions"],
   references: ["references/dependency-security.md","references/skill-safety.md"],

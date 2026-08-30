@@ -23,10 +23,25 @@ risk_level: low
 tools_allowed: repo-files
 requires_user_approval: false
 compatibility:
+  - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
-  - generic-markdown
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 references:
   - references/stack-nextjs.md
   - references/skill-safety.md
@@ -78,7 +93,7 @@ export const formsAndValidation = defineSkill({
   riskLevel: "low",
   toolsAllowed: "repo-files",
   requiresUserApproval: false,
-  compatibility: ["cursor","claude-code","skills-sh","generic-markdown"],
+  compatibility: ["generic-markdown","skills-sh","cursor","claude-code","antigravity","codex","github-copilot","windsurf","gemini-cli","cline","amp","opencode","roo","goose","kilo","kiro-cli","droid","openclaw","trae"],
   outcomes: ["Field-level error mapping tied to inputs","Schema split server vs shared types where App Router is used","Keyboard and screen reader checklist for the form"],
   stack: ["react","next","zod","typescript"],
   references: ["references/stack-nextjs.md","references/skill-safety.md"],

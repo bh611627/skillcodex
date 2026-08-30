@@ -22,10 +22,25 @@ risk_level: low
 tools_allowed: read-only
 requires_user_approval: false
 compatibility:
+  - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
-  - generic-markdown
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 references:
   - references/skill-safety.md
 ---
@@ -76,7 +91,7 @@ export const markdownPipeline = defineSkill({
   riskLevel: "low",
   toolsAllowed: "read-only",
   requiresUserApproval: false,
-  compatibility: ["cursor","claude-code","skills-sh","generic-markdown"],
+  compatibility: ["generic-markdown","skills-sh","cursor","claude-code","antigravity","codex","github-copilot","windsurf","gemini-cli","cline","amp","opencode","roo","goose","kilo","kiro-cli","droid","openclaw","trae"],
   outcomes: ["Plugin stack list remark-gfm rehype-sanitize or equivalent decision","XSS and raw HTML policy stated for user content","Bundle size notes for heavy syntax highlighters"],
   stack: ["react-markdown","remark-gfm","next"],
   references: ["references/skill-safety.md"],

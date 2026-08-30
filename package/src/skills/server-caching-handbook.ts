@@ -22,10 +22,25 @@ risk_level: medium
 tools_allowed: read-only
 requires_user_approval: false
 compatibility:
+  - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
-  - generic-markdown
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 references:
   - references/server-caching-patterns.md
   - references/stack-nextjs.md
@@ -79,7 +94,7 @@ export const serverCachingHandbook = defineSkill({
   riskLevel: "medium",
   toolsAllowed: "read-only",
   requiresUserApproval: false,
-  compatibility: ["cursor","claude-code","skills-sh","generic-markdown"],
+  compatibility: ["generic-markdown","skills-sh","cursor","claude-code","antigravity","codex","github-copilot","windsurf","gemini-cli","cline","amp","opencode","roo","goose","kilo","kiro-cli","droid","openclaw","trae"],
   outcomes: ["Tag naming plan and invalidation map after mutations","Stampede mitigation choice singleflight SWR or jitter per use case","When external Redis complements vs replaces Next data cache"],
   stack: ["next","redis","typescript"],
   references: ["references/server-caching-patterns.md","references/stack-nextjs.md","references/skill-safety.md"],

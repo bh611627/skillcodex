@@ -22,10 +22,25 @@ risk_level: low
 tools_allowed: read-only
 requires_user_approval: false
 compatibility:
+  - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
-  - generic-markdown
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 references:
   - references/stack-nextjs.md
   - references/skill-safety.md
@@ -84,7 +99,7 @@ export const nextServerPatterns = defineSkill({
   riskLevel: "low",
   toolsAllowed: "read-only",
   requiresUserApproval: false,
-  compatibility: ["cursor","claude-code","skills-sh","generic-markdown"],
+  compatibility: ["generic-markdown","skills-sh","cursor","claude-code","antigravity","codex","github-copilot","windsurf","gemini-cli","cline","amp","opencode","roo","goose","kilo","kiro-cli","droid","openclaw","trae"],
   outcomes: ["List of which routes should be Server vs Client with rationale","Caching strategy notes per segment static dynamic revalidate","Streaming and Suspense boundaries sketched for slow data"],
   stack: ["next","react","typescript"],
   references: ["references/stack-nextjs.md","references/skill-safety.md"],

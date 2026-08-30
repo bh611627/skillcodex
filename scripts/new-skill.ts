@@ -47,10 +47,25 @@ risk_level: ${fields.risk_level}
 tools_allowed: ${fields.tools_allowed}
 requires_user_approval: ${fields.risk_level === "high" ? "true" : "false"}
 compatibility:
+  - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
-  - generic-markdown
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 ---
 
 # Instructions
@@ -59,6 +74,11 @@ compatibility:
 
 1. First step
 2. Second step
+
+## When to Use
+
+- Use when …
+- Prefer another skill when …
 
 ## Scope and boundaries
 

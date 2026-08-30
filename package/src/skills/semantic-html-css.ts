@@ -23,10 +23,25 @@ risk_level: low
 tools_allowed: read-only
 requires_user_approval: false
 compatibility:
+  - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
-  - generic-markdown
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 references:
   - references/design-guidelines.md
   - references/skill-safety.md
@@ -78,7 +93,7 @@ export const semanticHtmlCss = defineSkill({
   riskLevel: "low",
   toolsAllowed: "read-only",
   requiresUserApproval: false,
-  compatibility: ["cursor","claude-code","skills-sh","generic-markdown"],
+  compatibility: ["generic-markdown","skills-sh","cursor","claude-code","antigravity","codex","github-copilot","windsurf","gemini-cli","cline","amp","opencode","roo","goose","kilo","kiro-cli","droid","openclaw","trae"],
   outcomes: ["Landmark map main nav aside for the layout in question","Heading outline h1 per view logical order","CSS checklist focus-visible containment prefers-reduced-motion"],
   stack: ["html","css","react","tailwindcss"],
   references: ["references/design-guidelines.md","references/skill-safety.md"],

@@ -22,10 +22,25 @@ risk_level: low
 tools_allowed: read-only
 requires_user_approval: false
 compatibility:
+  - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
-  - generic-markdown
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 references:
   - references/stack-nextjs.md
   - references/skill-safety.md
@@ -77,7 +92,7 @@ export const i18nHandbook = defineSkill({
   riskLevel: "low",
   toolsAllowed: "read-only",
   requiresUserApproval: false,
-  compatibility: ["cursor","claude-code","skills-sh","generic-markdown"],
+  compatibility: ["generic-markdown","skills-sh","cursor","claude-code","antigravity","codex","github-copilot","windsurf","gemini-cli","cline","amp","opencode","roo","goose","kilo","kiro-cli","droid","openclaw","trae"],
   outcomes: ["Locale strategy table default locales and fallbacks","File layout for messages or dictionaries consistent with repo","RTL and date number formatting checklist"],
   stack: ["next","react","typescript"],
   references: ["references/stack-nextjs.md","references/skill-safety.md"],

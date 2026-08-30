@@ -18,5 +18,6 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - run: pnpm export-skills-sh
       - run: cd package && pnpm run validate
       - run: cd package && pnpm run build

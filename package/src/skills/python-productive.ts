@@ -26,10 +26,25 @@ risk_level: low
 tools_allowed: repo-files
 requires_user_approval: false
 compatibility:
+  - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
-  - generic-markdown
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 references:
   - references/skill-safety.md
 ---
@@ -94,7 +109,7 @@ export const pythonProductive = defineSkill({
   riskLevel: "low",
   toolsAllowed: "repo-files",
   requiresUserApproval: false,
-  compatibility: ["cursor","claude-code","skills-sh","generic-markdown"],
+  compatibility: ["generic-markdown","skills-sh","cursor","claude-code","antigravity","codex","github-copilot","windsurf","gemini-cli","cline","amp","opencode","roo","goose","kilo","kiro-cli","droid","openclaw","trae"],
   outcomes: ["pyproject.toml aligned with uv and pinned dependency strategy","Pydantic v2 models with validation errors users can fix","Ruff + formatter config consistent with team style","Short note on when native extensions (Rust/C) help vs complexity"],
   stack: ["uv","pydantic","ruff","basedpyright","pytest"],
   references: ["references/skill-safety.md"],

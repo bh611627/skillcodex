@@ -22,10 +22,25 @@ risk_level: low
 tools_allowed: repo-files
 requires_user_approval: false
 compatibility:
+  - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
-  - generic-markdown
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 references:
   - references/skill-safety.md
   - references/dependency-security.md
@@ -80,7 +95,7 @@ export const githubActionsCi = defineSkill({
   riskLevel: "low",
   toolsAllowed: "repo-files",
   requiresUserApproval: false,
-  compatibility: ["cursor","claude-code","skills-sh","generic-markdown"],
+  compatibility: ["generic-markdown","skills-sh","cursor","claude-code","antigravity","codex","github-copilot","windsurf","gemini-cli","cline","amp","opencode","roo","goose","kilo","kiro-cli","droid","openclaw","trae"],
   outcomes: ["Workflow YAML with least-privilege permissions and cancel-in-progress concurrency","pnpm frozen lockfile cache and Node LTS pin matching package engines","Optional audit job and dependency-review pointer for lockfile PRs"],
   stack: ["github-actions","pnpm","node"],
   references: ["references/skill-safety.md","references/dependency-security.md"],

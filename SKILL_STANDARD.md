@@ -76,7 +76,7 @@ tags:
 | `risk_level` | string | `low` \| `medium` \| `high` - see [TRUST.md](./TRUST.md) |
 | `tools_allowed` | string | `read-only` \| `repo-files` \| `suggest-shell` - intent only; host enforces |
 | `requires_user_approval` | boolean | `true` when `risk_level: high` or destructive steps |
-| `compatibility` | string[] | Hosts reviewed against (e.g. `cursor`, `claude-code`, `skills-sh`) |
+| `compatibility` | string[] | Hosts reviewed against. Canonical set: `generic-markdown`, `skills-sh`, `cursor`, `claude-code`, `antigravity`, `codex`, `github-copilot`, `windsurf`, `gemini-cli`, `cline`, `amp`, `opencode`, `roo`, `goose`, `kilo`, `kiro-cli`, `droid`, `openclaw`, `trae` |
 
 ### Body (required)
 
@@ -91,6 +91,10 @@ Under `# Instructions`, write clear, structured behavior rules for the AI agent.
 ### Body (optional sections)
 
 ```markdown
+## When to Use
+
+When this skill should activate, and which sibling skill to prefer otherwise.
+
 ## Outcomes
 
 What the user should receive when the skill completes successfully.
@@ -106,6 +110,14 @@ Required in **SkillCodex** skills. State what the skill covers and what it must 
 ## Safety
 
 Required in **SkillCodex** skills. State tool posture, confirmation rules, and injection awareness. See [references/skill-safety.md](./references/skill-safety.md).
+
+## Troubleshooting
+
+Common failure modes and fixes (strongly recommended).
+
+## Related skills
+
+Cross-links to sibling skills (recommended for paired domains).
 
 ## Recommended stack
 
@@ -125,6 +137,10 @@ Put repeatable rules in `references/` - short markdown agents load instead of fu
 | [references/skill-safety.md](./references/skill-safety.md) | Prompt injection, tools, review checklist |
 | [references/interoperability.md](./references/interoperability.md) | Cursor, Claude Code, skills.sh mapping |
 | [references/google-seo.md](./references/google-seo.md) | Search Console, CWV, Next SEO |
+| [references/auth-sessions.md](./references/auth-sessions.md) | Cookie sessions, OAuth checklist, RBAC placement |
+| [references/payments-pci.md](./references/payments-pci.md) | PCI boundaries and webhook pairing |
+| [references/csp-headers.md](./references/csp-headers.md) | CSP rollout and companion headers |
+| [references/realtime-transports.md](./references/realtime-transports.md) | SSE vs WebSocket choice matrix |
 
 Link from skill frontmatter: `references: [references/react-stack.md]`
 

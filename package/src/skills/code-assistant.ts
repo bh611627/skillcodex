@@ -25,9 +25,24 @@ tools_allowed: suggest-shell
 requires_user_approval: false
 compatibility:
   - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 references:
   - references/react-stack.md
   - references/stack-nextjs.md
@@ -118,7 +133,7 @@ export const codeAssistant = defineSkill({
   riskLevel: "medium",
   toolsAllowed: "suggest-shell",
   requiresUserApproval: false,
-  compatibility: ["generic-markdown","cursor","claude-code","skills-sh"],
+  compatibility: ["generic-markdown","skills-sh","cursor","claude-code","antigravity","codex","github-copilot","windsurf","gemini-cli","cline","amp","opencode","roo","goose","kilo","kiro-cli","droid","openclaw","trae"],
   outcomes: ["Focused diffs (not full-file rewrites) that fit repo patterns","Commands with the right package manager (pnpm when greenfield)","Review split into blockers, suggestions, nits"],
   stack: ["pnpm","next","react","typescript"],
   references: ["references/react-stack.md","references/stack-nextjs.md","references/skill-safety.md"],

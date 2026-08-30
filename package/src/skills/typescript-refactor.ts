@@ -21,10 +21,25 @@ risk_level: medium
 tools_allowed: repo-files
 requires_user_approval: false
 compatibility:
+  - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
-  - generic-markdown
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 references:
   - references/react-stack.md
   - references/skill-safety.md
@@ -93,7 +108,7 @@ export const typescriptRefactor = defineSkill({
   riskLevel: "medium",
   toolsAllowed: "repo-files",
   requiresUserApproval: false,
-  compatibility: ["cursor","claude-code","skills-sh","generic-markdown"],
+  compatibility: ["generic-markdown","skills-sh","cursor","claude-code","antigravity","codex","github-copilot","windsurf","gemini-cli","cline","amp","opencode","roo","goose","kilo","kiro-cli","droid","openclaw","trae"],
   outcomes: ["strict tsconfig enabled with tsc --noEmit passing (Mode A)","OR file:line audit of any usage and missing return types (Mode B)"],
   stack: ["typescript","ts-morph","pnpm"],
   references: ["references/react-stack.md","references/skill-safety.md"],

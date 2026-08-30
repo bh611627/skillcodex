@@ -23,10 +23,25 @@ risk_level: low
 tools_allowed: repo-files
 requires_user_approval: false
 compatibility:
+  - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
-  - generic-markdown
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 references:
   - references/stack-nextjs.md
   - references/skill-safety.md
@@ -79,7 +94,7 @@ export const clientDataFetching = defineSkill({
   riskLevel: "low",
   toolsAllowed: "repo-files",
   requiresUserApproval: false,
-  compatibility: ["cursor","claude-code","skills-sh","generic-markdown"],
+  compatibility: ["generic-markdown","skills-sh","cursor","claude-code","antigravity","codex","github-copilot","windsurf","gemini-cli","cline","amp","opencode","roo","goose","kilo","kiro-cli","droid","openclaw","trae"],
   outcomes: ["QueryClient provider placement server vs client boundary","dehydrate hydrate pattern sketch when using RSC prefetch","staleTime gcTime defaults suited to dashboard vs public pages"],
   stack: ["next","react","@tanstack/react-query","typescript"],
   references: ["references/stack-nextjs.md","references/skill-safety.md"],

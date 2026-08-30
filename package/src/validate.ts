@@ -2,13 +2,15 @@
  * Validate SkillCodex SKILL.md files.
  * Run: pnpm run validate
  */
-import { readFileSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import matter from "gray-matter";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const skillsDir = join(__dirname, "..", "..", "skills");
+const repoRoot = join(__dirname, "..", "..");
+const skillsDir = join(repoRoot, "skills");
+const catalogDir = join(repoRoot, "skills-sh-catalog", "skills");
 
 const KEBAB = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const UNICODE_TAG = /[\u{E0000}-\u{E007F}]/u;
@@ -16,6 +18,28 @@ const BIDI_OVERRIDE = /[\u202A-\u202E\u2066-\u2069]/u;
 
 const VALID_RISK = new Set(["low", "medium", "high"]);
 const VALID_TOOLS = new Set(["read-only", "repo-files", "suggest-shell"]);
+
+const REQUIRED_COMPAT = new Set([
+  "generic-markdown",
+  "skills-sh",
+  "cursor",
+  "claude-code",
+  "antigravity",
+  "codex",
+  "github-copilot",
+  "windsurf",
+  "gemini-cli",
+  "cline",
+  "amp",
+  "opencode",
+  "roo",
+  "goose",
+  "kilo",
+  "kiro-cli",
+  "droid",
+  "openclaw",
+  "trae",
+]);
 
 interface SkillResult {
   slug: string;
@@ -105,6 +129,40 @@ for (const d of dirs) {
   if (!body.includes("# Instructions")) {
     r.errors.push("markdown body must contain '# Instructions' heading");
   }
+  if (!body.includes("## Scope and boundaries")) {
+    r.errors.push("markdown body must contain '## Scope and boundaries'");
+  }
+  if (!body.includes("## Safety")) {
+    r.errors.push("markdown body must contain '## Safety'");
+  }
+  if (!body.includes("## Troubleshooting")) {
+    r.warnings.push("missing '## Troubleshooting' section");
+  }
+
+  const refs = fm.references;
+  if (Array.isArray(refs)) {
+    for (const ref of refs) {
+      if (typeof ref !== "string") continue;
+      const abs = join(repoRoot, ref);
+      if (!existsSync(abs)) {
+        r.errors.push(`missing reference file: ${ref}`);
+      }
+    }
+  }
+
+  const compat = fm.compatibility;
+  if (!Array.isArray(compat) || compat.length === 0) {
+    r.errors.push("compatibility must list reviewed hosts");
+  } else {
+    const set = new Set(
+      compat.filter((c): c is string => typeof c === "string"),
+    );
+    for (const required of REQUIRED_COMPAT) {
+      if (!set.has(required)) {
+        r.errors.push(`compatibility missing "${required}"`);
+      }
+    }
+  }
 
   if (fm.version === undefined || fm.version === null || fm.version === "") {
     r.warnings.push("no version field");
@@ -142,6 +200,26 @@ for (const d of dirs) {
 
   if (riskLevel === "high" && fm.requires_user_approval !== true) {
     r.errors.push("high risk skills must set requires_user_approval: true");
+  }
+
+  const catalogPath = join(catalogDir, slug, "SKILL.md");
+  if (!existsSync(catalogPath)) {
+    r.errors.push(
+      "missing skills-sh-catalog mirror (run pnpm export-skills-sh)",
+    );
+  }
+}
+
+const catalogDirs = existsSync(catalogDir)
+  ? readdirSync(catalogDir, { withFileTypes: true })
+      .filter((d) => d.isDirectory())
+      .map((d) => d.name)
+  : [];
+const skillSlugs = new Set(dirs.map((d) => d.name));
+for (const c of catalogDirs) {
+  if (!skillSlugs.has(c)) {
+    const r = addResult(c, `skills-sh-catalog/skills/${c}/SKILL.md`);
+    r.errors.push("catalog skill has no source under skills/");
   }
 }
 

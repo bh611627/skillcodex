@@ -22,10 +22,25 @@ risk_level: medium
 tools_allowed: repo-files
 requires_user_approval: true
 compatibility:
+  - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
-  - generic-markdown
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 references:
   - references/stack-nextjs.md
   - references/skill-safety.md
@@ -92,7 +107,7 @@ export const databaseSchemaAgent = defineSkill({
   riskLevel: "medium",
   toolsAllowed: "repo-files",
   requiresUserApproval: true,
-  compatibility: ["cursor","claude-code","skills-sh","generic-markdown"],
+  compatibility: ["generic-markdown","skills-sh","cursor","claude-code","antigravity","codex","github-copilot","windsurf","gemini-cli","cline","amp","opencode","roo","goose","kilo","kiro-cli","droid","openclaw","trae"],
   outcomes: ["Valid schema.prisma with migration steps (Mode A)","OR audit report for indexes, N+1 risk, and naming (Mode B)"],
   stack: ["prisma","@prisma/client","pnpm"],
   references: ["references/stack-nextjs.md","references/skill-safety.md","references/data-layer-choice.md"],

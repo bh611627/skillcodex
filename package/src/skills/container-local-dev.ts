@@ -22,10 +22,25 @@ risk_level: low
 tools_allowed: suggest-shell
 requires_user_approval: false
 compatibility:
+  - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
-  - generic-markdown
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 references:
   - references/stack-nextjs.md
   - references/skill-safety.md
@@ -78,7 +93,7 @@ export const containerLocalDev = defineSkill({
   riskLevel: "low",
   toolsAllowed: "suggest-shell",
   requiresUserApproval: false,
-  compatibility: ["cursor","claude-code","skills-sh","generic-markdown"],
+  compatibility: ["generic-markdown","skills-sh","cursor","claude-code","antigravity","codex","github-copilot","windsurf","gemini-cli","cline","amp","opencode","roo","goose","kilo","kiro-cli","droid","openclaw","trae"],
   outcomes: ["Multi-stage Dockerfile outline deps build runner non root user","compose yaml services app db cache volumes env file not committed","dockerignore node_modules git next cache reduce context size"],
   stack: ["docker","pnpm","next"],
   references: ["references/stack-nextjs.md","references/skill-safety.md"],

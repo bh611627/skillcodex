@@ -29,9 +29,24 @@ tools_allowed: repo-files
 requires_user_approval: false
 compatibility:
   - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 references:
   - references/design-guidelines.md
   - references/react-stack.md
@@ -113,7 +128,7 @@ export const webDesignGuidelines = defineSkill({
   riskLevel: "low",
   toolsAllowed: "repo-files",
   requiresUserApproval: false,
-  compatibility: ["generic-markdown","cursor","claude-code","skills-sh"],
+  compatibility: ["generic-markdown","skills-sh","cursor","claude-code","antigravity","codex","github-copilot","windsurf","gemini-cli","cline","amp","opencode","roo","goose","kilo","kiro-cli","droid","openclaw","trae"],
   outcomes: ["Doc UI implemented with design-guidelines checklist passed (tokens, skeletons, whitespace)","OR file:line audit + pass/fail for a11y, motion, anti-sales-led violations"],
   stack: ["react","typescript","tailwindcss","react-markdown","remark-gfm","react-icons","pnpm","framer-motion"],
   references: ["references/design-guidelines.md","references/react-stack.md","references/data-source.md"],

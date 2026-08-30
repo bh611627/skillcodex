@@ -7,7 +7,18 @@ Versioning: [Semantic Versioning](https://semver.org/)
 
 ## [Unreleased]
 
-_No user-facing changes yet._
+### Added
+
+- Domain references: `auth-sessions.md`, `payments-pci.md`, `csp-headers.md`, `realtime-transports.md`.
+- Expanded `compatibility` across all skills (incl. `antigravity`, `codex`, `github-copilot`, `windsurf`, `gemini-cli`, `cline`, `amp`, `opencode`, `roo`, `goose`, `kilo`, `kiro-cli`, `droid`, `openclaw`, `trae`).
+
+### Changed
+
+- Thickened `auth-handbook`, `payments-handbook`, `security-headers`, `webhook-receivers`, `realtime-handbook`, `react-email-templates` (When to Use, Related skills, deeper failure modes).
+- Aligned `skillcodex-browser-ui` motion policy with Tier 0 / Tier 2 leaf rules.
+- Hardened `package/src/validate.ts` (Scope/Safety, reference existence, compatibility set, skills-sh-catalog parity).
+- CI runs `pnpm export-skills-sh` before validate; fixed `DIRECTORY.md` relative links.
+- Removed empty orphan `package/src/skills/web-interface-guidelines.ts`.
 
 ## [1.3.0] - 2026-05-20
 

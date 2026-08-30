@@ -25,10 +25,25 @@ risk_level: low
 tools_allowed: repo-files
 requires_user_approval: false
 compatibility:
+  - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
-  - generic-markdown
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 references:
   - references/react-stack.md
   - references/stack-nextjs.md
@@ -93,7 +108,7 @@ export const testingAgent = defineSkill({
   riskLevel: "low",
   toolsAllowed: "repo-files",
   requiresUserApproval: false,
-  compatibility: ["cursor","claude-code","skills-sh","generic-markdown"],
+  compatibility: ["generic-markdown","skills-sh","cursor","claude-code","antigravity","codex","github-copilot","windsurf","gemini-cli","cline","amp","opencode","roo","goose","kilo","kiro-cli","droid","openclaw","trae"],
   outcomes: ["Unit/component tests pass with pnpm test","Coverage report generated or gap list produced (Mode B)"],
   stack: ["vitest","@testing-library/react","@testing-library/user-event","playwright","pnpm","next"],
   references: ["references/react-stack.md","references/stack-nextjs.md","references/skill-safety.md"],

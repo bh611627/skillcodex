@@ -22,9 +22,24 @@ tools_allowed: read-only
 requires_user_approval: false
 compatibility:
   - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 references:
   - references/react-stack.md
   - references/skill-safety.md
@@ -101,7 +116,7 @@ export const contentCreator = defineSkill({
   riskLevel: "low",
   toolsAllowed: "read-only",
   requiresUserApproval: false,
-  compatibility: ["generic-markdown","cursor","claude-code","skills-sh"],
+  compatibility: ["generic-markdown","skills-sh","cursor","claude-code","antigravity","codex","github-copilot","windsurf","gemini-cli","cline","amp","opencode","roo","goose","kilo","kiro-cli","droid","openclaw","trae"],
   outcomes: ["Hooks tested against 3 scroll-stop criteria","Caption includes CTA with measurable action verb","Post body or script ready to edit and publish"],
   stack: ["pnpm","next"],
   references: ["references/react-stack.md","references/skill-safety.md"],

@@ -27,9 +27,24 @@ tools_allowed: read-only
 requires_user_approval: false
 compatibility:
   - generic-markdown
+  - skills-sh
   - cursor
   - claude-code
-  - skills-sh
+  - antigravity
+  - codex
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - cline
+  - amp
+  - opencode
+  - roo
+  - goose
+  - kilo
+  - kiro-cli
+  - droid
+  - openclaw
+  - trae
 references:
   - references/google-seo.md
   - references/stack-nextjs.md
@@ -118,7 +133,7 @@ export const seoExpert = defineSkill({
   riskLevel: "low",
   toolsAllowed: "read-only",
   requiresUserApproval: false,
-  compatibility: ["generic-markdown","cursor","claude-code","skills-sh"],
+  compatibility: ["generic-markdown","skills-sh","cursor","claude-code","antigravity","codex","github-copilot","windsurf","gemini-cli","cline","amp","opencode","roo","goose","kilo","kiro-cli","droid","openclaw","trae"],
   outcomes: ["Primary search intent stated in plain language","Title, meta, H1/H2 outline aligned to intent and URL slug","JSON-LD block valid for chosen schema and visible content","OpenGraph and Twitter card checklist completed","GSC-oriented next steps (indexing, CWV, enhancements) prioritized"],
   stack: ["pnpm","next","react","typescript"],
   references: ["references/google-seo.md","references/stack-nextjs.md","references/skill-safety.md"],

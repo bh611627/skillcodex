@@ -11,6 +11,8 @@ Versioning: [Semantic Versioning](https://semver.org/)
 
 - Domain references: `auth-sessions.md`, `payments-pci.md`, `csp-headers.md`, `realtime-transports.md`.
 - Expanded `compatibility` across all skills (incl. `antigravity`, `codex`, `github-copilot`, `windsurf`, `gemini-cli`, `cline`, `amp`, `opencode`, `roo`, `goose`, `kilo`, `kiro-cli`, `droid`, `openclaw`, `trae`).
+- New skills: **`pr-review-workflow`**, **`tdd-vitest`**, **`next-architecture`** (workflow depth without cloning vercel-labs/agent-skills).
+- **When to Use** + **Related skills** on the full catalog (40 skills).
 
 ### Changed
 

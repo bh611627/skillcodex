@@ -48,6 +48,12 @@ references:
 # Instructions
 
 Design or review **Prisma** data models for **Next.js** applications.
+## When to Use
+
+- Use for Prisma schema design/review (relations, indexes, naming).
+- Prefer `data-layer-handbook` first if ORM is undecided.
+- Prefer `api-handbook` for HTTP shapes over the schema.
+
 
 ## Mode A - generate schema
 
@@ -90,6 +96,12 @@ State mode. For Mode A, fence `schema.prisma` only after approval summary.
 - **Migrate drift:** suggest `prisma migrate status` before new migrations.
 - **PlanetScale / serverless:** note provider-specific limitations if user names them.
 - **Monorepo:** confirm `schema.prisma` path (`packages/db` vs root).
+
+## Related skills
+
+- [`data-layer-handbook`](../data-layer-handbook/SKILL.md) - ORM vs SQL choice first
+- [`next-server-patterns`](../next-server-patterns/SKILL.md) - query placement
+- [`api-handbook`](../api-handbook/SKILL.md) - API shapes over the schema
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/database-schema-agent/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills

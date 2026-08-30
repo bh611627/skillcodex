@@ -41,6 +41,9 @@ Same install model as [skills.sh](https://www.skills.sh/) - one row per skill; C
 | 35 | `container-local-dev` | `docker` `compose` `nextjs` | [skills/container-local-dev](https://github.com/bh611627/skillcodex/tree/main/skills/container-local-dev/SKILL.md) | `npx skills add https://github.com/bh611627/skillcodex --skill container-local-dev` |
 | 36 | `storybook-handbook` | `storybook` `react` `design-system` | [skills/storybook-handbook](https://github.com/bh611627/skillcodex/tree/main/skills/storybook-handbook/SKILL.md) | `npx skills add https://github.com/bh611627/skillcodex --skill storybook-handbook` |
 | 37 | `data-layer-handbook` | `prisma` `drizzle` `sql` | [skills/data-layer-handbook](https://github.com/bh611627/skillcodex/tree/main/skills/data-layer-handbook/SKILL.md) | `npx skills add https://github.com/bh611627/skillcodex --skill data-layer-handbook` |
+| 38 | `pr-review-workflow` | `pr-review` `code-review` `nextjs` | [skills/pr-review-workflow](https://github.com/bh611627/skillcodex/tree/main/skills/pr-review-workflow/SKILL.md) | `npx skills add https://github.com/bh611627/skillcodex --skill pr-review-workflow` |
+| 39 | `tdd-vitest` | `tdd` `vitest` `testing-library` | [skills/tdd-vitest](https://github.com/bh611627/skillcodex/tree/main/skills/tdd-vitest/SKILL.md) | `npx skills add https://github.com/bh611627/skillcodex --skill tdd-vitest` |
+| 40 | `next-architecture` | `architecture` `nextjs` `app-router` | [skills/next-architecture](https://github.com/bh611627/skillcodex/tree/main/skills/next-architecture/SKILL.md) | `npx skills add https://github.com/bh611627/skillcodex --skill next-architecture` |
 
 ## npm (programmatic)
 

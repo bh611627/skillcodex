@@ -19,10 +19,12 @@ export { default as githubActionsCi } from "./skills/github-actions-ci.js";
 export { default as i18nHandbook } from "./skills/i18n-handbook.js";
 export { default as markdownPipeline } from "./skills/markdown-pipeline.js";
 export { default as monorepoTooling } from "./skills/monorepo-tooling.js";
+export { default as nextArchitecture } from "./skills/next-architecture.js";
 export { default as nextServerPatterns } from "./skills/next-server-patterns.js";
 export { default as observabilityHandbook } from "./skills/observability-handbook.js";
 export { default as paymentsHandbook } from "./skills/payments-handbook.js";
 export { default as performanceAudit } from "./skills/performance-audit.js";
+export { default as prReviewWorkflow } from "./skills/pr-review-workflow.js";
 export { default as pythonProductive } from "./skills/python-productive.js";
 export { default as reactEmailTemplates } from "./skills/react-email-templates.js";
 export { default as realtimeHandbook } from "./skills/realtime-handbook.js";
@@ -34,6 +36,7 @@ export { default as serverCachingHandbook } from "./skills/server-caching-handbo
 export { default as skillCreator } from "./skills/skill-creator.js";
 export { default as skillcodexBrowserUi } from "./skills/skillcodex-browser-ui.js";
 export { default as storybookHandbook } from "./skills/storybook-handbook.js";
+export { default as tddVitest } from "./skills/tdd-vitest.js";
 export { default as testingAgent } from "./skills/testing-agent.js";
 export { default as typescriptRefactor } from "./skills/typescript-refactor.js";
 export { default as webDesignGuidelines } from "./skills/web-design-guidelines.js";
@@ -57,10 +60,12 @@ import githubActionsCi from "./skills/github-actions-ci.js";
 import i18nHandbook from "./skills/i18n-handbook.js";
 import markdownPipeline from "./skills/markdown-pipeline.js";
 import monorepoTooling from "./skills/monorepo-tooling.js";
+import nextArchitecture from "./skills/next-architecture.js";
 import nextServerPatterns from "./skills/next-server-patterns.js";
 import observabilityHandbook from "./skills/observability-handbook.js";
 import paymentsHandbook from "./skills/payments-handbook.js";
 import performanceAudit from "./skills/performance-audit.js";
+import prReviewWorkflow from "./skills/pr-review-workflow.js";
 import pythonProductive from "./skills/python-productive.js";
 import reactEmailTemplates from "./skills/react-email-templates.js";
 import realtimeHandbook from "./skills/realtime-handbook.js";
@@ -72,6 +77,7 @@ import serverCachingHandbook from "./skills/server-caching-handbook.js";
 import skillCreator from "./skills/skill-creator.js";
 import skillcodexBrowserUi from "./skills/skillcodex-browser-ui.js";
 import storybookHandbook from "./skills/storybook-handbook.js";
+import tddVitest from "./skills/tdd-vitest.js";
 import testingAgent from "./skills/testing-agent.js";
 import typescriptRefactor from "./skills/typescript-refactor.js";
 import webDesignGuidelines from "./skills/web-design-guidelines.js";
@@ -98,10 +104,12 @@ export const skills: Record<string, SkillModule> = {
   "i18n-handbook": i18nHandbook,
   "markdown-pipeline": markdownPipeline,
   "monorepo-tooling": monorepoTooling,
+  "next-architecture": nextArchitecture,
   "next-server-patterns": nextServerPatterns,
   "observability-handbook": observabilityHandbook,
   "payments-handbook": paymentsHandbook,
   "performance-audit": performanceAudit,
+  "pr-review-workflow": prReviewWorkflow,
   "python-productive": pythonProductive,
   "react-email-templates": reactEmailTemplates,
   "realtime-handbook": realtimeHandbook,
@@ -113,6 +121,7 @@ export const skills: Record<string, SkillModule> = {
   "skill-creator": skillCreator,
   "skillcodex-browser-ui": skillcodexBrowserUi,
   "storybook-handbook": storybookHandbook,
+  "tdd-vitest": tddVitest,
   "testing-agent": testingAgent,
   "typescript-refactor": typescriptRefactor,
   "web-design-guidelines": webDesignGuidelines,

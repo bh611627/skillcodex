@@ -83,6 +83,10 @@
       "types": "./dist/skills/monorepo-tooling.d.ts",
       "import": "./dist/skills/monorepo-tooling.js"
     },
+    "./next-architecture": {
+      "types": "./dist/skills/next-architecture.d.ts",
+      "import": "./dist/skills/next-architecture.js"
+    },
     "./next-server-patterns": {
       "types": "./dist/skills/next-server-patterns.d.ts",
       "import": "./dist/skills/next-server-patterns.js"
@@ -98,6 +102,10 @@
     "./performance-audit": {
       "types": "./dist/skills/performance-audit.d.ts",
       "import": "./dist/skills/performance-audit.js"
+    },
+    "./pr-review-workflow": {
+      "types": "./dist/skills/pr-review-workflow.d.ts",
+      "import": "./dist/skills/pr-review-workflow.js"
     },
     "./python-productive": {
       "types": "./dist/skills/python-productive.d.ts",
@@ -142,6 +150,10 @@
     "./storybook-handbook": {
       "types": "./dist/skills/storybook-handbook.d.ts",
       "import": "./dist/skills/storybook-handbook.js"
+    },
+    "./tdd-vitest": {
+      "types": "./dist/skills/tdd-vitest.d.ts",
+      "import": "./dist/skills/tdd-vitest.js"
     },
     "./testing-agent": {
       "types": "./dist/skills/testing-agent.d.ts",

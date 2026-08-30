@@ -47,6 +47,12 @@ references:
 
 # Instructions
 
+## When to Use
+
+- Use for revalidateTag, stampedes, Redis, fetch cache hierarchy.
+- Prefer `next-server-patterns` for where caching sits in the tree.
+- Prefer `client-data-fetching` for TanStack Query caches.
+
 Design **server-side caching** for **Next.js** under load. Pair with **`next-server-patterns`**.
 
 1. Classify data: **public static**, **public dynamic**, **per-user** - each needs different cache keys and invalidation.
@@ -55,7 +61,6 @@ Design **server-side caching** for **Next.js** under load. Pair with **`next-ser
 4. **`unstable_cache` / `cache`:** wrap DB or HTTP fan-out; keys must include tenant and all inputs that affect output.
 5. **External Redis:** use for cross-region or cross-runtime shared cache; define serialization, TTL, and namespacing; handle Redis down (degrade or fail closed - user chooses).
 6. **Personalization:** never cache HTML that embeds private user data under a shared URL.
-
 ## Outcomes
 
 - Tag table + invalidation flow + stampede strategy paragraph per hot route.
@@ -77,6 +82,12 @@ State Next version from lockfile; behavior differs by minor - say “verify agai
 
 - **Stale UI after mutation:** missing `revalidatePath` / tag mismatch typo.
 - **Redis memory:** TTL mandatory; max entry size cap.
+
+## Related skills
+
+- [`next-server-patterns`](../next-server-patterns/SKILL.md) - cache placement
+- [`client-data-fetching`](../client-data-fetching/SKILL.md) - client vs server cache
+- [`observability-handbook`](../observability-handbook/SKILL.md) - cache miss metrics
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/server-caching-handbook/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills

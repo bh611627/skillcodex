@@ -47,6 +47,12 @@ references:
 
 # Instructions
 
+## When to Use
+
+- Use for structured logs, correlation IDs, client error hygiene.
+- Prefer \`api-handbook\` for public error JSON shapes.
+- Prefer \`auth-handbook\` before logging anything near sessions.
+
 Add **observability** that works with **Next.js App Router**: logs, errors, and light tracing.
 
 1. **Correlation:** generate or forward **\`x-request-id\`** (or trace id) in Route Handlers and middleware; pass through Server Actions via async context or explicit argument - pick one pattern per app.
@@ -55,7 +61,6 @@ Add **observability** that works with **Next.js App Router**: logs, errors, and 
 4. **PII:** log user ids (opaque), not names/emails, unless audited retention policy says otherwise.
 5. **External APM (optional):** if repo has Sentry/Datadog/etc., initialize **server-only** SDK in instrumentation file pattern; never ship server DSN in client bundles.
 6. **Performance signals:** log slow query thresholds as metrics names, not raw SQL with literals.
-
 ## Outcomes
 
 - Logging contract markdown + file list (\`instrumentation.ts\`, logger util) matching repo.
@@ -78,6 +83,12 @@ Redact examples; use \`req_***\` style ids.
 - **Double logging:** middleware + layout both log same request - dedupe with id guard.
 - **Edge vs Node:** OpenTelemetry exporters often Node-only - split instrumentation.
 
+## Related skills
+
+- [\`api-handbook\`](../api-handbook/SKILL.md) - handler error shapes
+- [\`error-loading-not-found\`](../error-loading-not-found/SKILL.md) - UI error boundaries
+- [\`auth-handbook\`](../auth-handbook/SKILL.md) - never log tokens
+
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/observability-handbook/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills
 `;
@@ -98,6 +109,12 @@ export const observabilityHandbook = defineSkill({
   references: ["references/stack-nextjs.md","references/skill-safety.md"],
   instructions: `# Instructions
 
+## When to Use
+
+- Use for structured logs, correlation IDs, client error hygiene.
+- Prefer \`api-handbook\` for public error JSON shapes.
+- Prefer \`auth-handbook\` before logging anything near sessions.
+
 Add **observability** that works with **Next.js App Router**: logs, errors, and light tracing.
 
 1. **Correlation:** generate or forward **\`x-request-id\`** (or trace id) in Route Handlers and middleware; pass through Server Actions via async context or explicit argument - pick one pattern per app.
@@ -106,7 +123,6 @@ Add **observability** that works with **Next.js App Router**: logs, errors, and 
 4. **PII:** log user ids (opaque), not names/emails, unless audited retention policy says otherwise.
 5. **External APM (optional):** if repo has Sentry/Datadog/etc., initialize **server-only** SDK in instrumentation file pattern; never ship server DSN in client bundles.
 6. **Performance signals:** log slow query thresholds as metrics names, not raw SQL with literals.
-
 ## Outcomes
 
 - Logging contract markdown + file list (\`instrumentation.ts\`, logger util) matching repo.`,
@@ -127,6 +143,12 @@ Redact examples; use \`req_***\` style ids.
 
 - **Double logging:** middleware + layout both log same request - dedupe with id guard.
 - **Edge vs Node:** OpenTelemetry exporters often Node-only - split instrumentation.
+
+## Related skills
+
+- [\`api-handbook\`](../api-handbook/SKILL.md) - handler error shapes
+- [\`error-loading-not-found\`](../error-loading-not-found/SKILL.md) - UI error boundaries
+- [\`auth-handbook\`](../auth-handbook/SKILL.md) - never log tokens
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/observability-handbook/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills`,

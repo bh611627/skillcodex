@@ -47,6 +47,12 @@ references:
 
 # Instructions
 
+## When to Use
+
+- Use for accessible forms with zod + Server Actions or client submit.
+- Prefer `api-handbook` for pure JSON APIs without forms.
+- Prefer `accessibility-audit` for a full WCAG pass after the form ships.
+
 Build or audit **forms** with **zod** and accessible markup.
 
 1. Choose pattern: **Server Action** with **`useActionState`** (React 19) or legacy `useFormState` naming in older docs - progressive enhancement vs controlled client form; match repo and installed `react` types.
@@ -54,7 +60,6 @@ Build or audit **forms** with **zod** and accessible markup.
 3. Labels, `htmlFor`, `aria-invalid`, `aria-describedby` for errors; no placeholder-only labels.
 4. Disable double-submit; optimistic UI only when user asks.
 5. File uploads: size limits and accept list in copy, not insecure defaults.
-
 ## Outcomes
 
 - Schema snippet + error wiring plan + a11y checklist.
@@ -76,6 +81,12 @@ Show field error mapping table (field → zod path).
 
 - **Next 15 form types:** align with current `react` types from repo lockfile.
 - **Hydration on date pickers:** prefer server default string + client parse in island.
+
+## Related skills
+
+- [`api-handbook`](../api-handbook/SKILL.md) - Route Handler APIs behind forms
+- [`client-data-fetching`](../client-data-fetching/SKILL.md) - client mutation patterns
+- [`accessibility-audit`](../accessibility-audit/SKILL.md) - accessible error messaging
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/forms-and-validation/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills

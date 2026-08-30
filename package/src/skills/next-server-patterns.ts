@@ -48,6 +48,12 @@ references:
 
 # Instructions
 
+## When to Use
+
+- Use for RSC, Server Actions, Route Handlers, and client boundaries.
+- Prefer \`server-caching-handbook\` for stampede/tag details.
+- Prefer \`next-architecture\` for whole-app layering decisions.
+
 Guide **Next.js App Router** layout: **Server Components** by default, **Client** only where hooks, browser APIs, or event handlers require it.
 
 1. Map each route segment: static generation, dynamic with \`fetch\` cache, or \`force-dynamic\` - justify in one line each.
@@ -58,7 +64,6 @@ Guide **Next.js App Router** layout: **Server Components** by default, **Client*
 6. **React 19+ in Next 15+:** prefer \`useActionState\` / server-first flows from \`forms-and-validation\`; use \`React.cache\` for per-request dedupe of expensive server-only calls when appropriate.
 7. **User-visible failures:** pair with \`error-loading-not-found\` - do not catch errors only in client toasts while the server returns 500 HTML.
 8. **Hot paths:** for tag-based revalidation and stampedes see **\`server-caching-handbook\`** and **\`references/server-caching-patterns.md\`**.
-
 ## Outcomes
 
 - Boundary diagram (bullet list: server file → client leaf).
@@ -85,6 +90,13 @@ Use headings: Boundaries · Caching · Streaming · Metadata. No full app rewrit
 - **Stale data:** verify \`revalidatePath\` / \`revalidateTag\` after mutations.
 - **Huge client bundle:** list largest imports in client leaves only.
 
+## Related skills
+
+- [\`server-caching-handbook\`](../server-caching-handbook/SKILL.md) - tags and stampedes
+- [\`client-data-fetching\`](../client-data-fetching/SKILL.md) - hydrate QueryClient
+- [\`next-architecture\`](../next-architecture/SKILL.md) - app-wide boundaries
+- [\`edge-runtime-handbook\`](../edge-runtime-handbook/SKILL.md) - Edge vs Node
+
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/next-server-patterns/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills
 `;
@@ -105,6 +117,12 @@ export const nextServerPatterns = defineSkill({
   references: ["references/stack-nextjs.md","references/skill-safety.md"],
   instructions: `# Instructions
 
+## When to Use
+
+- Use for RSC, Server Actions, Route Handlers, and client boundaries.
+- Prefer \`server-caching-handbook\` for stampede/tag details.
+- Prefer \`next-architecture\` for whole-app layering decisions.
+
 Guide **Next.js App Router** layout: **Server Components** by default, **Client** only where hooks, browser APIs, or event handlers require it.
 
 1. Map each route segment: static generation, dynamic with \`fetch\` cache, or \`force-dynamic\` - justify in one line each.
@@ -115,7 +133,6 @@ Guide **Next.js App Router** layout: **Server Components** by default, **Client*
 6. **React 19+ in Next 15+:** prefer \`useActionState\` / server-first flows from \`forms-and-validation\`; use \`React.cache\` for per-request dedupe of expensive server-only calls when appropriate.
 7. **User-visible failures:** pair with \`error-loading-not-found\` - do not catch errors only in client toasts while the server returns 500 HTML.
 8. **Hot paths:** for tag-based revalidation and stampedes see **\`server-caching-handbook\`** and **\`references/server-caching-patterns.md\`**.
-
 ## Outcomes
 
 - Boundary diagram (bullet list: server file → client leaf).
@@ -140,6 +157,13 @@ Use headings: Boundaries · Caching · Streaming · Metadata. No full app rewrit
 - **Hydration mismatch:** trace client-only state leaking into server HTML.
 - **Stale data:** verify \`revalidatePath\` / \`revalidateTag\` after mutations.
 - **Huge client bundle:** list largest imports in client leaves only.
+
+## Related skills
+
+- [\`server-caching-handbook\`](../server-caching-handbook/SKILL.md) - tags and stampedes
+- [\`client-data-fetching\`](../client-data-fetching/SKILL.md) - hydrate QueryClient
+- [\`next-architecture\`](../next-architecture/SKILL.md) - app-wide boundaries
+- [\`edge-runtime-handbook\`](../edge-runtime-handbook/SKILL.md) - Edge vs Node
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/next-server-patterns/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills`,

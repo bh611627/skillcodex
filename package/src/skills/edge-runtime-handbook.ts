@@ -47,6 +47,12 @@ references:
 
 # Instructions
 
+## When to Use
+
+- Use when deciding Edge vs Node for a Route Handler or middleware.
+- Prefer \`next-server-patterns\` for general App Router placement.
+- Prefer \`auth-handbook\` if Edge auth APIs are the blocker.
+
 Explain **Edge vs Node** runtimes in **Next.js** for the user’s code.
 
 1. Flag imports: \`fs\`, native Prisma client, some \`crypto\` patterns, large WASM - usually **Node**.
@@ -54,7 +60,6 @@ Explain **Edge vs Node** runtimes in **Next.js** for the user’s code.
 3. **Route segment config** \`runtime = 'edge' | 'nodejs'\` - justify per route.
 4. **Env:** \`process.env\` inlined on edge - secrets risk; use public env only on edge.
 5. Suggest **split:** edge handler validates + forwards to Node server action or internal API if needed.
-
 ## Outcomes
 
 - Table: file → current runtime → recommended runtime → blockers.
@@ -76,6 +81,12 @@ Link to Next docs concepts by name; no fabricated API lists - say “verify agai
 
 - **Prisma on edge:** use Data Proxy or move to Node route - state tradeoffs.
 
+## Related skills
+
+- [\`next-server-patterns\`](../next-server-patterns/SKILL.md) - Node vs Edge split
+- [\`server-caching-handbook\`](../server-caching-handbook/SKILL.md) - edge-compatible caches
+- [\`auth-handbook\`](../auth-handbook/SKILL.md) - session checks on Edge limits
+
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/edge-runtime-handbook/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills
 `;
@@ -96,6 +107,12 @@ export const edgeRuntimeHandbook = defineSkill({
   references: ["references/stack-nextjs.md","references/skill-safety.md"],
   instructions: `# Instructions
 
+## When to Use
+
+- Use when deciding Edge vs Node for a Route Handler or middleware.
+- Prefer \`next-server-patterns\` for general App Router placement.
+- Prefer \`auth-handbook\` if Edge auth APIs are the blocker.
+
 Explain **Edge vs Node** runtimes in **Next.js** for the user’s code.
 
 1. Flag imports: \`fs\`, native Prisma client, some \`crypto\` patterns, large WASM - usually **Node**.
@@ -103,7 +120,6 @@ Explain **Edge vs Node** runtimes in **Next.js** for the user’s code.
 3. **Route segment config** \`runtime = 'edge' | 'nodejs'\` - justify per route.
 4. **Env:** \`process.env\` inlined on edge - secrets risk; use public env only on edge.
 5. Suggest **split:** edge handler validates + forwards to Node server action or internal API if needed.
-
 ## Outcomes
 
 - Table: file → current runtime → recommended runtime → blockers.`,
@@ -123,6 +139,12 @@ Link to Next docs concepts by name; no fabricated API lists - say “verify agai
 ## Troubleshooting
 
 - **Prisma on edge:** use Data Proxy or move to Node route - state tradeoffs.
+
+## Related skills
+
+- [\`next-server-patterns\`](../next-server-patterns/SKILL.md) - Node vs Edge split
+- [\`server-caching-handbook\`](../server-caching-handbook/SKILL.md) - edge-compatible caches
+- [\`auth-handbook\`](../auth-handbook/SKILL.md) - session checks on Edge limits
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/edge-runtime-handbook/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills`,

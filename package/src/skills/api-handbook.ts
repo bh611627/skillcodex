@@ -48,6 +48,12 @@ references:
 
 # Instructions
 
+## When to Use
+
+- Use for REST-ish Route Handlers, status codes, errors, versioning.
+- Prefer \`forms-and-validation\` for Server Action forms.
+- Prefer \`webhook-receivers\` for inbound provider callbacks.
+
 Shape **HTTP APIs** implemented as **Next.js Route Handlers** (or edge/node runtime).
 
 1. Model resources and sub-resources; prefer nouns in paths; version in path or header - pick one and document.
@@ -59,7 +65,6 @@ Shape **HTTP APIs** implemented as **Next.js Route Handlers** (or edge/node runt
 7. **CORS:** if handlers are called from browsers, define explicit \`Access-Control-Allow-Origin\` (never \`*\` with credentials); prefer same-origin BFF pattern for cookie sessions.
 8. **Security headers:** align with \`security-headers\` for APIs that return HTML or are hit by browsers; JSON-only APIs still benefit from \`X-Content-Type-Options: nosniff\`.
 9. **Realtime:** for SSE/WebSockets see **\`realtime-handbook\`** - do not overload REST handlers with long-lived streams without that skill’s checks.
-
 ## Outcomes
 
 - Verb + path table, error contract, idempotency bullets.
@@ -82,6 +87,13 @@ Tables first; then optional example handler signature pseudocode only.
 - **405 on route:** check \`export const dynamic\` vs method exports.
 - **Body parse errors:** validate content-type and zod schema order.
 
+## Related skills
+
+- [\`forms-and-validation\`](../forms-and-validation/SKILL.md) - Server Actions + zod forms
+- [\`webhook-receivers\`](../webhook-receivers/SKILL.md) - inbound provider callbacks
+- [\`auth-handbook\`](../auth-handbook/SKILL.md) - protecting handlers
+- [\`observability-handbook\`](../observability-handbook/SKILL.md) - request IDs and error logs
+
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/api-handbook/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills
 `;
@@ -102,6 +114,12 @@ export const apiHandbook = defineSkill({
   references: ["references/stack-nextjs.md","references/skill-safety.md"],
   instructions: `# Instructions
 
+## When to Use
+
+- Use for REST-ish Route Handlers, status codes, errors, versioning.
+- Prefer \`forms-and-validation\` for Server Action forms.
+- Prefer \`webhook-receivers\` for inbound provider callbacks.
+
 Shape **HTTP APIs** implemented as **Next.js Route Handlers** (or edge/node runtime).
 
 1. Model resources and sub-resources; prefer nouns in paths; version in path or header - pick one and document.
@@ -113,7 +131,6 @@ Shape **HTTP APIs** implemented as **Next.js Route Handlers** (or edge/node runt
 7. **CORS:** if handlers are called from browsers, define explicit \`Access-Control-Allow-Origin\` (never \`*\` with credentials); prefer same-origin BFF pattern for cookie sessions.
 8. **Security headers:** align with \`security-headers\` for APIs that return HTML or are hit by browsers; JSON-only APIs still benefit from \`X-Content-Type-Options: nosniff\`.
 9. **Realtime:** for SSE/WebSockets see **\`realtime-handbook\`** - do not overload REST handlers with long-lived streams without that skill’s checks.
-
 ## Outcomes
 
 - Verb + path table, error contract, idempotency bullets.`,
@@ -134,6 +151,13 @@ Tables first; then optional example handler signature pseudocode only.
 
 - **405 on route:** check \`export const dynamic\` vs method exports.
 - **Body parse errors:** validate content-type and zod schema order.
+
+## Related skills
+
+- [\`forms-and-validation\`](../forms-and-validation/SKILL.md) - Server Actions + zod forms
+- [\`webhook-receivers\`](../webhook-receivers/SKILL.md) - inbound provider callbacks
+- [\`auth-handbook\`](../auth-handbook/SKILL.md) - protecting handlers
+- [\`observability-handbook\`](../observability-handbook/SKILL.md) - request IDs and error logs
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/api-handbook/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills`,

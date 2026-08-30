@@ -7,7 +7,7 @@ How SkillCodex skills map to **product engineering** concerns for **Next.js 15+*
 | Concern | Primary skills | Supporting references |
 |---------|----------------|------------------------|
 | **Stack defaults** | (implicit in many skills) | `references/stack-nextjs.md` |
-| **RSC / App Router** | `next-server-patterns`, `edge-runtime-handbook` | `references/server-caching-patterns.md` |
+| **RSC / App Router** | `next-server-patterns`, `edge-runtime-handbook`, `next-architecture` | `references/server-caching-patterns.md` |
 | **Errors / UX** | `error-loading-not-found` | `observability-handbook` |
 | **HTML / CSS / a11y entry** | `semantic-html-css` | `accessibility-audit`, `web-design-guidelines` |
 | **Forms** | `forms-and-validation` | `api-handbook`, `security-headers` |
@@ -35,7 +35,9 @@ How SkillCodex skills map to **product engineering** concerns for **Next.js 15+*
 | **Design system UI** | `web-design-guidelines`, `storybook-handbook` | [`references/design-guidelines.md`](../references/design-guidelines.md) |
 | **Skill browser UI** | `skillcodex-browser-ui` | `web-design-guidelines` |
 | **Type system** | `typescript-refactor` | `code-assistant` |
-| **Tests** | `testing-agent` | `accessibility-audit`, `forms-and-validation` |
+| **Tests** | `testing-agent`, `tdd-vitest` | `accessibility-audit`, `forms-and-validation` |
+| **PR / review** | `pr-review-workflow` | `code-assistant`, `testing-agent` |
+| **App architecture** | `next-architecture` | `next-server-patterns`, `data-layer-handbook`, `monorepo-tooling` |
 | **Python** | `python-productive` | - |
 | **Marketing copy** | `content-creator` | - |
 | **Authoring skills** | `skill-creator` | [`SKILL_STANDARD.md`](../SKILL_STANDARD.md) |

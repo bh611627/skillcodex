@@ -117,6 +117,9 @@ More detail: [docs/usage.md](./docs/usage.md)
 | Docker dev | [container-local-dev](./skills/container-local-dev/SKILL.md) | “Multi-stage Next image + compose Postgres” |
 | Storybook | [storybook-handbook](./skills/storybook-handbook/SKILL.md) | “CSF3 + a11y addon for our design system package” |
 | ORM choice | [data-layer-handbook](./skills/data-layer-handbook/SKILL.md) | “Prisma vs Drizzle for edge + serverless Postgres” |
+| PR review checklist | [pr-review-workflow](./skills/pr-review-workflow/SKILL.md) | “Review this PR for Next App Router risks” |
+| TDD with Vitest | [tdd-vitest](./skills/tdd-vitest/SKILL.md) | “Red-green-refactor for this form validation” |
+| App architecture | [next-architecture](./skills/next-architecture/SKILL.md) | “Where should domain logic live in this App Router app?” |
 
 Step-by-step host guides: [Cursor](./examples/cursor-usage/README.md) · [Claude Code](./examples/claude-code-usage/README.md)
 
@@ -181,6 +184,9 @@ Compared to [skills.sh](https://www.skills.sh/): same `npx skills add` install p
 | [container-local-dev](./skills/container-local-dev/SKILL.md) | Dockerfile + Compose for Next |
 | [storybook-handbook](./skills/storybook-handbook/SKILL.md) | Storybook 8, a11y addon, CSF3 |
 | [data-layer-handbook](./skills/data-layer-handbook/SKILL.md) | Prisma vs Drizzle vs SQL, pooling |
+| [pr-review-workflow](./skills/pr-review-workflow/SKILL.md) | Structured PR review + merge recommendation |
+| [tdd-vitest](./skills/tdd-vitest/SKILL.md) | Red-green-refactor with Vitest/RTL |
+| [next-architecture](./skills/next-architecture/SKILL.md) | App-wide App Router layers and boundaries |
 
 ---
 

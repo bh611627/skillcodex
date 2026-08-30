@@ -50,6 +50,12 @@ references:
 Help the user migrate a React/Next.js codebase from JavaScript to **strict TypeScript**.
 
 **Before edits:** suggest \`pnpm exec tsc --noEmit\` (or \`npx tsc --noEmit\`) so there is a baseline.
+## When to Use
+
+- Use for JS→strict TypeScript or type audits.
+- Prefer \`code-assistant\` for small non-migration diffs.
+- Prefer \`testing-agent\` to lock behavior before refactors.
+
 
 ## Mode A - full file refactor
 
@@ -94,6 +100,12 @@ State mode. List files changed or audited. Include the exact \`tsc\` command use
 - **\`any\` explosion:** narrow one module at a time; use \`satisfies\` and discriminated unions before generics everywhere.
 - **ts-morph version mismatch:** align \`typescript\` devDependency with the project’s installed version.
 
+## Related skills
+
+- [\`code-assistant\`](../code-assistant/SKILL.md) - scoped TS fixes
+- [\`testing-agent\`](../testing-agent/SKILL.md) - type-safe tests
+- [\`pr-review-workflow\`](../pr-review-workflow/SKILL.md) - review type migrations
+
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/typescript-refactor/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills
 `;
@@ -117,6 +129,12 @@ export const typescriptRefactor = defineSkill({
 Help the user migrate a React/Next.js codebase from JavaScript to **strict TypeScript**.
 
 **Before edits:** suggest \`pnpm exec tsc --noEmit\` (or \`npx tsc --noEmit\`) so there is a baseline.
+## When to Use
+
+- Use for JS→strict TypeScript or type audits.
+- Prefer \`code-assistant\` for small non-migration diffs.
+- Prefer \`testing-agent\` to lock behavior before refactors.
+
 
 ## Mode A - full file refactor
 
@@ -159,6 +177,12 @@ State mode. List files changed or audited. Include the exact \`tsc\` command use
 - **RSC errors after rename:** ensure server files avoid client-only APIs; add \`"use client"\` only where hooks are required.
 - **\`any\` explosion:** narrow one module at a time; use \`satisfies\` and discriminated unions before generics everywhere.
 - **ts-morph version mismatch:** align \`typescript\` devDependency with the project’s installed version.
+
+## Related skills
+
+- [\`code-assistant\`](../code-assistant/SKILL.md) - scoped TS fixes
+- [\`testing-agent\`](../testing-agent/SKILL.md) - type-safe tests
+- [\`pr-review-workflow\`](../pr-review-workflow/SKILL.md) - review type migrations
 
 **GitHub:** https://github.com/bh611627/skillcodex/tree/main/skills/typescript-refactor/SKILL.md  
 **npm:** https://www.npmjs.com/package/@skillcodex/skills`,
